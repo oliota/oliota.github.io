@@ -1,9 +1,0 @@
-
-
-footer{
-    text-align: center;
-}
-footer::after {
-    content: "® Copyright Proway 2021";
-    
-}
