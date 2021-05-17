@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Divs com css</title>
+
+    <style>
+        html {
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+
+        h1 {
+            display: inline-block;
+        }
+
+        body {
+            width: 1000px;
+        }
+
+        div.linha {
+
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #topo {
+            align-items: initial;
+            background-color: lightblue;
+            padding: 8px;
+        }
+
+        #centro {
+            background-color: green;
+            float: left;
+        }
+
+        #menu {
+            background-color: lightgreen;
+            width: 300px;
+            min-height: 300px;
+            float: left;
+        }
+
+        #conteudo {
+            background-color: darkgreen;
+            width: 700px;
+            min-height: 300px;
+            float: left;
+        }
+
+        #rodape {
+            width: 1000px;
+            background-color: lightseagreen;
+            min-height: 100px;
+        }
+
+        #qualquer_lugar {
+            position: absolute;
+            left: 600px;
+            top: 100px;
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="topo">
+
+        <div class="linha">
+
+            <img src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="">
+        </div>
+        <div class="linha">
+
+            <h1>Titulo</h1>
+        </div>
+    </div>
+
+    <div id="centro">
+
+        <div id="menu">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div id="conteudo">
+            Conteudo
+        </div>
+
+    </div>
+
+    <div id="rodape">
+        rodape
+    </div>
+
+    <div id="qualquer_lugar">
+        opa
+    </div>
+
+</body>
+
+</html>

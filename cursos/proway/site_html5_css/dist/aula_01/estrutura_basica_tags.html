@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Aula 01</title>
+</head>
+
+<body>
+
+    <h1>Estrutura básica do html</h1>
+
+ 
+<pre>
+    < ! DOCTYPE html >  tag para identificar o tipo do documento que é html
+    < html > tag para identificar o inicio do nossa pagina
+        < head > tag "cabeça" onde fica o titulo e outras tags
+            < meta charset="UTF-8" > tag meta com atributo charset com valor utf-8 para compreender carecteres especiais 
+            < title >Minha página< / title > tag title insere um texto na aba do navegador
+        < / head > fechamento da tag head
+        < body > tag "corpo" onde os conteudos visuais são apresentados
+            
+        < / body > fechamento da tag corpo
+    < / html > fechamento da tag html
+</pre>
+ <hr>   
+
+<p>As tags são escritas da seguinte forma</p>
+<pre> < nome da tag > conteúdo < / nome da tag> para encerrar </pre>
+
+<p>Na primeira parte da tag podemos incluir atributos</p>
+<pre> < p id="meu_id" > conteúdo < / p> o atributo id serve para que outros recursos o encontrem por esse valor unico </pre>
+
+<p>As tags que não possuem conteúdo podem se auto encerrar</p>
+<pre> < nome da tag / > aqui o caracter / sera colocado após no nome da tag </pre>
+<hr>
+
+<p> Tags H </p>
+<pre> < h1 > texto < / h1>  </pre>
+<pre> < h2 > texto < / h2>  </pre>
+<pre> < h3 > texto < / h3>  </pre>
+<pre> < h4 > texto < / h4>  </pre>
+<pre> < h5 > texto < / h5>  </pre>
+<pre> < h6 > texto < / h6>  </pre> 
+
+Veja o resultado
+<h1>texto</h1>
+<h2>texto</h2>
+<h3>texto</h3>
+<h4>texto</h4>
+<h5>texto</h5>
+<h6>texto</h6> 
+
+
+<hr>
+
+Em hml os ENTERs no codigo fonte não geram linhas no html , para realizar uma quebra de linha é necessário a tag < br >
+<br>
+Exemplo: <br>
+Bom dia < br / > <br>
+Boa tarde < br / > <br>
+Boa noite < br / > <br>
+<br>
+resultado: <br>
+Bom dia  <br>
+Boa tarde   <br>
+Boa noite   <br>
+
+<hr>
+Paragrafros criam uma linha adicional no final<br>
+< p > Meu primeiro paragrafo < / p > <br>
+< p > Meu segundo paragrafo < / p > <br>
+Resultado <br>
+
+<p>Meu primeiro paragrafo</p>
+<p>Meu segundo paragrafo</p>
+
+
+<hr>
+Linha divisoria <br>
+< hr / > o resultado é uma linha horizontal
+
+<hr>
+Cores em html <br>
+As cores podem atribuidas a qualquer elemento e essa mudança será aplicada ao conteudo interno da tag <br>
+Exemplo: <br>
+< font color="red" > < p >  meu paragrafo vermelho < / p > < / font > <br>
+< font color="green" > < p >  meu paragrafo verde < / p > < / font > <br>
+< font color="blue" > < p >  meu paragrafo azul < / p > < / font > <br>
+Resultado: <br>
+<font color="red"  ><p>meu paragrafo vermelho</p> </font> 
+<font color="green"  ><p>meu paragrafo verde</p> </font> 
+<font color="blue"  ><p>meu paragrafo azul</p> </font> 
+
+<hr>
+Links <br>
+< a href="destino" > parte clicavel < / a > encerramento do link <br>
+<a href="https://google.com" > Vai para o google</a>  <br>
+
+<br>
+para que o link abra em outra aba é preciso informar o atributo target com valor _blank <br>
+< a href="destino" > parte clicavel < / a > encerramento do link <br>
+<a href="https://google.com" target="_blank" > Vai para o google em outra aba</a>  <br>
+
+
+
+<hr>
+Imagens
+< img src="onde a imagem esta . tipo do arquivo" / > <br>
+Exemplo: <br> 
+< img src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" / >  exibe a imagem do google nesse endereço na internet<br>
+
+resultado: <br>
+<img src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="" />
+
+
+<br>
+
+
+Para alterar o tamanho original da imagem utilize os atributos width e height (respectivamente largura e altura): <br> 
+< img src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" width="50px"  height="50px"/ >  exibe a imagem do google nesse endereço na internet<br>
+
+resultado: <br>
+<img src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"  width="50px"  height="50px" />
+
+
+<br>
+ 
+
+
+<br>
+<br>
+
+</body>
+
+</html>
