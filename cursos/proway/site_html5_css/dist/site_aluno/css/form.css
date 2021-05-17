@@ -1,0 +1,36 @@
+.campo {
+    width: 200px;
+}
+label{
+    width: 100px;
+    display: inline-block;
+}
+textarea{
+    width: 200px;
+    resize: none;
+}
+
+.limpar{
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+.limpar:hover{
+    background-color: lightcoral;
+    border-radius: 5px;
+    color: black;
+}
+
+
+.enviar{
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+}
+
+.enviar:hover{
+    background-color: lightgreen;
+    border-radius: 5px;
+    color: black;
+}

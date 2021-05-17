@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Cadastro de anuncios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        h1 {
+            display: inline-block;
+        }
+
+        h2 {    
+            display: inline-block;
+        }
+
+        header {
+            background-color: lightblue;
+            border-radius: 30px;
+            padding: 10px;
+        }
+
+        #sair {
+            position: absolute;
+            right: 0;
+            margin-right: 150px;
+            top: 20px;
+        }
+
+        #formulario{
+            border: 1px dashed black;
+            padding: 30px;
+            border-radius: 30px; 
+            left: 50%;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Bem vindo,</h1>
+            <h2 id="usuario"></h2>
+            <form>
+                <input type="button" value="Sair" id="sair">
+            </form>
+
+
+        </header>
+
+
+        <div class="row" id="formulario">
+            <form action="" >
+
+          
+ 
+                <div class="form-group col-md-3">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+    
+    
+                <div class="form-group col-md-2">
+                    <label for="valor">Valor a investir</label>
+                    <input type="number" class="form-control" id="valor" name="valor" required>
+                </div>
+    
+                <div class="form-group col-md-3">
+                    <label for="inicio">Data inicio</label>
+                    <input type="date" class="form-control" id="inicio" name="inicio" required>
+                </div>
+    
+                <div class="form-group col-md-3">
+                    <label for="fim">Data fim</label>
+                    <input type="date" class="form-control" id="fim" name="fim" required>
+                </div>
+                <div class="form-group col-md-3 ">
+                    <br>
+                    <input type="button" class=" btn btn-primary" id="salvar" value="Salvar novo anuncio">
+                </div>
+            </form>
+        </div>
+      
+
+        <hr>
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <th>Anuncio</th>
+                <th>Valor investido</th>
+                <th>Dias</th>
+                <th>Visualizações originais</th>
+                <th>Clicks originais</th>
+                <th>Compartilhamentos originais</th>
+                <th>Acrescimo de visualizações</th>
+                <th>Vizualizações totais</th>
+                <th>Clicks totais</th>
+                <th>Compartilhamentos totais</th>
+            </thead>
+            <tbody id="resultado">
+
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="module" src='js/cadastro_anuncios.js'></script>
+</body>
+
+</html>

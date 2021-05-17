@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Apresentação inicial - Javascript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="form-collection">
+
+
+
+    <div class="card elevation-2 limit-width sign-up-card above">
+      <div class="card-header">
+        Bem vindos ao curso de Algoritmos
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-md-2">
+            <h5>Sobre o curso</h3>
+              <hr>
+              <div class="form-group ">
+                <label for="professor_nome">Professor</label><br>
+                <input type="text" id="professor_nome" class="form-control" value="Rubem Oliota" readonly />
+              </div>
+              <div class="form-group ">
+                <label for="professor_idade">Aulas</label><br>
+                <input type="number" id="professor_idade" class="form-control" title="Sempre aos sábados" value="6"
+                  readonly />
+              </div>
+              <div class="form-group ">
+                <label for="professor_naturalidade">Assuntos</label><br>
+                <ul>
+                  <li>Algoritmos 1</li>
+                  <li>Algoritmos 2</li>
+                </ul>
+              </div>
+          </div>
+          <div class="col-md-3">
+
+            <h5>Pré-requisitos</h3>
+              <hr>
+              Nenhum
+
+          </div>
+          <div class="col-md-7">
+            <h5>Aprendizado</h3>
+              <div class="row">
+                <div class="col-md-6">
+                  Algoritmos 1
+                  <ul>
+                    <li>Introdução</li>
+                    <li>Básicas de Algoritmos</li>
+                    <li>Tipos de Dados</li>
+                    <li>Variáveis</li>
+                    <li>Funções</li>
+                    <li>Contantes</li>
+                    <li>Trabalhando com Dados</li>
+                    <li>Operadores</li>
+                    <li>Estruturas condicionais </li>
+                    <li>Métodos de repetição</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  Algoritmos 2
+                  <ul>
+                    <li>Algoritmos avançados</li>
+                    <li>Banco de dados  </li>
+                    <li>Introdução à orientação a objetos </li> 
+                  </ul>
+                </div>
+
+
+              </div>
+
+
+
+          </div>
+
+        </div>
+
+        <br>
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn-success">Algoritmos</button>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="card elevation-3 limit-width log-in-card below turned">
+      <div class="card-header">
+        <div class="row">
+
+          <div class="col-md-10">
+            Vamos nos conhecer melhor...
+          </div>
+          <div class="col-md-2">
+            <a href="../site/index.html">
+              <button type="button" class="btn btn-success">Continuação</button>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col-md-2">
+            <h5>Sobre mim</h3>
+              <hr>
+              <div class="form-group ">
+                <label for="professor_nome">Nome</label><br>
+                <input type="text" id="professor_nome" class="form-control" value="Rubem Oliota" readonly />
+              </div>
+              <div class="form-group ">
+                <label for="professor_idade">Idade</label><br>
+                <input type="number" id="professor_idade" class="form-control" value="32" readonly />
+              </div>
+              <div class="form-group ">
+                <label for="professor_naturalidade">Paraibano</label><br>
+                <input type="text" id="professor_naturalidade" class="form-control" value="Com muito orgulho"
+                  readonly />
+              </div>
+          </div>
+          <div class="col-md-6">
+
+            <h5>Experiência</h3>
+              <hr>
+              10 anos no mercado de trabalho, atualmente na Benner como analista de sistemas sênior
+              <hr>
+              Linguagens: Java, C#, C, Delphi, VBA, Javascript, Phython, Sql, Markdown, Html e Css
+              <hr>
+              Banco de dados: Oracle, Sqlserver, Firebase e Sqlite
+              <hr>
+              Fullstack: Desktop, Web, Mobile, Wear e robótica
+              <hr>
+              Professor: Fora do horário comercial
+
+          </div>
+          <div class="col-md-4">
+            <h5>Sobre você</h3>
+              <hr>
+              <div class="form-group ">
+                <label for="aluno_nome">Nome</label><br>
+                <input type="text" id="aluno_nome" class="form-control" placeholder="Oi eu nome é..." />
+              </div>
+              <div class="form-group ">
+                <label for="aluno_idade">Idade</label><br>
+                <input type="text" id="aluno_idade" class="form-control" placeholder="Opcional" />
+              </div>
+              <div class="form-group ">
+                <label for="aluno_experiencia">Experiência</label><br>
+                <input type="text" id="aluno_experiencia" class="form-control" value="Estudo ou trabalho" readonly />
+              </div>
+              <div class="form-group ">
+                <label for="aluno_objetivo">Objetivo</label><br>
+                <input type="text" id="aluno_objetivo" class="form-control"
+                  placeholder="Espero conseguir ... com esse curso" readonly />
+              </div>
+              <div class="form-group ">
+                <br>
+                <button type="button" id="proximo" class="btn btn-warning form-control">Proximo...</button>
+              </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn-success">Apresentação</button>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src="./script.js"></script>
+
+  <script>
+
+    $("#proximo").on(
+      "click", function () {
+        alert("Obrigado agora é a vez de outra pessoa se apresentar.")
+      }
+
+    )
+  </script>
+
+</body>
+
+</html>

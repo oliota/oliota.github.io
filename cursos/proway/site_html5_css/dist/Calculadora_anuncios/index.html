@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Calculadora de anuncios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+       h1 {
+            display: inline-block;
+        }
+
+        h2 {
+            display: inline-block;
+        }
+
+        header {
+            background-color: lightblue;
+            border-radius: 30px;
+            padding: 10px;
+        }
+
+        #login {
+            position: absolute;
+            right: 0;
+            margin-right: 150px;
+            top: 20px;
+        }
+        #calculadora{
+            border: 1px dashed black;
+            padding: 30px;
+            border-radius: 30px; 
+            left: 50%;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+
+            <h1>Bem vindo a calculadora de anuncios</h1>
+
+            <form action="login.html">
+                <input type="submit" value="Login" id="login">
+            </form>
+
+        </header>
+
+
+
+        <div id="calculadora">
+            <div class="row">
+
+                <div class="form-group col-md-4">
+
+                    <label for="valor">Valor a investir</label>
+                    <input type="number" id="valor" class="form-control" name="valor investido"
+                        placeholder="informe o quanto deseja investir">
+    
+                </div>
+                <div class="form-group col-md-2">
+     
+                    <br>
+                        <input type="button" id="bt_calcular" value="Calcular" class="btn btn-success">
+    
+                </div>
+            </div>
+        <form >
+
+            <hr>
+            *Ao se cadastrar será possivel:
+            <ul>
+                <li>Salvar varios anuncios</li>
+                <li>Definir um periodo de tempo para cada anuncio</li>
+                <li>Calcular o valor total investido</li>
+            </ul>
+
+
+          
+           
+
+
+        </form>
+    </div>
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <th>Valor investido</th>
+                <th>Visualizações originais</th>
+                <th>Clicks originais</th>
+                <th>Compartilhamentos originais</th>
+                <th>Acrescimo de visualizações</th>
+                <th>Vizualizações totais</th>
+                <th>Clicks totais</th>
+                <th>Compartilhamentos totais</th>
+            </thead>
+            <tbody id="resultado">
+
+            </tbody>
+
+
+        </table>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="module" src='js/index.js'></script>
+</body>
+
+</html>

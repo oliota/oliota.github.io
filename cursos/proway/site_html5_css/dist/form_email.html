@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Enviar e-mail</title>
+    <style>
+        label {
+            width: 150px;
+            display: inline-block;
+        }
+
+        .campo {
+            width: 200px;
+        }
+
+
+        textarea {
+            resize: none;
+        }
+
+
+        .botao {
+            width: 235px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="mailto:rubemoliota@gmail.com?subject=HTML 5 - email" method="post" enctype="text/plain">
+        <h1>Caixa de sugestões</h1>
+        <h3>Sua contribuição é muito importante, por favor informe seus dados.</h3>
+        <hr />
+        <label for="visitante">Nome:</label>
+        <input id="visitante" class="campo" type="text" size="40" name="visitante" value=""
+            placeholder="informe o seu nome" required />
+
+        <label for="idade">Idade:</label>
+        <input id="idade" class="campo" type="number" size="40" name="idade" value="" placeholder="informe a sua idade"
+            required /><br />
+        <hr />
+
+
+
+        <label for="data_nascimento">Data de nascimento:</label>
+        <input id="data_nascimento" class="campo" type="date" size="50" name="data de nascimento" value=""
+            placeholder="dd/mm/aaaa" required />
+
+        <label for="sim">Esta gostando?</label>
+        <input type="radio" id="sim" name="Gostando" value="sim" required>
+        <label for="sim">Sim</label>
+        <input type="radio" id="claro" name="Gostando" value="claro" required>
+        <label for="claro">Claro</label>
+        <hr />
+
+        <label for="telefone">Telefone:</label>
+        <input id="telefone" class="campo" type="tel" size="50" name="telefone para resposta" value=""
+            placeholder="(__) ____-____" data-slots="_" required />
+
+        <label for="email">E-mail:</label>
+        <input id="email" class="campo" type="email" size="50" name="e-mail para resposta" value=""
+            placeholder="informe o seu melhor e-mail" required />
+
+        <hr />
+
+
+        <label for="cor">Cor favorita:</label>
+        <input id="cor" class="campo" type="color" size="50" name="cor favorita" value="" required />
+
+
+
+        <label for="satisfacao">Nível de satisfação:</label>
+        <input id="satisfacao" class="campo" type="range" size="50" name="nivel de satisfacao" value="" required />
+
+        <hr />
+        <fieldset>
+            <legend> Escolha seus interesses </legend>
+            <div>
+                <input type="checkbox" id="html5" name="interesse" valor="HTML5">
+                <label for="html"> Html5 </label>
+
+                <input type="checkbox" id="css" name="interesse" valor="CSS">
+                <label for="css"> Css </label>
+
+                <input type="checkbox" id="js" name="interesse" valor="Javascript">
+                <label for="js"> Javascript </label>
+
+                <input type="checkbox" id="jq" nome="interesse" valor="Jquery">
+                <label for="jq"> Jquery </label>
+
+                <input type="checkbox" id="bootstrap" nome="interesse" valor="Bootstrap">
+                <label for="bootstrap"> Bootstrap </label>
+
+                <input type="checkbox" id="trabalhar" nome="interesse" valor="Trabalhar">
+                <label for="trabalhar"> Trabalhar </label>
+
+            </div>
+
+        </fieldset>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" rows="10" cols="170" name="mensagem"
+            placeholder="Somente sugestões serão lidas. Reclamações serão ignoradas..." required></textarea><br />
+
+        <input type="submit" class="botao" value="Enviar" />
+        <input type="reset" class="botao" value="Limpar campos" />
+
+    </form>
+</body>
+
+</html>

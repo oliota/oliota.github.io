@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Rubem Oliota - Contato</title>
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        html { 
+            background-color: lightsalmon;
+            padding: 20px;
+        }
+
+        nav a{
+            color: white;
+        }
+
+        
+        nav a:hover{
+            color: black;
+        }
+        nav ul {
+            background-color: darksalmon;
+        }
+
+        nav ul li:hover {
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header valign="top">
+        <img src="img/contact.png" alt="" width="32px" height="32px">
+        <h1>Contato</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cv.html">CV</a> </li>
+            <li><a href="contato.html">Contato</a> </li>
+        </ul>
+    </nav>
+
+    <article>
+
+        <h2>Estou a disposição, informe os seus dados</h2>
+ <hr>
+        <form action="mailto:rubemoliota@gmail.com?subject=Contato - via site pessoal" method="POST" enctype="text/plain">
+
+            <label for="nome">Nome:</label>
+            <input class="campo" type="text" id="nome" name="nome do visitante" placeholder="Informe seu nome" required>
+            <br>
+
+            <label for="email">Email:</label>
+            <input class="campo" type="email" id="email" name="email do visitante" placeholder="Informe seu email" required>
+            <br>
+
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem do visitante" id="mensagem" cols="30" rows="10" required></textarea>
+            <br>
+
+            <input class="limpar" type="reset" value="Limpar campos"> 
+            <input class="enviar" type="submit" value="Enviar">
+
+
+        </form>
+ 
+         
+
+
+
+    </article>
+
+    <footer> 
+        <hr>
+    </footer>
+</body>
+
+</html>
