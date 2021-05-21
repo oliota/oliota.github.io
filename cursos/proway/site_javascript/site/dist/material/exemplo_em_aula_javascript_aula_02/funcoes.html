@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Funções</title>
+</head>
+
+<body>
+
+    <h1>Funções</h1>
+    <h3><a href="index.html">Voltar</a></h3>
+
+
+    <script>
+
+        document.write("Verifique o console...")
+
+
+        console.log("Realizando chamadas as funções com valores fixos")
+        console.log(somar(4, 2))
+        console.log(subtrair(3, 10))
+        console.log(dividir(6, 2))
+        console.log(multiplicar(4, 5))
+
+        var num1 = Number(prompt("Informe um numero"));
+        var num2 = Number(prompt("Informe outro numero"));
+
+
+        console.log("Realizando chamadas as funções com valores variaveis informados pelo usuario")
+        console.log(somar(num1, num2))
+        console.log(subtrair(num1, num2))
+        console.log(dividir(num1, num2))
+        console.log(multiplicar(num1, num2))
+
+
+        function somar(num1, num2) {
+            return num1 + num2
+        }
+
+
+        function subtrair(num1, num2) {
+            return num1 - num2
+        }
+
+
+        function dividir(num1, num2) {
+            return num1 / num2
+        }
+
+
+        function multiplicar(num1, num2) {
+            return num1 * num2
+        }
+
+
+    </script>
+
+</body>
+
+</html>
