@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Primeira página</title>
+</head>
+
+<body>
+    <h1>Bem vindos</h1>
+
+    <h2>Vamos aprender javascript</h2>
+    <ol>
+        <li>Tag script</li>
+        <li>Variaveis</li>
+        <li>Comentários</li>
+        <li>Console.log</li>
+        <li><a href="alert.html">Alert</a> </li>
+        <li><a href="operadores_matematicos.html">Operadores matemáticos</a></li>
+        <li><a href="operadores_logicos.html">Operadores lógicos</a></li>
+        <li><a href="operadores_relacionais.html">Operadores relacionais</a></li>
+        <li><a href="escrever_em_tela.html">Escrever em tela</a> </li>
+        <li><a href="segunda_pagina.html">Esconder javascript</a> </li>
+    </ol>
+
+    <p>Verifique o console...</p>
+    <script>
+
+        //A tag script nos permitem escrever codigos em nossa pagina html
+        //As variaveis nos permitem armazenar informações
+        //Tipos das variaveis
+        // para declarar uma variavel podemos usar var que criaria uma variavel global ou podemos usar let que cria uma variavel de escopo
+
+        // sintaxe var nome = "nome aqui"
+        // let frase = "uma frase longa aqui"
+        // o operador "=" igual, serve para atribuição de valor
+
+        //tipo string , é uma variavel que aceita textos
+        let nome = "Rubem Oliota"
+        let curso = "Javascript, jquery e Ajax"
+
+        //tipo number, é uma variavel que aceita valores numerios, inteiros ou decimais
+        // a parte decimal em programação é definida com o caractere "." ponto e não "virgula"
+        let idade = 32
+        let altura = 1.79
+
+        //tipo boolean, é uma varivel que aceita true ou false
+        let hj_esta_chovendo = false
+        let primeira_aula = true
+
+
+        /*
+         para exibir os valores das variaveis podemos usar console.log ou o alert
+         o console.log exibe as informações no log no navegador acessivel no atalho F12
+         e ao observar a aba console
+        */
+
+        //exemplo : quero ver o valor da variavel nome
+        console.log(nome)
+        //quero montar uma frase com essa variavel
+        console.log("Meu nome é", nome)
+        // nesse momento concatenamos a informação para ser exibida de uma só vez no console
+
+        //montar uma frase com todas a variaveis que escrevi ate agora
+
+        console.log("Bem vindo ao curso de ", curso, " meu nome é ", nome, " e tenho ", idade, " anos e minha altura é", altura, " m")
+
+        //as variaveis booleanas ao serem exibidas em tela apresentação seu valor como true ou false
+        console.log("Está chovendo?", hj_esta_chovendo)
+
+        //-------Estrutura de controle
+        //IF
+        //o if nos permite tomar decisões no código
+        // sintaxe 
+        /*
+       //if simples apenas tratando a possibilidade verdadeira
+        if(varias condições aqui){
+            escopo do true
+        }
+
+        //if completo tradanço a possibilidade verdadeira e falsa
+         if(varias condições aqui){
+            escopo do true
+        }else{
+            escopo do else
+        }
+
+        //ifs aninhados onde cada else me permite iniciar um novo if com possibilidades para outros else ifs
+        if(varias condições aqui){
+            escopo do true
+        }else if( outras condições aqui){
+            escopo do novo true
+        }else if( outras condições aqui){
+             escopo do novo true
+        }else if( outras condições aqui){
+             escopo do novo true
+        }else{
+            escopo do else
+        }
+
+        */
+
+        //na pratica...
+
+        // será que esta chovendo hoje?
+        if (hj_esta_chovendo) {
+            console.log("Sim esta chovendo hj")
+        }
+
+
+        // será que esta chovendo hoje? e se não tiver?
+        if (hj_esta_chovendo) {
+            console.log("Sim esta chovendo hj")
+        } else {
+            console.log("Não esta chovendo hj")
+        }
+
+        // if aninhado
+        // é a primeira aula? se não for eu so vou se não estiver chovendo
+        if (primeira_aula) {
+            console.log("Sim é a primeira aula")
+        }else if(hj_esta_chovendo){ 
+            console.log("Não é a primeira e está chovendo então não vou")
+        }  else {
+            console.log("Não é a primeira e não esta chovendo então irei pra aula")
+        }
+
+
+    </script>
+
+</body>
+
+</html>
