@@ -12,12 +12,13 @@ Var
 
 Inicio
    // Seção de Comandos, procedimento, funções, operadores, etc...
-   altura <- 1.79
+   escreval("Informe sua altura")
+   leia(altura)
+   
+   escreval("Informe seu peso")
+   leia(peso)
 
-   escreval(altura)
+   escreval("Sua altura é ",altura," e peso é ",peso)
 
-   peso <- 90.50
-
-   escreval(peso)
 
 Fimalgoritmo
