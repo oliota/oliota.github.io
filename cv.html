@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Rubem Oliota
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- CSS Files -->
+  <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+    crossorigin="anonymous" />
+  <style>
+    .timeline {
+      margin-top: 20px;
+      position: relative;
+
+    }
+
+    .timeline:before {
+      position: absolute;
+      content: '';
+      width: 4px;
+      height: calc(100% + 50px);
+      background: rgb(138, 145, 150);
+      background: -moz-linear-gradient(left, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
+      background: -webkit-linear-gradient(left, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
+      background: linear-gradient(to right, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(98, 105, 109, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8a9196', endColorstr='#62696d', GradientType=1);
+      left: 14px;
+      top: 5px;
+      border-radius: 4px;
+    }
+
+    .timeline-month {
+      position: relative;
+      padding: 4px 15px 4px 35px;
+      background-color: white;
+      display: inline-block;
+      width: auto;
+      border-radius: 40px;
+      border: 1px solid #17191B;
+      border-right-color: black;
+      margin-bottom: 30px;
+    }
+
+    .timeline-month span {
+      position: absolute;
+      top: -1px;
+      left: calc(100% - 10px);
+      z-index: -1;
+      white-space: nowrap;
+      display: inline-block;
+      background-color: white;
+      padding: 4px 10px 4px 20px;
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+      border: 1px solid black;
+      box-sizing: border-box;
+    }
+
+    .timeline-month:before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: rgb(138, 145, 150);
+      background: -moz-linear-gradient(top, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+      background: -webkit-linear-gradient(top, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+      background: linear-gradient(to bottom, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8a9196', endColorstr='#70787d', GradientType=0);
+      border-radius: 100%;
+      border: 1px solid #17191B;
+      left: 5px;
+    }
+
+    .timeline-section {
+      padding-left: 35px;
+      display: block;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .timeline-date {
+      margin-bottom: 15px;
+      padding: 8px;
+      background: white;
+      position: relative;
+      display: inline-block;
+      border-radius: 20px;
+      border: 1px solid #17191B;
+    }
+
+    .timeline-section:before {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 1px;
+      background-color: #444950;
+      top: 12px;
+      left: 20px;
+    }
+
+    .timeline-section:after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(to bottom, rgba(138, 145, 150, 1) 0%, rgba(122, 130, 136, 1) 60%, rgba(112, 120, 125, 1) 100%);
+      top: 7px;
+      left: 11px;
+      border: 1px solid #17191B;
+      border-radius: 100%;
+    }
+
+    .timeline-section .col-sm-4 {
+      margin-bottom: 15px;
+    }
+
+    .timeline-box {
+      position: relative;
+
+      background-color: white;
+      border-radius: 15px;
+      border-top-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      border: 1px solid #17191B;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .box-icon {
+      position: absolute;
+      right: 5px;
+      top: 0px;
+    }
+
+    .box-title {
+      padding: 5px 15px;
+      border-bottom: 1px solid #17191B;
+    }
+
+    .box-title i {
+      margin-right: 5px;
+    }
+
+    .box-content {
+      padding: 5px 15px;
+      background-color: white;
+    }
+
+    .box-content strong {
+      color: black;
+      font-style: italic;
+      margin-right: 5px;
+    }
+
+    .box-item {
+      margin-bottom: 5px;
+    }
+
+    .box-footer {
+      padding: 5px 15px;
+      border-top: 1px solid #17191B;
+      background-color: #444950;
+      color: white;
+      text-align: right;
+      font-style: italic;
+    }
+  </style>
+
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+      <div class="logo"><a href="#" class="simple-text logo-normal">
+          Rubem Oliota
+        </a></div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">
+              <i class="material-icons">home</i>
+              <p>Inicio</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./cv.html">
+              <i class="material-icons">list</i>
+              <p>Currículo</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./cursos.html">
+              <i class="material-icons">school</i>
+              <p>Cursos</p>
+            </a>
+          </li>
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="./tables.html">
+              <i class="material-icons">content_paste</i>
+              <p>Table List</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./typography.html">
+              <i class="material-icons">library_books</i>
+              <p>Typography</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./icons.html">
+              <i class="material-icons">bubble_chart</i>
+              <p>Icons</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./map.html">
+              <i class="material-icons">location_ons</i>
+              <p>Maps</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./notifications.html">
+              <i class="material-icons">notifications</i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./rtl.html">
+              <i class="material-icons">language</i>
+              <p>RTL Support</p>
+            </a>
+          </li>
+          <li class="nav-item active-pro ">
+            <a class="nav-link" href="#">
+              <i class="material-icons">mail</i>
+              <p>Contato</p>
+            </a>
+          </li>
+        </ul> -->
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">Currículo</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+          <!-- <div class="collapse navbar-collapse justify-content-end">
+            <form class="navbar-form">
+              <div class="input-group no-border">
+                <input type="text" value="" class="form-control" placeholder="Search...">
+                <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                  <i class="material-icons">search</i>
+                  <div class="ripple-container"></div>
+                </button>
+              </div>
+            </form>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:;">
+                  <i class="material-icons">dashboard</i>
+                  <p class="d-lg-none d-md-block">
+                    Stats
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">notifications</i>
+                  <span class="notification">5</span>
+                  <p class="d-lg-none d-md-block">
+                    Some Actions
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                  <a class="dropdown-item" href="#">Another Notification</a>
+                  <a class="dropdown-item" href="#">Another One</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  <i class="material-icons">person</i>
+                  <p class="d-lg-none d-md-block">
+                    Account
+                  </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="#">Settings</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Log out</a>
+                </div>
+              </li>
+            </ul>
+          </div> -->
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+
+
+
+
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-tabs card-header-primary">
+                  <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                      <!-- <span class="nav-tabs-title">Tasks:</span> -->
+                      <ul class="nav nav-tabs" data-tabs="tabs">
+
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#profissional" data-toggle="tab">
+                            <i class="material-icons">school</i> Experiências profissionais
+                            <div class="ripple-container"></div>
+                          </a>
+                        </li>
+
+                        <li class="nav-item">
+                          <a class="nav-link  " href="#formacao" data-toggle="tab">
+                            <i class="material-icons">school</i> Formação acadêmica
+                            <div class="ripple-container"></div>
+                          </a>
+                        </li>
+
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="tab-content">
+
+                    <div class="tab-pane active" id="profissional">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="container">
+                                <div class="timeline">
+                                  <div class="timeline-month">
+                                    <script> document.write(new Date().toLocaleDateString());</script>
+                                  </div>
+
+                                  <!-- Benner sistemas inicio -->
+                                  <!-- <div class="timeline-section">
+                                    <div class="timeline-date">
+                                      Maio / 2021
+                                    </div>
+                                  </div> -->
+                                  <div class="timeline-section">
+                                    <div class="timeline-date ">
+                                      <img src="https://www.benner.com.br/wp-content/uploads/2021/04/35ok.png" alt=""
+                                        width="100px">
+                                      <br>
+                                    </div>
+                                    <div class="row">
+
+                                      <div class="col-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="material-icons">record_voice_over</i> Analista de sistemas -
+                                            sênior
+                                          </div>
+                                          <div class="box-content">
+
+                                            <div class="box-item">
+                                              <i class="material-icons">flag</i>
+                                              <strong>Abril / 2021</strong>
+                                            </div>
+                                            <div class="box-item">
+                                              <strong>Descrição</strong>
+                                              : ...
+                                            </div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+
+                                      <div class="col">
+                                        <div class="timeline">
+                                          <div class="timeline-month">
+                                            Atividades em paralelo
+
+                                          </div>
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                              <img
+                                                src="https://www.proway.com.br/ead/wp-content/uploads/2020/03/Logo-ProWay-EAD_Prancheta-11.png"
+                                                width="100px" alt="">
+                                            </div>
+
+
+                                          </div>
+
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                              Maio / 2021
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Instrutor
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>Fundamentos em Css</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Instrutor
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>Javascript, Jquery e Ajax</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Instrutor
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>Lógica de programação e algoritmos 1</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+                                            </div>
+
+                                          </div>
+
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                              Abril / 2021
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Instrutor
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>TypeScript</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Instrutor
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>Fundamentos de Html 5</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+                                            </div>
+
+                                          </div>
+
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+
+                                  <div class="timeline-section">
+                                    <div class="timeline-date ">
+                                      <img src="https://www.benner.com.br/wp-content/uploads/2021/04/35ok.png" alt=""
+                                        width="100px">
+                                      <br>
+                                    </div>
+
+                                    <div class="row">
+                                      <div class="col-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="material-icons">psychology</i> Analista de sistemas - pleno
+                                          </div>
+                                          <div class="box-content">
+
+                                            <div class="box-item">
+                                              <i class="material-icons">flag</i>
+                                              <strong>Outubro / 2020</strong>
+                                            </div>
+                                            <div class="box-item">
+                                              <strong>Descrição</strong>
+                                              : ...
+                                            </div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+
+                                      </div>
+                                      <div class="col">
+
+                                        <div class="timeline">
+                                          <div class="timeline-month">
+                                            Atividades em paralelo
+
+                                          </div>
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                              <img
+                                                src="https://www.proway.com.br/ead/wp-content/uploads/2020/03/Logo-ProWay-EAD_Prancheta-11.png"
+                                                width="100px" alt="">
+                                            </div>
+
+
+                                          </div>
+
+
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                              Março / 2021
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Instrutor
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>Linguagem de programação Java</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+                                            </div>
+
+                                          </div>
+
+
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                              Fevereiro / 2021
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Instrutor
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>Java Fundamentos</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+                                            </div>
+
+                                          </div>
+
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                              Janeiro / 2021
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Instrutor
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>Fundamentos em C#</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+                                            </div>
+
+                                          </div>
+                                        </div>
+
+
+
+                                      </div>
+                                    </div>
+
+                                  </div>
+
+
+
+
+
+
+                                  <div class="timeline-section">
+                                    <div class="timeline-date ">
+                                      <img src="https://www.benner.com.br/wp-content/uploads/2021/04/35ok.png" alt=""
+                                        width="100px">
+                                      <br>
+                                    </div>
+
+                                    <div class="row ">
+                                      <div class="col-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="material-icons">integration_instructions</i> Desenvolvedor
+                                            pleno
+                                          </div>
+                                          <div class="box-content">
+
+                                            <div class="box-item">
+                                              <i class="material-icons">flag</i>
+                                              <strong>Agosto / 2019</strong>
+                                            </div>
+                                            <div class="box-item">
+                                              <strong>Descrição</strong>
+                                              : ...
+                                            </div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+                                      <div class="col">
+                                        <div class="timeline">
+                                          <div class="timeline-month">
+                                            Atividades em paralelo
+                                          </div>
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                              Novembro / 2019
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">model_training</i> Inovação para
+                                                    melhoria interna de processos
+                                                  </div>
+                                                  <div class="box-content">
+                                                    <div class="box-item">
+                                                      <i class="material-icons">phone_android</i>
+                                                      <strong>Aplicativo - Roda Ágil</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <hr>
+                                  </div>
+                                  <!-- Benner sistemas fim -->
+
+
+
+
+
+                                  <div class="timeline-section">
+                                    <div class="timeline-date ">
+                                      <img
+                                        src="https://www.accenture.com/t20180820T080654Z__w__/br-pt/_acnmedia/Accenture/Dev/Redesign/Acc_Logo_Black_Purple_RGB.PNG"
+                                        alt="" width="100px">
+                                      <br>
+                                    </div>
+
+                                    <div class="row ">
+                                      <div class="col-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="material-icons">integration_instructions</i> Analista de sistemas
+                                            - junior
+                                          </div>
+                                          <div class="box-content">
+
+                                            <div class="box-item">
+                                              <i class="material-icons">flag</i>
+                                              <strong>Abril / 2017</strong>
+                                            </div>
+                                            <div class="box-item">
+                                              <strong>Descrição</strong>
+                                              : ...
+                                            </div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                    <hr>
+                                  </div>
+
+
+
+                                  <div class="timeline-section">
+                                    <div class="timeline-date ">
+                                      <img
+                                        src="https://brasscom.org.br/wp-content/uploads/2020/05/Logo-Stefanini-300x91.png"
+                                        alt="" width="100px">
+                                      <br>
+                                    </div>
+
+                                    <div class="row ">
+                                      <div class="col-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="material-icons">phone_android</i> Desenvolvedor mobile - pleno
+                                          </div>
+                                          <div class="box-content">
+
+                                            <div class="box-item">
+                                              <i class="material-icons">flag</i>
+                                              <strong>Outubro / 2015</strong>
+                                            </div>
+                                            <div class="box-item">
+                                              <strong>Descrição</strong>
+                                              : ...
+                                            </div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                    <hr>
+                                  </div>
+
+
+
+                                  <div class="timeline-section">
+                                    <div class="timeline-date ">
+                                      <img
+                                        src="https://play-lh.googleusercontent.com/ynhuSaLvLoVRNfo3gQfDU5KJK4wi4rRKoM-YxGOTYhIinJ1e0Q2GIK8EFw2IvNjVNiO8=w288-h288-n-rw"
+                                        alt="" width="100px">
+                                      <br>
+                                    </div>
+
+                                    <div class="row ">
+                                      <div class="col-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="material-icons">phone_android</i> Desenvolvedor mobile - pleno
+                                          </div>
+                                          <div class="box-content">
+
+                                            <div class="box-item">
+                                              <i class="material-icons">flag</i>
+                                              <strong>Janeiro / 2013</strong>
+                                            </div>
+                                            <div class="box-item">
+                                              <strong>Descrição</strong>
+                                              : ...
+                                            </div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                    <hr>
+                                  </div>
+
+
+                                  
+                                  <div class="timeline-section">
+                                    <div class="timeline-date ">
+                                      <img
+                                        src="https://www.joaopessoa.pb.gov.br/wp-content/themes/joaopessoavinte/assets/images/logo-pmjp-color-horizontal.png"
+                                        alt="" width="100px">
+                                      <br>
+                                    </div>
+
+                                    <div class="row ">
+                                      <div class="col-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="material-icons">phone_android</i> Analista de sistemas - junior
+                                          </div>
+                                          <div class="box-content">
+
+                                            <div class="box-item">
+                                              <i class="material-icons">flag</i>
+                                              <strong>Abril / 2012</strong>
+                                            </div>
+                                            <div class="box-item">
+                                              <strong>Descrição</strong>
+                                              : ...
+                                            </div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                    <hr>
+                                  </div>
+
+
+
+
+                                  <!-- Linha do tempo normal inicio -->
+                                  <!-- <div class="timeline-section">
+                                    <div class="timeline-date">
+                                      22, Wednesday
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-pencil text-info" aria-hidden="true"></i> Job Edited
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-light pull-right">Details</a>
+                                            <div class="box-item"><strong>Extraction Type</strong>: Carpet Heavy</div>
+                                            <div class="box-item"><strong>Water Category</strong>: 4</div>
+                                            <div class="box-item"><strong>No. Of Tech</strong>: 6</div>
+                                            <div class="box-item"><strong>Est. Complation</strong>: 09/01/2018</div>
+                                          </div>
+                                          <div class="box-footer">- Carol</div>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-tasks text-primary" aria-hidden="true"></i> New Job To Do
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-default pull-right">Details</a>
+                                            <div class="box-item"><strong>Employee</strong>: Sam</div>
+                                            <div class="box-item"><strong>To Do</strong>: Lorem ipsum dolor sit amet,
+                                              consectetur adipiscing elit. Nullam nisi nulla, viverra quis felis sit
+                                              amet,
+                                              lacinia feugiat odio. Aliquam sed orci elementum, volutpat dolor eget,
+                                              venenatis nunc</div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-tasks text-primary" aria-hidden="true"></i> New Job To Do
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-default pull-right">Details</a>
+                                            <div class="box-item"><strong>Employee</strong>: Jones</div>
+                                            <div class="box-item"><strong>To Do</strong>: Proin sit amet aliquet neque,
+                                              eget sagittis nunc. Proin convallis lectus quis volutpat pharetra. Donec
+                                              quis ultrices eros. Ut eget mi faucibus.</div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-thermometer-half text-warning" aria-hidden="true"></i>
+                                            Pschrometrics
+                                          </div>
+                                          <div class="box-content">
+                                            <div class="box-item"><strong>Temp.</strong>: 23 <sup>o</sup>C</div>
+                                            <div class="box-item"><strong>Rh </strong>: 42</div>
+                                            <div class="box-item"><strong>Comments</strong>: Integer nec placerat ipsum.
+                                              Aliquam id ligula suscipit, ornare dui nec, laoreet tortor.</div>
+                                          </div>
+                                          <div class="box-footer">- Jones</div>
+                                        </div>
+                                      </div>
+
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-building-o text-default" aria-hidden="true"></i> Room
+                                            Created
+                                          </div>
+                                          <div class="box-content">
+                                            <div class="box-item"><strong>Name</strong>: Kitchen</div>
+                                            <div class="box-item"><strong>Floor Level </strong>: 2</div>
+                                            <div class="box-item"><strong>Dimensions</strong>: 26 x 11 x 8</div>
+                                          </div>
+                                          <div class="box-footer">- Sam</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+
+                                  </div> -->
+                                  <!-- Linha do tempo normal fim -->
+
+                                  <!-- 
+
+  // Exemplo nova timeline /
+                                  <div class="timeline-section">
+                                    <div class="timeline-date">
+                                      23, Thursday
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-tasks text-success" aria-hidden="true"></i> Job To Do
+                                            Completed
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-default pull-right">Details</a>
+                                            <div class="box-item"><strong>Employee</strong>: Sam</div>
+                                            <div class="box-item"><strong>Employee Response</strong>: Lorem ipsum dolor
+                                              sit amet, consectetur adipiscing elit. Nullam nisi nulla, viverra quis
+                                              felis
+                                              sit amet, lacinia feugiat odio. Aliquam sed orci elementum, volutpat dolor
+                                              eget, venenatis nunc</div>
+                                          </div>
+                                          <div class="box-footer">- Carol</div>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-cogs text-info" aria-hidden="true"></i> Equipment Entry
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-default pull-right">Details</a>
+                                            <div class="box-item"><strong>ID</strong>: TW-3232</div>
+                                            <div class="box-item"><strong>Name</strong>: HEPA 600</div>
+                                            <div class="box-item"><strong>Date In</strong>: 08/22/2018</div>
+                                          </div>
+                                          <div class="box-footer">- Jones</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+
+                                  </div> -->
+
+                                </div>
+                              </div>
+
+
+                            </div>
+
+
+
+                          </div>
+                        </div> 
+                      </div>
+                    </div>
+
+                    
+                    <div class="tab-pane" id="formacao">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <div class="container">
+                                <div class="timeline">
+                                  
+                                  <!--formação inicio -->
+                                 
+                                  <div class="timeline-section">
+                                    <div class="timeline-date ">
+                                      <img src="https://www.iesp.edu.br/images/logo-iesp.jpg" style="border-radius: 8px;" alt=""
+                                        width="100px">
+                                      <br>
+                                    </div>
+                                    <div class="row">
+
+                                      <div class="col-6">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="material-icons">school</i> Bacharel em sistemas de informação
+                                             
+                                          </div>
+                                          <div class="box-content">
+
+                                            <div class="box-item">
+                                              <i class="material-icons">flag</i>
+                                              <strong>2008 até 2013</strong>
+                                            </div>
+                                            <div class="box-item">
+                                              <strong>Descrição</strong>
+                                              : ...
+                                            </div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+
+                                      <div class="col">
+                                        <div class="timeline">
+                                          <div class="timeline-month">
+                                            Atividades em paralelo
+
+                                          </div>
+                                        
+
+                                          <div class="timeline-section">
+                                            <div class="timeline-date">
+                                             Periodo
+                                            </div>
+                                            <div class="row">
+                                              <div class="col">
+
+                                                <div class="timeline-box">
+                                                  <div class="box-title">
+                                                    <i class="material-icons">school</i> Item
+                                                  </div>
+                                                  <div class="box-content">
+
+                                                    <div class="box-item">
+                                                      <strong>Titulo</strong>
+                                                    </div>
+                                                    <div class="box-item">
+                                                      <strong>Descrição</strong>
+                                                      : ...
+                                                    </div>
+                                                  </div>
+                                                  <div class="box-footer">...</div>
+                                                </div>
+
+                                              </div>
+                                              
+                                            </div>
+
+                                          </div>
+ 
+
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+ 
+                                  <!--formação fim -->
+ 
+ 
+
+
+
+                                  <!-- Linha do tempo normal inicio -->
+                                  <!-- <div class="timeline-section">
+                                    <div class="timeline-date">
+                                      22, Wednesday
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-pencil text-info" aria-hidden="true"></i> Job Edited
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-light pull-right">Details</a>
+                                            <div class="box-item"><strong>Extraction Type</strong>: Carpet Heavy</div>
+                                            <div class="box-item"><strong>Water Category</strong>: 4</div>
+                                            <div class="box-item"><strong>No. Of Tech</strong>: 6</div>
+                                            <div class="box-item"><strong>Est. Complation</strong>: 09/01/2018</div>
+                                          </div>
+                                          <div class="box-footer">- Carol</div>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-tasks text-primary" aria-hidden="true"></i> New Job To Do
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-default pull-right">Details</a>
+                                            <div class="box-item"><strong>Employee</strong>: Sam</div>
+                                            <div class="box-item"><strong>To Do</strong>: Lorem ipsum dolor sit amet,
+                                              consectetur adipiscing elit. Nullam nisi nulla, viverra quis felis sit
+                                              amet,
+                                              lacinia feugiat odio. Aliquam sed orci elementum, volutpat dolor eget,
+                                              venenatis nunc</div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-tasks text-primary" aria-hidden="true"></i> New Job To Do
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-default pull-right">Details</a>
+                                            <div class="box-item"><strong>Employee</strong>: Jones</div>
+                                            <div class="box-item"><strong>To Do</strong>: Proin sit amet aliquet neque,
+                                              eget sagittis nunc. Proin convallis lectus quis volutpat pharetra. Donec
+                                              quis ultrices eros. Ut eget mi faucibus.</div>
+                                          </div>
+                                          <div class="box-footer">...</div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-thermometer-half text-warning" aria-hidden="true"></i>
+                                            Pschrometrics
+                                          </div>
+                                          <div class="box-content">
+                                            <div class="box-item"><strong>Temp.</strong>: 23 <sup>o</sup>C</div>
+                                            <div class="box-item"><strong>Rh </strong>: 42</div>
+                                            <div class="box-item"><strong>Comments</strong>: Integer nec placerat ipsum.
+                                              Aliquam id ligula suscipit, ornare dui nec, laoreet tortor.</div>
+                                          </div>
+                                          <div class="box-footer">- Jones</div>
+                                        </div>
+                                      </div>
+
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-building-o text-default" aria-hidden="true"></i> Room
+                                            Created
+                                          </div>
+                                          <div class="box-content">
+                                            <div class="box-item"><strong>Name</strong>: Kitchen</div>
+                                            <div class="box-item"><strong>Floor Level </strong>: 2</div>
+                                            <div class="box-item"><strong>Dimensions</strong>: 26 x 11 x 8</div>
+                                          </div>
+                                          <div class="box-footer">- Sam</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+
+                                  </div> -->
+                                  <!-- Linha do tempo normal fim -->
+
+                                  <!-- 
+
+  // Exemplo nova timeline /
+                                  <div class="timeline-section">
+                                    <div class="timeline-date">
+                                      23, Thursday
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-tasks text-success" aria-hidden="true"></i> Job To Do
+                                            Completed
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-default pull-right">Details</a>
+                                            <div class="box-item"><strong>Employee</strong>: Sam</div>
+                                            <div class="box-item"><strong>Employee Response</strong>: Lorem ipsum dolor
+                                              sit amet, consectetur adipiscing elit. Nullam nisi nulla, viverra quis
+                                              felis
+                                              sit amet, lacinia feugiat odio. Aliquam sed orci elementum, volutpat dolor
+                                              eget, venenatis nunc</div>
+                                          </div>
+                                          <div class="box-footer">- Carol</div>
+                                        </div>
+                                      </div>
+                                      <div class="col-sm-4">
+                                        <div class="timeline-box">
+                                          <div class="box-title">
+                                            <i class="fa fa-cogs text-info" aria-hidden="true"></i> Equipment Entry
+                                          </div>
+                                          <div class="box-content">
+                                            <a class="btn btn-xs btn-default pull-right">Details</a>
+                                            <div class="box-item"><strong>ID</strong>: TW-3232</div>
+                                            <div class="box-item"><strong>Name</strong>: HEPA 600</div>
+                                            <div class="box-item"><strong>Date In</strong>: 08/22/2018</div>
+                                          </div>
+                                          <div class="box-footer">- Jones</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+
+                                  </div> -->
+
+                                </div>
+                              </div>
+
+
+                            </div>
+
+
+
+                          </div>
+                        </div>
+                      </div> 
+                    </div> 
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+
+          <!-- <div class="row">
+            <div class="col-md-4">
+              <div class="card card-chart">
+                <div class="card-header card-header-success">
+                  <div class="ct-chart" id="dailySalesChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Daily Sales</h4>
+                  <p class="card-category">
+                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">access_time</i> updated 4 minutes ago
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-chart">
+                <div class="card-header card-header-warning">
+                  <div class="ct-chart" id="websiteViewsChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Email Subscriptions</h4>
+                  <p class="card-category">Last Campaign Performance</p>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">access_time</i> campaign sent 2 days ago
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card card-chart">
+                <div class="card-header card-header-danger">
+                  <div class="ct-chart" id="completedTasksChart"></div>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Completed Tasks</h4>
+                  <p class="card-category">Last Campaign Performance</p>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">access_time</i> campaign sent 2 days ago
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <!-- <nav class="float-left">
+            <ul>
+              <li>
+                <a href="#">
+                  Rubem Oliota
+                </a>
+              </li>
+              <li>
+                <a href="https://creative-tim.com/presentation">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="http://blog.creative-tim.com">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="https://www.creative-tim.com/license">
+                  Licenses
+                </a>
+              </li>
+            </ul>
+          </nav> -->
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>,
+            <a href="#" target="_blank">Rubem Oliota</a>.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <br>
+        <i class="material-icons">mail</i>
+        <br>
+        <br>
+      </a>
+      <ul class="dropdown-menu">
+
+        <li class="header-title"> Contatos</li>
+        <li class="adjustments-line" style="text-align: center;">
+          <span title="Abrir GMAIL
+          para : rubemoliota@gmail.com
+          assunto: Contato - via assinatura de email
+          mensagem: Olá Rubem Tudo bem?">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rubemoliota@gmail.com&su=Contato - via assinatura de email&body=Olá Rubem Tudo bem?"
+              target="_blank">
+              <img border="0" width="16" alt="Github" style="border:0; height:32px; width:32px"
+                src="https://i.ibb.co/WpW9YsX/gmail.png"></a>
+          </span>
+
+
+
+          <span><a href="https://api.whatsapp.com/send?phone=+5547997898093&text=Olá+Rubem+tudo+bem?" target="_blank"
+              title="Iniciar uma conversa no whatsapp
+          para : +5547997898093
+          mensagem: Olá Rubem Tudo bem?">
+              <img border="0" width="16" alt="Github" style="border:0; height:32px; width:32px"
+                src="https://i.ibb.co/f46zXgh/whatsapp.png"></a>
+          </span>
+        </li>
+        <li class="header-title">Links</li>
+        <!--      
+         
+        <li class="button-container">
+          <a href="https://www.creative-tim.com/product/material-dashboard" target="_blank"
+            class="btn btn-primary btn-block">Free Download</a>
+        </li> -->
+        <!-- <li class="header-title">Want more components?</li>
+            <li class="button-container">
+                <a href="https://www.creative-tim.com/product/material-dashboard-pro" target="_blank" class="btn btn-warning btn-block">
+                  Get the pro version
+                </a>
+            </li> -->
+        <li class="button-container" style="text-align: center;">
+          <span><a href="https://www.facebook.com/oliotartesanato"
+              title="Visite a minha página de artesanatos no facebook" target="_blank">
+              <img border="0" width="16" alt="Facebook" style="border:0; height:32px; width:32px"
+                src="https://i.ibb.co/Xt2PZp1/facebook.png"></a>
+          </span>
+          <span><a href="https://www.instagram.com/oliotaartesanato/"
+              title="Visite o meu perfil de artesanatos no instagram" target="_blank">
+              <img border="0" width="16" alt="Instagram" style="border:0; height:32px; width:32px"
+                src="https://i.ibb.co/thyG9JC/instagram.png"></a>
+          </span>
+          <span><a href="https://www.youtube.com/user/rubemoliota" title="Visite o meu canal no Youtube"
+              target="_blank">
+              <img border="0" width="16" alt="Youtube" style="border:0; height:32px; width:32px"
+                src="https://i.ibb.co/d0NL9XF/youtube.png"></a>
+          </span>
+          <span><a href="https://www.linkedin.com/in/rubem-oliota-abb273120/"
+              title="Visite o meu perfil profissional no Linkedin" target="_blank">
+              <img border="0" width="16" alt="Linkedin" style="border:0; height:32px; width:32px"
+                src="https://i.ibb.co/30GQCw5/linkedin.png"></a>
+          </span>
+
+          <span><a href="https://play.google.com/store/apps/dev?id=4624325070796601602&hl=pt_BR&gl=US" target="_blank"
+              title="Baixe os meus aplicativos na Google Play">
+              <img border="0" width="16" alt="Twitter icon" style="border:0; height:32px; width:32px"
+                src="https://i.ibb.co/SQK55kH/playstore.png"></a>
+          </span>
+
+
+          <span><a href="https://github.com/oliota?tab=repositories" title="Visite o meu perfil no Github"
+              target="_blank">
+              <img border="0" width="16" alt="Github" style="border:0; height:32px; width:32px"
+                src="https://i.ibb.co/M5jFmtP/logotipo-do-github.png"></a>
+          </span>
+
+
+
+
+
+
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!-- Plugin for the momentJs  -->
+  <script src="../assets/js/plugins/moment.min.js"></script>
+  <!--  Plugin for Sweet Alert -->
+  <script src="../assets/js/plugins/sweetalert2.js"></script>
+  <!-- Forms Validations Plugin -->
+  <script src="../assets/js/plugins/jquery.validate.min.js"></script>
+  <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+  <script src="../assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <script src="../assets/js/plugins/bootstrap-selectpicker.js"></script>
+  <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+  <script src="../assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+  <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
+  <script src="../assets/js/plugins/jquery.dataTables.min.js"></script>
+  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <script src="../assets/js/plugins/bootstrap-tagsinput.js"></script>
+  <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+  <script src="../assets/js/plugins/jasny-bootstrap.min.js"></script>
+  <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
+  <script src="../assets/js/plugins/fullcalendar.min.js"></script>
+  <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+  <script src="../assets/js/plugins/jquery-jvectormap.js"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="../assets/js/plugins/nouislider.min.js"></script>
+  <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <!-- Library for adding dinamically elements -->
+  <script src="../assets/js/plugins/arrive.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <!-- Chartist JS -->
+  <script src="../assets/js/plugins/chartist.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/demo/demo.js"></script>
+  <script>
+    $(document).ready(function () {
+      $().ready(function () {
+        $sidebar = $('.sidebar');
+
+        $sidebar_img_container = $sidebar.find('.sidebar-background');
+
+        $full_page = $('.full-page');
+
+        $sidebar_responsive = $('body > .navbar-collapse');
+
+        window_width = $(window).width();
+
+        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+
+        if (window_width > 767 && fixed_plugin_open == 'Cursos') {
+          if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+            $('.fixed-plugin .dropdown').addClass('open');
+          }
+
+        }
+
+        $('.fixed-plugin a').click(function (event) {
+          // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+          if ($(this).hasClass('switch-trigger')) {
+            if (event.stopPropagation) {
+              event.stopPropagation();
+            } else if (window.event) {
+              window.event.cancelBubble = true;
+            }
+          }
+        });
+
+        $('.fixed-plugin .active-color span').click(function () {
+          $full_page_background = $('.full-page-background');
+
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data-color', new_color);
+          }
+
+          if ($full_page.length != 0) {
+            $full_page.attr('filter-color', new_color);
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.attr('data-color', new_color);
+          }
+        });
+
+        $('.fixed-plugin .background-color .badge').click(function () {
+          $(this).siblings().removeClass('active');
+          $(this).addClass('active');
+
+          var new_color = $(this).data('background-color');
+
+          if ($sidebar.length != 0) {
+            $sidebar.attr('data-background-color', new_color);
+          }
+        });
+
+        $('.fixed-plugin .img-holder').click(function () {
+          $full_page_background = $('.full-page-background');
+
+          $(this).parent('li').siblings().removeClass('active');
+          $(this).parent('li').addClass('active');
+
+
+          var new_image = $(this).find("img").attr('src');
+
+          if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            $sidebar_img_container.fadeOut('fast', function () {
+              $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+              $sidebar_img_container.fadeIn('fast');
+            });
+          }
+
+          if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+            $full_page_background.fadeOut('fast', function () {
+              $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+              $full_page_background.fadeIn('fast');
+            });
+          }
+
+          if ($('.switch-sidebar-image input:checked').length == 0) {
+            var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+            var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+          }
+
+          if ($sidebar_responsive.length != 0) {
+            $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+          }
+        });
+
+        $('.switch-sidebar-image input').change(function () {
+          $full_page_background = $('.full-page-background');
+
+          $input = $(this);
+
+          if ($input.is(':checked')) {
+            if ($sidebar_img_container.length != 0) {
+              $sidebar_img_container.fadeIn('fast');
+              $sidebar.attr('data-image', '#');
+            }
+
+            if ($full_page_background.length != 0) {
+              $full_page_background.fadeIn('fast');
+              $full_page.attr('data-image', '#');
+            }
+
+            background_image = true;
+          } else {
+            if ($sidebar_img_container.length != 0) {
+              $sidebar.removeAttr('data-image');
+              $sidebar_img_container.fadeOut('fast');
+            }
+
+            if ($full_page_background.length != 0) {
+              $full_page.removeAttr('data-image', '#');
+              $full_page_background.fadeOut('fast');
+            }
+
+            background_image = false;
+          }
+        });
+
+        $('.switch-sidebar-mini input').change(function () {
+          $body = $('body');
+
+          $input = $(this);
+
+          if (md.misc.sidebar_mini_active == true) {
+            $('body').removeClass('sidebar-mini');
+            md.misc.sidebar_mini_active = false;
+
+            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+          } else {
+
+            $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+            setTimeout(function () {
+              $('body').addClass('sidebar-mini');
+
+              md.misc.sidebar_mini_active = true;
+            }, 300);
+          }
+
+          // we simulate the window Resize so the charts will get updated in realtime.
+          var simulateWindowResize = setInterval(function () {
+            window.dispatchEvent(new Event('resize'));
+          }, 180);
+
+          // we stop the simulation of Window Resize after the animations are completed
+          setTimeout(function () {
+            clearInterval(simulateWindowResize);
+          }, 1000);
+
+        });
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      // Javascript method's body can be found in assets/js/demos.js
+      md.initDashboardPageCharts();
+
+
+
+    });
+
+    $('table').DataTable({
+      language: {
+        url: 'http://cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'
+      }
+    });
+  </script>
+</body>
+
+</html>
