@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de usuarios</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+        rel="stylesheet" type="text/css">
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Cadastro de usuarios </h1>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="card ">
+                    <form id="cadastro">
+                        <div class="card-header bg-dark text-white">
+                            Cadastro
+                        </div>
+
+                        <div class="card-body">
+
+                            <label for="nome">Nome</label>
+                            <input type="text" name="" id="nome" class="form-control campo" required>
+
+
+                            <label for="email">E-mail</label>
+                            <input type="email" name="" id="email" class="form-control campo" required>
+
+                            <label class="form-check-label">
+                                Sexo:
+                            </label>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sexo" id="masculino"
+                                    placeholder="Male">
+                                <label class="form-check-label" for="masculino">
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sexo" id="feminino"
+                                    placeholder="Female">
+                                <label class="form-check-label" for="masculino">
+                                    Feminino
+                                </label>
+                            </div>
+
+
+                            <label class="form-check-label">
+                                Status:
+                            </label>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="ativo"
+                                    placeholder="Active" checked>
+                                <label class="form-check-label" for="masculino">
+                                    Ativo
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="inativo"
+                                    placeholder="Inactive">
+                                <label class="form-check-label" for="masculino">
+                                    Inativo
+                                </label>
+                            </div>
+
+
+
+
+                        </div>
+
+                        <div class="card-footer">
+
+                            <!-- <button id="cancelar" class="btn btn-danger">Cancelar</button> -->
+                            <input type="reset" id="cancelar" class="btn btn-danger" value="limpar campos" />
+                            <input type="submit" id="salvar" class="btn btn-success" />
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-8">
+                <div class="card">
+
+
+                    <div class="card-header bg-dark text-white">
+
+                        Usuarios
+                        <button id="atualizar" class="btn btn-success" title="Atualizar tabela">
+                            <span class="material-icons"> refresh </span>
+                        </button>
+                        <button id="deletar_tudo" class="btn btn-danger" title="Deletar TUDO">
+                            <span class="material-icons"> close </span>
+                        </button>
+
+
+
+
+                    </div>
+
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped table-hover">
+                            <thead>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Sexo</th>
+                                <th>Ativo</th>
+                                <th>Ações</th>
+                            </thead>
+                            <tbody id="usuarios">
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="card-footer" id="total">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var gorest = 'https://gorest.co.in/public-api'
+        var token = 'a6f906ca1462ee35051d80e4f987172770c914e1dc10d9e32cd16e73dcb325ce'
+        var usuarios = new Array
+        var adicionando = true
+
+        atualizarMomento(true)
+
+        function atualizarMomento(atual) {
+            adicionando = atual
+            $("#salvar").val(adicionando ? "Adicionar" : "Atualizar")
+        }
+        atualizarTabela()
+
+        $("#atualizar").click(
+            function () {
+                atualizarTabela()
+            }
+
+        )
+
+        function atualizarTabela() {
+
+            usuarios = new Array
+
+            $("#total").empty()
+            $('table').DataTable().clear();
+            $('table').DataTable().destroy();
+
+            $.ajax({
+                url: gorest + '/users',
+                type: 'get',
+                success: function (dados) {
+                    let pages = dados.meta.pagination.pages
+
+                    for (i = 1; i <= pages; i++) {
+                        console.log("pagina = " + i)
+                        buscarPorPagina(i, pages)
+                    }
+
+
+                },
+                error: function (erro) {
+                    console.error(erro)
+                }
+            })
+
+
+        }
+
+        function buscarPorPagina(pagina, maximo) {
+            $.ajax({
+                url: gorest + '/users?page=' + pagina,
+                type: 'get',
+                success: function (dados) {
+                    // console.log(dados.data)
+
+
+                    dados.data.forEach(
+                        function (item) {
+                            usuarios.push(item)
+                            InserirDadosTabela(item)
+                        }
+
+                    )
+
+
+
+                    if (pagina != maximo)
+                        return
+
+                    $("#total").empty()
+                    $("#total").append(NovaTag("span").text("Total:" + usuarios.length))
+
+                    $('table').DataTable(
+                        {
+                            "order": [[0, "desc"]],
+                            language: {
+                                url: "http://cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json"
+                            }
+                        }
+
+                    );
+
+                },
+                error: function (erro) {
+                    console.error(erro)
+                }
+            })
+        }
+
+
+
+        $("#cadastro").submit(
+            function (event) {
+
+                event.preventDefault();
+                let formulario = valido()
+                if (!formulario.situacao) {
+                    alert(formulario.detalhes)
+                    return
+                }
+
+                var objeto = {
+                    name: $("#nome").val(),
+                    gender: $("#cadastro").find("input[name=sexo]:checked").attr("placeholder"),
+                    email: $("#email").val(),
+                    status: $("#cadastro").find("input[name=status]:checked").attr("placeholder")
+                };
+                console.log(objeto)
+
+
+                $.ajax({
+                    url: gorest + '/users',
+                    type: 'POST',
+                    headers: {
+                        'Accept': "application/json",
+                        'Content-type': 'application/json',
+                        'Authorization': 'Bearer ' + token
+                    },
+                    data: JSON.stringify(objeto),
+                    success: function (dados) {
+                        console.log(dados)
+                        $("#cancelar").click()
+                        atualizarTabela()
+                    },
+                    error: function (erro) {
+                        console.error(erro)
+                    }
+                })
+
+            }
+        )
+
+        function InserirDadosTabela(usuario) {
+
+
+            let linha = NovaTag("tr").attr("id", usuario.id)
+
+            linha.append(NovaTag("td").text(usuario.id))
+            linha.append(NovaTag("td").text(usuario.name))
+            linha.append(NovaTag("td").text(usuario.email))
+
+            let sexo = NovaTag("span")
+                .attr("class", usuario.gender == "Male" ? "material-icons text-primary" : "material-icons text-danger")
+                .text(usuario.gender == "Male" ? "male" : "female")
+            linha.append(NovaTag("td").append(sexo))
+
+
+            let status = NovaTag("span")
+                .attr("class", usuario.status == "Active" ? "material-icons text-success" : "material-icons  text-danger")
+                .text(usuario.status == "Active" ? "toggle_on" : "toggle_off")
+            linha.append(NovaTag("td").append(status))
+
+
+            let deletar = $("<button></button>")
+                .text("Deletar")
+                .attr("class", "btn btn-danger form-control")
+                .click(
+                    function () {
+
+                        if (!confirm("Deseja mesmo deletar o usuario [" + usuario.name + "] ?"))
+                            return
+                        console.log("deletando " + usuario.id)
+
+                        $.ajax({
+                            url: gorest + '/users/' + usuario.id,
+                            type: 'DELETE',
+                            headers: {
+                                'Accept': "application/json",
+                                'Content-type': 'application/json',
+                                'Authorization': 'Bearer ' + token
+                            },
+                            success: function (dados) {
+                                console.log(dados)
+                                if (dados.data != null
+                                    && dados.data.message != null
+                                    && dados.data.message.includes("limit")
+                                )
+                                    alert(dados.data.message)
+                                else
+                                    atualizarTabela()
+                            },
+                            error: function (erro) {
+                                console.error(erro)
+                            }
+                        })
+                    }
+                )
+            linha.append(NovaTag("td").append(deletar))
+
+
+            $("#usuarios").append(linha)
+
+
+
+        }
+
+        function NovaTag(tag) {
+            return $("<" + tag + "></" + tag + ">")
+        }
+
+        function valido() {
+            let status = true
+            let mensagem = ""
+
+            if ($("#nome").val().length < 3) {
+                status = false
+                mensagem += "Tamanho minimo para um nome é 3 letras\n"
+            }
+
+            if ($("#nome").val().length > 30) {
+                status = false
+                mensagem += "Tamanho máximo para um nome é 30 letras\n"
+            }
+
+            let sexo = $("#cadastro").find("input[name=sexo]:checked").attr("placeholder");
+            if (sexo == undefined) {
+                status = false
+                mensagem += "Selecione um sexo\n"
+            }
+
+            let status_cadastro = $("#cadastro").find("input[name=status]:checked").attr("placeholder");
+            if (status_cadastro == undefined) {
+                status = false
+                mensagem += "Selecione um status\n"
+            }
+
+            if (status)
+                mensagem = "Tudo ok"
+
+
+            return {
+                situacao: status,
+                detalhes: mensagem
+            }
+        }
+
+        $("#deletar_tudo").click(
+            function () {
+
+                if (!confirm("Deseja deletar todos os usuarios?"))
+                    return
+
+
+                $.ajax({
+                    url: gorest + '/users',
+                    type: 'get',
+                    success: function (dados) {
+                        let pages = dados.meta.pagination.pages
+
+                        for (i = 1; i <= pages; i++) {
+                            console.log("pagina = " + i)
+                            deletarPorPagina(i)
+                        }
+                        atualizarTabela()
+
+                    },
+                    error: function (erro) {
+                        console.error(erro)
+                    }
+                })
+
+
+
+            }
+        )
+
+        function deletarPorPagina(pagina) {
+            $.ajax({
+                url: gorest + '/users?page=' + pagina,
+                type: 'get',
+                success: function (dados) {
+                    // console.log(dados.data)
+
+
+                    dados.data.forEach(
+                        function (item) {
+                            deletar(item.id)
+                        }
+
+                    )
+                },
+                error: function (erro) {
+                    console.error(erro)
+                }
+            })
+        }
+
+        function deletar(id) {
+            console.log("deletando id = " + id)
+            $.ajax({
+                url: gorest + '/users/' + id,
+                type: 'DELETE',
+                headers: {
+                    'Accept': "application/json",
+                    'Content-type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                success: function (dados) {
+                    console.log(dados)
+                },
+                error: function (erro) {
+                    console.error(erro)
+                }
+            })
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
