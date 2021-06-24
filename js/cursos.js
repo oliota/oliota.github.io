@@ -165,7 +165,7 @@ cursos.forEach(element => {
 
 
 });
-
+ 
 
 $('table').DataTable({
     language: {
