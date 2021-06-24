@@ -1,0 +1,92 @@
+//variaveis de cores aqui
+
+$branco: white;
+$preto: black;
+$cinza: gray;
+$vermelho: red;
+$amarelo: yellow;
+$verde: green;
+$azul: blue;
+
+
+$cores:($branco,$preto,$cinza,$vermelho,$amarelo,$verde,$azul);
+
+@each $cor in $cores {
+    .cor-#{$cor}{
+        color: $cor;
+    }
+    
+}
+
+.bordas {
+    border-radius: 8px;
+    border: 1px solid black;
+}
+.delimitador {
+    @extend .bordas;
+    padding: 8px;
+    margin: 4px;
+    width: 200px;
+    min-height: 200px;
+}
+
+//criando um tema manualmente com variaveis
+.tema-padrao {
+    @extend .delimitador;
+    background-color: $branco;
+    color: $preto;
+    a {
+        color: $azul;
+        text-decoration: underline;
+        &:hover {
+            color: $vermelho;
+        }
+    }
+    .alert {
+        color: red;
+    }
+}
+
+//criando variaveis de lista
+$tema-dark: ($preto, $cinza, $branco, $amarelo, true);
+$tema-light: ($branco, $preto, $cinza, $azul, true);
+$tema-pb: ($preto, $vermelho, $branco, $cinza, false);
+
+//criando um variavel contendo varias listas e tbm chaves
+$temas: (
+    light: $tema-light,
+    dark: $tema-dark,
+    pb: $tema-pb,
+);
+
+@mixin tem_hover($tem, $cor) {
+    @if $tem {
+        &:hover {
+            color: $cor;
+        }
+    }
+}
+
+//percorrendo a variavel de lista
+@each $key, $tema in $temas {
+    .tema-#{$key} {
+        @extend .delimitador;
+        border: 1px solid nth($tema, 2);
+        background-color: nth($tema, 1); //obtendo os valores por indice
+        color: nth($tema, 2);
+        a {
+            color: nth($tema, 3);
+            text-decoration: none;
+            @include tem_hover(nth($tema, 5), nth($tema, 2));
+
+            //vai escrever isso caso seja true
+            // &:hover {
+            //     color: nth($tema, 2);
+            // }
+        }
+
+        .alert {
+            color: nth($tema, 4);
+        }
+    }
+}

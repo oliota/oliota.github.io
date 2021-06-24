@@ -1,0 +1,16 @@
+
+// aninhamento
+ul{
+
+    color: gray;
+
+    a{
+        text-decoration: none;
+        :hover{
+            text-decoration: dashed;
+        }
+     
+     }
+     
+
+}

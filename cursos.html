@@ -219,8 +219,9 @@
                                   <th>Aulas</th>
                                   <th>Dias</th>
                                   <th>Carga horária</th>
+                                  <th>Link</th>
                                 </thead>
-                                <tbody>
+                                <tbody id="lista_cursos">
                                   <!-- 
                                     <tr>
                                     <td>1</td>
@@ -232,6 +233,7 @@
                                     <td>0</td>
                                   </tr> 
                                 -->
+<!--                                 
                                   <tr>
                                     <td>1</td>
                                     <td>C# Fundamentos</td>
@@ -326,7 +328,7 @@
                                     <td>6</td>
                                     <td>Domingo</td>
                                     <td>28</td>
-                                  </tr>
+                                  </tr> -->
 
                                 </tbody>
                               </table>
@@ -407,88 +409,12 @@
 
 
 
-          <!-- <div class="row">
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success">
-                  <div class="ct-chart" id="dailySalesChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Daily Sales</h4>
-                  <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> updated 4 minutes ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                  <div class="ct-chart" id="websiteViewsChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Email Subscriptions</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                  <div class="ct-chart" id="completedTasksChart"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Completed Tasks</h4>
-                  <p class="card-category">Last Campaign Performance</p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> campaign sent 2 days ago
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
+      
 
         </div>
       </div>
       <footer class="footer">
         <div class="container-fluid">
-          <!-- <nav class="float-left">
-            <ul>
-              <li>
-                <a href="#">
-                  Rubem Oliota
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav> -->
           <div class="copyright float-right">
             &copy;
             <script>
@@ -814,12 +740,10 @@
 
     });
 
-    $('table').DataTable({
-      language: {
-        url: 'http://cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'
-      }
-    });
+  
   </script>
+
+  <script src="js/cursos.js"></script>
 </body>
 
 </html>
