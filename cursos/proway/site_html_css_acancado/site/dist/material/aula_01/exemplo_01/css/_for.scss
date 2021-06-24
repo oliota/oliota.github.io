@@ -1,0 +1,15 @@
+@for $cont from 1 to 5+1 {
+
+    .text-#{$cont}{
+        font-size: 10px * $cont;
+    }
+}
+
+$cores:(purple,blue,green,lightgreen,yellow,orange,red);
+
+@each $cor in $cores {
+    .#{$cor}-text{
+        color: $cor;
+    }
+    
+}

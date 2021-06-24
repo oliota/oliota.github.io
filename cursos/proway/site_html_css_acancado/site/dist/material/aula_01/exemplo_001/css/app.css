@@ -1,0 +1,161 @@
+@charset "UTF-8";
+.cor-white {
+  color: white;
+}
+
+.cor-black {
+  color: black;
+}
+
+.cor-gray {
+  color: gray;
+}
+
+.cor-red {
+  color: red;
+}
+
+.cor-yellow {
+  color: yellow;
+}
+
+.cor-green {
+  color: green;
+}
+
+.cor-blue {
+  color: blue;
+}
+
+.bordas, .delimitador, .tema-padrao, .tema-light, .tema-dark, .tema-pb {
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.delimitador, .tema-padrao, .tema-light, .tema-dark, .tema-pb {
+  padding: 8px;
+  margin: 4px;
+  width: 200px;
+  min-height: 200px;
+}
+
+.tema-padrao {
+  background-color: white;
+  color: black;
+}
+
+.tema-padrao a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.tema-padrao a:hover {
+  color: red;
+}
+
+.tema-padrao .alert {
+  color: red;
+}
+
+.tema-light {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+.tema-light a {
+  color: gray;
+  text-decoration: none;
+}
+
+.tema-light a:hover {
+  color: black;
+}
+
+.tema-light .alert {
+  color: blue;
+}
+
+.tema-dark {
+  border: 1px solid gray;
+  background-color: black;
+  color: gray;
+}
+
+.tema-dark a {
+  color: white;
+  text-decoration: none;
+}
+
+.tema-dark a:hover {
+  color: gray;
+}
+
+.tema-dark .alert {
+  color: yellow;
+}
+
+.tema-pb {
+  border: 1px solid red;
+  background-color: black;
+  color: red;
+}
+
+.tema-pb a {
+  color: white;
+  text-decoration: none;
+}
+
+.tema-pb .alert {
+  color: gray;
+}
+
+.size-1 {
+  font-size: 5px;
+}
+
+.size-2 {
+  font-size: 10px;
+}
+
+.size-3 {
+  font-size: 15px;
+}
+
+.size-4 {
+  font-size: 20px;
+}
+
+.size-5 {
+  font-size: 25px;
+}
+
+.size-6 {
+  font-size: 30px;
+}
+
+.size-7 {
+  font-size: 35px;
+}
+
+.size-8 {
+  font-size: 40px;
+}
+
+.size-9 {
+  font-size: 45px;
+}
+
+.size-10 {
+  font-size: 50px;
+}
+
+html {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+footer:after {
+  content: "Copyright Ⓒ Rubem Oliota - Proway";
+}
+/*# sourceMappingURL=app.css.map */

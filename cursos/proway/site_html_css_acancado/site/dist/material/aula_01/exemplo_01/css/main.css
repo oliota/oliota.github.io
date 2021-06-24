@@ -1,0 +1,92 @@
+.enviar {
+  border-radius: 8px;
+  border: solid black 1px;
+}
+
+ul {
+  color: gray;
+}
+
+ul a {
+  text-decoration: none;
+}
+
+ul a :hover {
+  -webkit-text-decoration: dashed;
+          text-decoration: dashed;
+}
+
+.text-1 {
+  font-size: 10px;
+}
+
+.text-2 {
+  font-size: 20px;
+}
+
+.text-3 {
+  font-size: 30px;
+}
+
+.text-4 {
+  font-size: 40px;
+}
+
+.text-5 {
+  font-size: 50px;
+}
+
+.purple-text {
+  color: purple;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.green-text {
+  color: green;
+}
+
+.lightgreen-text {
+  color: lightgreen;
+}
+
+.yellow-text {
+  color: yellow;
+}
+
+.orange-text {
+  color: orange;
+}
+
+.red-text {
+  color: red;
+}
+
+.espacos_laterais, body {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  border: solid #ff0000 1px;
+  border-radius: 8px;
+  padding: 8px;
+  width: 200px;
+}
+
+.text-vermelho {
+  color: red;
+  font-weight: bold;
+}
+
+.text-azul {
+  color: blue;
+}
+/*# sourceMappingURL=main.css.map */

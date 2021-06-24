@@ -1,0 +1,16 @@
+@mixin arredondado($color) {
+    border: solid $color 1px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+
+@mixin colorir($color) {
+
+    @if $color == red{
+        color:red;
+        font-weight: bold;
+    }@else{
+        color:$color;
+    } 
+}

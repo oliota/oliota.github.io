@@ -1,0 +1,16 @@
+@import 'cores';
+@import 'tamanhos';
+
+$rodape:'Copyright Ⓒ Rubem Oliota - Proway';
+
+html{
+    margin-right: 100px;
+    margin-left: 100px;
+  
+}
+
+footer{ 
+    &:after{
+        content: $rodape;
+    }
+}

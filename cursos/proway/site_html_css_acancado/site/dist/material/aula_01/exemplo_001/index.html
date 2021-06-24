@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+        <div style="display: flex;">
+            <div class="tema-padrao">
+
+                <p>Texto</p>
+                <a href="usando_estilo_padrao.html" target="_blank">links</a>
+                <p class="alert">Alerta</p>
+            </div>
+
+            <div class="tema-dark">
+
+                <p>Texto</p>
+                <a href="#">links</a>
+                <p class="alert">Alerta</p>
+            </div>
+
+            <div class="tema-light">
+
+                <p>Texto</p>
+                <a href="#">links</a>
+                <p class="alert">Alerta</p>
+            </div>
+
+            <div class="tema-pb">
+
+                <p>Texto</p>
+                <a href="#">links</a>
+                <p class="alert">Alerta</p>
+            </div>
+        </div>
+
+        <p class="size-1">tamanho - 1</p>
+        <p class="size-2">tamanho - 2</p>
+        <p class="size-3">tamanho - 3</p>
+        <p class="size-4">tamanho - 4</p>
+        <p class="size-5">tamanho - 5</p>
+        <p class="size-6">tamanho - 6</p>
+        <p class="size-7">tamanho - 7</p>
+        <p class="size-8">tamanho - 8</p>
+        <p class="size-9">tamanho - 9</p>
+        <p class="size-10">tamanho - 10</p>
+ 
+
+    <footer>
+        <hr>
+    </footer>
+
+
+
+
+</body>
+
+<script>
+
+
+    document.body.append(document.createElement('hr'));
+    for (let index = 1; index <= 10; index++) {
+        let item = document.createElement('p');
+        item.setAttribute('class', 'size-' + index);
+        item.textContent = 'Texto gerado por JS tamanho ' + index;
+        document.body.append(item);
+
+    }
+
+
+    let cores=['white','black','gray','red','yellow','green','blue'];
+    console.log(cores);
+    
+    document.body.append(document.createElement('hr'));
+    cores.forEach(element => {
+        let item = document.createElement('p');
+        console.log(element);
+        item.setAttribute('class', 'cor-' + element+ ' bordas');
+        item.textContent = 'Texto gerado por JS e estilizado por css class " cor-'+element+ ' bordas"';
+        document.body.append(item);
+        
+    });
+
+</script>
+
+</html>

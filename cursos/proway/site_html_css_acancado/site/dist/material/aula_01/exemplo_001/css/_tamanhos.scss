@@ -1,0 +1,6 @@
+
+@for $tamanho from 1 to 10+1 {
+    .size-#{$tamanho}{
+        font-size: 5px * $tamanho;
+    }
+}
