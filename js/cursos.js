@@ -141,7 +141,9 @@ let contador = 1;
 cursos.forEach(element => {
     let item = document.createElement('tr');
 
-    item.append(document.createElement('td').textContent = contador++);
+    let indice=document.createElement('td');
+    indice.textContent = contador++
+    item.append(indice);
     for (var campo in element) {
         let coluna = document.createElement('td');
         if (campo != 'link') {
@@ -165,17 +167,15 @@ cursos.forEach(element => {
 });
 
 
-if ($('#lista_cursos').length != 0){
-       $('table').DataTable({
-        language: {
-            url: 'http://cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'
-        }
-    }); 
-}
+$('table').DataTable({
+    language: {
+        url: 'http://cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'
+    }
+});
 
 $('#quantidade_cursos').text(cursos.length)
 
- /*
+/*
 
 
 
