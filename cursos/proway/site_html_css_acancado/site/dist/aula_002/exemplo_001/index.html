@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamento de Loops</title>
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>Aninhamento de loops</h1>
+
+    <div class="box">
+        <p>_cores.scss</p>
+        <pre>
+            //minhas cores
+            $cor_preto: black;
+            $cor_cinza: gray;
+            $cor_cinzinha: lightgray;
+            $cor_branco: white;
+            $cor_roxo: purple;
+            $cor_azul: blue;
+            $cor_verde: green;
+            $cor_amarelo: yellow;
+            $cor_laranja: orange;
+            $cor_vermelho: red;
+            $cor-marrom: brown;
+            
+            //agrupar cores em uma lista
+            $lista_cores: (
+            preto: $cor_preto,
+            cinza: $cor_cinza,
+            cinzinha: $cor_cinzinha,
+            branco: $cor_branco,
+            roxo: $cor_roxo,
+            azul: $cor_azul,
+            verde: $cor_verde,
+            amarelo: $cor_amarelo,
+            laranja: $cor_laranja,
+            vermelho: $cor_vermelho,
+            marrom: $cor-marrom,
+            );
+        </pre>
+    </div>
+
+    <div class="box">
+        <p>Com @import 'cores';</p>
+        <pre>
+
+            @each $key, $var in $lista_cores {
+                .texto-#{$key} {
+                    // $key seria o nome do item na lista no primeiro loop seria 'preto'
+                    color: $var;
+                    //$var seria o valor desse item no loop e seria 'black'
+                }
+            }
+        </pre>
+        <div class="box">
+            <p>resultado em css puro</p>
+            <pre>
+
+.texto-preto {
+    color: black;
+  }
+  
+  .texto-cinza {
+    color: gray;
+  }
+  
+  .texto-cinzinha {
+    color: lightgray;
+  }
+  
+  .texto-branco {
+    color: white;
+  }
+  
+  .texto-roxo {
+    color: purple;
+  }
+  
+  .texto-azul {
+    color: blue;
+  }
+  
+  .texto-verde {
+    color: green;
+  }
+  
+  .texto-amarelo {
+    color: yellow;
+  }
+  
+  .texto-laranja {
+    color: orange;
+  }
+  
+  .texto-vermelho {
+    color: red;
+  }
+  
+  .texto-marrom {
+    color: brown;
+  }
+            </pre>
+            <div id="resultado_text_color">
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="box">
+        <p>Com @import 'cores';</p>
+        <pre>
+
+            @each $key, $var in $lista_cores {
+                .fundo-#{$key} {
+                    // $key seria o nome do item na lista no primeiro loop seria 'preto'
+                    color: $var;
+                    //$var seria o valor desse item no loop e seria 'black'
+                }
+            }
+        </pre>
+        <div class="box">
+            <p>resultado em css puro</p>
+            <pre>
+
+    .fundo-preto {
+    background-color: black;
+    }
+    
+    .fundo-cinza {
+    background-color: gray;
+    }
+    
+    .fundo-cinzinha {
+    background-color: lightgray;
+    }
+    
+    .fundo-branco {
+    background-color: white;
+    }
+    
+    .fundo-roxo {
+    background-color: purple;
+    }
+    
+    .fundo-azul {
+    background-color: blue;
+    }
+    
+    .fundo-verde {
+    background-color: green;
+    }
+    
+    .fundo-amarelo {
+    background-color: yellow;
+    }
+    
+    .fundo-laranja {
+    background-color: orange;
+    }
+    
+    .fundo-vermelho {
+    background-color: red;
+    }
+    
+    .fundo-marrom {
+    background-color: brown;
+    }
+            </pre>
+            <div id="resultado_back_color">
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="box">
+        <p>Com @import 'cores';</p>
+        <pre>
+            $tema_quente: (
+                fundo: $cor_vermelho,
+                texto: $cor_branco,
+                link: $cor_laranja,
+            );
+
+            $tema_frio: (
+                fundo: $cor_azul,
+                texto: $cor_branco,
+                link: $cor_preto,
+            );
+
+            $temas: (
+                tema_quente: $tema_quente,
+                tema_frio: $tema_frio,
+            );
+
+        </pre>
+        <hr>
+        <pre>
+            .tema_light {
+                background-color: $cor_branco;
+                color: $cor_preto;
+                a {
+                    color: $cor_cinza;
+                }
+            }
+            
+            //nth permite pegar um item da lista com base no indice
+            //se a lista tiver apenas valores
+            //sintaxe nth($variavel_de_lista,posicao_na_lista)
+            
+            //se a lista tiver chaves e valores
+            //encapsular a variavel de lista com map-keys para pegar a chave
+            //encapsular a variavel de lista com map-values para pegar o valor
+            //sintaxe nth(map-values$variavel_de_lista),posicao_na_lista)
+            
+            .tema_dark {
+                background-color: nth(map-values($lista_cores), 1);
+                color: nth(map-values($lista_cores), 2);
+                a {
+                    color: nth(map-values($lista_cores), 3);
+                }
+            }
+            
+            @each $key, $tema in $temas {
+                .#{$key} {
+                    // $key seria o nome do item na lista no primeiro loop seria 'tema_quente'
+                    background-color: nth(map-values($tema), 1);
+                    color: nth(map-values($tema), 2);
+                    a {
+                        color: nth(map-values($tema), 3);
+                    }
+                }
+            }
+
+            
+        </pre>
+        <div class="box">
+            <p>resultado em css puro</p>
+            <pre>
+
+                .tema_light {
+                    background-color: white;
+                    color: black;
+                  }
+                  
+                  .tema_light a {
+                    color: gray;
+                  }
+                  
+                  .tema_dark {
+                    background-color: black;
+                    color: gray;
+                  }
+                  
+                  .tema_dark a {
+                    color: lightgray;
+                  }
+                  
+                  .tema_quente {
+                    background-color: red;
+                    color: white;
+                  }
+                  
+                  .tema_quente a {
+                    color: orange;
+                  }
+                  
+                  .tema_frio {
+                    background-color: blue;
+                    color: white;
+                  }
+                  
+                  .tema_frio a {
+                    color: black;
+                  }
+            </pre>
+            <div id="resultado_temas" style="display: flex;">
+ 
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+
+let cores = ['preto', 'cinza', 'cinzinha', 'branco', 'roxo', 'azul', 'verde', 'amarelo', 'laranja', 'vermelho', 'marrom'];
+        let temas = ['tema_quente', 'tema_frio','tema_light','tema_dark'];
+
+        gerar_linhas_dinamicas('resultado_text_color', 'texto');
+        gerar_linhas_dinamicas('resultado_back_color', 'fundo');
+        gerar_itens_com_tema();
+
+
+
+      
+
+        function gerar_linhas_dinamicas(id, prefixo) { 
+            $('#' + id).append(document.createElement('hr'));
+            cores.forEach(element => {
+                let item = document.createElement('p');
+                item.setAttribute('class', '' + prefixo + '-' + element + ' ');
+                item.textContent = 'Texto gerado por JS e estilizado por css class " ' + prefixo + '-' + element + ' "';
+                console.log(item);
+                $('#' + id).append(item);
+
+            });
+        }
+
+        function gerar_itens_com_tema() {
+            temas.forEach(element => {
+                let div = document.createElement('div');
+                div.setAttribute('class',    element + ' box-exemplo');
+                
+                let p = document.createElement('p');
+                p.textContent = element+ ' box-exemplo';  
+                div.append(p);
+                
+                let a = document.createElement('a');
+                a.textContent = 'link'; 
+                a.setAttribute ('href',"#"); 
+
+
+                div.append(a);
+                $('#resultado_temas' ).append(div);
+
+            });
+        }
+
+
+
+
+
+    </script>
+</body>
+
+
+</html>

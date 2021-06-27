@@ -1,0 +1,56 @@
+@import "cores", "tamanhos",'temas','box';
+
+//criar estilos de cores para TEXTO
+
+@each $key, $var in $lista_cores {
+    .texto-#{$key} {
+        // $key seria o nome do item na lista no primeiro loop seria 'preto'
+        color: $var;
+        //$var seria o valor desse item no loop e seria 'black'
+    }
+}
+
+// criar estilos de cores para BACKGROUND
+@each $key, $var in $lista_cores {
+    .fundo-#{$key} {
+        // $key seria o nome do item na lista no primeiro loop seria 'preto'
+        background-color: $var;
+        //$var seria o valor desse item no loop e seria 'black'
+    }
+}
+
+.tema_light {
+    background-color: $cor_branco;
+    color: $cor_preto;
+    a {
+        color: $cor_cinza;
+    }
+}
+
+//nth permite pegar um item da lista com base no indice
+//se a lista tiver apenas valores
+//sintaxe nth($variavel_de_lista,posicao_na_lista)
+
+//se a lista tiver chaves e valores
+//encapsular a variavel de lista com map-keys para pegar a chave
+//encapsular a variavel de lista com map-values para pegar o valor
+//sintaxe nth(map-values$variavel_de_lista),posicao_na_lista)
+
+.tema_dark {
+    background-color: nth(map-values($lista_cores), 1);
+    color: nth(map-values($lista_cores), 2);
+    a {
+        color: nth(map-values($lista_cores), 3);
+    }
+}
+
+@each $key, $tema in $temas {
+    .#{$key} {
+        // $key seria o nome do item na lista no primeiro loop seria 'tema_quente'
+        background-color: nth(map-values($tema), 1);
+        color: nth(map-values($tema), 2);
+        a {
+            color: nth(map-values($tema), 3);
+        }
+    }
+}

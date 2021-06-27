@@ -1,0 +1,11 @@
+
+
+$lista-cores:(black,gray,white,purple,blue,green,lightgreen,yellow,orange,red);
+
+ 
+
+@each $cor in $lista-cores {
+    .cor-#{$cor}{
+        color: $cor;
+    }
+}

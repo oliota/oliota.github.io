@@ -1,0 +1,29 @@
+//minhas cores
+$cor_preto: black;
+$cor_cinza: gray;
+$cor_cinzinha: lightgray;
+$cor_branco: white;
+$cor_roxo: purple;
+$cor_azul: blue;
+$cor_verde: green;
+$cor_amarelo: yellow;
+$cor_laranja: orange;
+$cor_vermelho: red;
+$cor-marrom: brown;
+
+//agrupar cores em uma lista
+$lista_cores: (
+    preto: $cor_preto,
+    cinza: $cor_cinza,
+    cinzinha: $cor_cinzinha,
+    branco: $cor_branco,
+    roxo: $cor_roxo,
+    azul: $cor_azul,
+    verde: $cor_verde,
+    amarelo: $cor_amarelo,
+    laranja: $cor_laranja,
+    vermelho: $cor_vermelho,
+    marrom: $cor-marrom,
+);
+
+

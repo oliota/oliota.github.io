@@ -1,0 +1,95 @@
+.cor-black {
+  color: black;
+}
+
+.cor-gray {
+  color: gray;
+}
+
+.cor-white {
+  color: white;
+}
+
+.cor-purple {
+  color: purple;
+}
+
+.cor-blue {
+  color: blue;
+}
+
+.cor-green {
+  color: green;
+}
+
+.cor-lightgreen {
+  color: lightgreen;
+}
+
+.cor-yellow {
+  color: yellow;
+}
+
+.cor-orange {
+  color: orange;
+}
+
+.cor-red {
+  color: red;
+}
+
+body {
+  background-color: purple;
+  color: white;
+}
+
+body p {
+  color: yellow;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+body a {
+  color: orange;
+  font-size: 32px;
+}
+
+body a:hover {
+  -webkit-text-decoration: dashed;
+          text-decoration: dashed;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box, .box-light, .box-dark, .box-pb, .box-sc {
+  margin: 32px;
+  width: 200px;
+  min-height: 200px;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.box-light {
+  background-color: white;
+  color: gray;
+}
+
+.box-dark {
+  background-color: black;
+  color: gray;
+}
+
+.box-pb {
+  background-color: black;
+  color: red;
+}
+
+.box-sc {
+  background-color: lightgreen;
+  color: red;
+}
+/*# sourceMappingURL=main.css.map */
