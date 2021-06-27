@@ -1,0 +1,57 @@
+@import 'cores','tamanhos','loops'; 
+
+
+body {
+    background-color: $cor-violeta;
+    color: $cor-branco;
+
+    p {
+        color: $cor-amarelo;
+        font-size: $text-middle;
+        text-decoration: underline;
+    }
+    a{
+        color: $cor-laranja;
+        font-size: $text-large;
+        &:hover{
+            text-decoration: dashed;
+        }
+    }
+}
+
+.flex{
+    display: flex;
+}
+.box{
+    margin: $box-margem-geral;
+    width: $box-largura;
+    min-height: $box-minima-altura;
+    border-radius: $box-curvas;
+    padding: $box_espacamento-interno;
+}
+
+.box-light{
+    @extend .box;
+    background-color: $cor-branco;
+    color: $cor-cinza; 
+}
+
+.box-dark{
+    @extend .box;
+    background-color: $cor-preto;
+    color: $cor-cinza; 
+}
+
+.box-pb{
+    @extend .box;
+    background-color: $cor-preto;
+    color: $cor-vermelho; 
+}
+.box-sc{
+    @extend .box;
+    background-color: $cor-verdin;
+    color: $cor-vermelho; 
+}
+ 
+
+ 

@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <meta charset="utf-8">
+    <title>ProwayFlix</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+
+    </div>
+    <div class="container">
+        <h1>Sistema ProwayFlix</h1>
+        <div class="row">
+            <div class="col-sm-4 pull-left">
+                <div id="filme" class="supply box box-blue" title="">Filme</div>
+                <br><br>
+                <br><br>
+                <div id="serie" class="supply box box-red" title="">Serie</div>
+                <br><br>
+            </div>
+            <div class="col-sm-4 pull-left">
+                <br><br> <br><br>
+                <div id='categoria' class="supply box box-green filme serie">Categoria</div>
+                <br><br>
+                <br><br>
+                <div id='temporada' class="supply box box-red serie">Temporada</div>
+                <br><br>
+
+            </div>
+            <div class="col-sm-4 pull-left">
+                <br><br> <br><br><br>
+                <br><br> <br><br><br>
+                <br><br> <br><br><br>
+                <div id="episodio" class="supply box box-red temporada">Episódio</div>
+
+
+
+            </div>
+
+        </div>
+        <div class="row">
+            <h3>
+                <ol>
+                    <li> Criar tabelas conforme o modelo entidade relacionamento</li>
+                    <li>Inserir categorias
+                        <ul>
+                            <li>Ação</li>
+                            <li>Terror</li>
+                            <li>Comédia</li>
+                            <li>Anime</li>
+                            <li>Ficção</li>
+                        </ul>
+                        Listar as categorias com SELECT
+                    </li>
+                    <li>
+                        Inserir filmes x 3
+                        <ul>
+                            <li>Deve informar o id da categoria no momento do insert</li>
+                            <li>exemplo:
+                                <ul><b>
+
+                                    <li>insert into filme (categoria,nome,ano,sinopse) values (1,'matrix',1999,'um jovem entra no mundo das drogas para salvar a humanidade escrevizada pelas maquinas');</li>
+                                </b>
+                                </ul>
+                            </li>
+                        </ul>
+                        Listar os filmes com SELECT
+                    </li>
+                    <li>
+                        Inserir series x 3
+                        <ul>
+                            <li>Deve informar o id da categoria no momento do insert</li>
+                            <li>exemplo:
+                                <ul><b>
+
+                                    <li>insert into serie (categoria,nome,ano,sinopse) values (1,'animatrix',1999,'explica a loucura do filme em desenhos de varios formatos');</li>
+                                </b>
+                                </ul>
+                            </li>
+                        </ul>
+                        Listar as series com SELECT
+                    </li>
+                    <li>
+                        Inserir temporadas x 3
+                        <ul>
+                            <li>Deve informar o id da serie no momento do insert</li>
+                            <li>exemplo:
+                                <ul><b> 
+                                    <li>insert into temporada (serie,sequencial,titulo) values (1,1,'primeira temporada');</li>
+                                    <li>insert into temporada (serie,sequencial,titulo) values (1,2,'segunda temporada');</li>
+                                    <li>insert into temporada (serie,sequencial,titulo) values (1,3,'terceira temporada');</li>
+                                </b>
+                                </ul>
+                            </li>
+                        </ul>
+                        Listar as temporadas com SELECT
+                    </li>
+                    <li>
+                        Inserir episodios x 3
+                        <ul>
+                            <li>Deve informar o id da temporada no momento do insert</li>
+                            <li>exemplo:
+                                <ul><b> 
+                                    <li>insert into episodio (temporada,sequencial,titulo) values (1,1,'primeiro episodio');</li>
+                                    <li>insert into episodio (serie,sequencial,titulo) values (1,2,'segunda episodio');</li>
+                                    <li>insert into episodio (serie,sequencial,titulo) values (1,3,'terceira episodio');</li>
+                                </b>
+                                </ul>
+                            </li>
+                        </ul>
+                        Listar as episodios com SELECT
+                    </li>
+                    <li>Listar as tabelas com relacionamento</li> 
+                </ol>
+
+            </h3>
+
+        </div>
+    </div>
+
+    <script>
+        $('.supply').linha({ strokeColor: 'blue', });
+
+
+        $("#categoria").attr("title",
+            '---------------------' + '\n' +
+            'Campos' + '\n' +
+            '---------------------' + '\n' +
+            'id_categoria' + '\n' +
+            'nome: text' + '\n' +
+            '---------------------' + '\n' +
+            'Chaves' + '\n' +
+            '---------------------' + '\n' +
+            'id_categoria PRIMARIA UNICA'
+        );
+
+
+        $("#filme").attr("title",
+            '---------------------' + '\n' +
+            'Campos' + '\n' +
+            '---------------------' + '\n' +
+            'id_filme' + '\n' +
+            'categoria' + '\n' +
+            'nome: text' + '\n' +
+            'ano: inteiro' + '\n' +
+            'sinopse: text' + '\n' +
+            '---------------------' + '\n' +
+            'Chaves' + '\n' +
+            '---------------------' + '\n' +
+            'id_filme PRIMARIA UNICA' + '\n' +
+            'categoria ESTRANGEIRA referente a tabela Categoria campo id_categoria'
+        );
+
+
+        $("#serie").attr("title",
+            '---------------------' + '\n' +
+            'Campos' + '\n' +
+            '---------------------' + '\n' +
+            'id_serie' + '\n' +
+            'categoria' + '\n' +
+            'nome: text' + '\n' +
+            'ano: inteiro' + '\n' +
+            'sinopse: text' + '\n' +
+            '---------------------' + '\n' +
+            'Chaves' + '\n' +
+            '---------------------' + '\n' +
+            'id_serie PRIMARIA UNICA' + '\n' +
+            'categoria ESTRANGEIRA referente a tabela Categoria campo id_categoria'
+        );
+
+
+
+        $("#temporada").attr("title",
+            '---------------------' + '\n' +
+            'Campos' + '\n' +
+            '---------------------' + '\n' +
+            'id_temporada' + '\n' +
+            'serie' + '\n' +
+            'sequencial: inteiro' + '\n' +
+            'titulo: text' + '\n' +
+            '---------------------' + '\n' +
+            'Chaves' + '\n' +
+            '---------------------' + '\n' +
+            'id_temporada PRIMARIA UNICA' + '\n' +
+            'serie ESTRANGEIRA referente a tabela Serie campo id_serie'
+        );
+
+        $("#episodio").attr("title",
+            '---------------------' + '\n' +
+            'Campos' + '\n' +
+            '---------------------' + '\n' +
+            'id_episodio' + '\n' +
+            'temporada' + '\n' +
+            'sequencial: inteiro' + '\n' +
+            'titulo: text' + '\n' +
+            '---------------------' + '\n' +
+            'Chaves' + '\n' +
+            '---------------------' + '\n' +
+            'id_episodio PRIMARIA UNICA' + '\n' +
+            'temporada ESTRANGEIRA referente a tabela Temporada campo id_temporada'
+        );
+
+
+
+
+    </script>
+</body>
+
+
+</html>

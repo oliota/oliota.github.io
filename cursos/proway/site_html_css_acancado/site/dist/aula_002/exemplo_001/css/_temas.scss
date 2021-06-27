@@ -1,0 +1,32 @@
+@import "cores";
+
+$tema_light2: (
+    fundo: $cor_branco,
+    texto: $cor_cinza,
+    link: $cor_laranja,
+);
+
+$tema_dark2: (
+    fundo: $cor_preto,
+    texto: $cor_cinza,
+    link: $cor_branco,
+);
+
+$tema_quente: (
+    fundo: $cor_vermelho,
+    texto: $cor_branco,
+    link: $cor_laranja,
+);
+
+$tema_frio: (
+    fundo: $cor_azul,
+    texto: $cor_branco,
+    link: $cor_preto,
+);
+
+$temas: (
+    tema_quente: $tema_quente,
+    tema_frio: $tema_frio,
+    tema_light2: $tema_light2,
+    tema_dark2: $tema_dark2,
+);

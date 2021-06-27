@@ -1,0 +1,152 @@
+.box, .box-exemplo {
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.box-exemplo {
+  min-width: 100px;
+}
+
+.texto-preto {
+  color: black;
+}
+
+.texto-cinza {
+  color: gray;
+}
+
+.texto-cinzinha {
+  color: lightgray;
+}
+
+.texto-branco {
+  color: white;
+}
+
+.texto-roxo {
+  color: purple;
+}
+
+.texto-azul {
+  color: blue;
+}
+
+.texto-verde {
+  color: green;
+}
+
+.texto-amarelo {
+  color: yellow;
+}
+
+.texto-laranja {
+  color: orange;
+}
+
+.texto-vermelho {
+  color: red;
+}
+
+.texto-marrom {
+  color: brown;
+}
+
+.fundo-preto {
+  background-color: black;
+}
+
+.fundo-cinza {
+  background-color: gray;
+}
+
+.fundo-cinzinha {
+  background-color: lightgray;
+}
+
+.fundo-branco {
+  background-color: white;
+}
+
+.fundo-roxo {
+  background-color: purple;
+}
+
+.fundo-azul {
+  background-color: blue;
+}
+
+.fundo-verde {
+  background-color: green;
+}
+
+.fundo-amarelo {
+  background-color: yellow;
+}
+
+.fundo-laranja {
+  background-color: orange;
+}
+
+.fundo-vermelho {
+  background-color: red;
+}
+
+.fundo-marrom {
+  background-color: brown;
+}
+
+.tema_light {
+  background-color: white;
+  color: black;
+}
+
+.tema_light a {
+  color: gray;
+}
+
+.tema_dark {
+  background-color: black;
+  color: gray;
+}
+
+.tema_dark a {
+  color: lightgray;
+}
+
+.tema_quente {
+  background-color: red;
+  color: white;
+}
+
+.tema_quente a {
+  color: orange;
+}
+
+.tema_frio {
+  background-color: blue;
+  color: white;
+}
+
+.tema_frio a {
+  color: black;
+}
+
+.tema_light2 {
+  background-color: white;
+  color: gray;
+}
+
+.tema_light2 a {
+  color: orange;
+}
+
+.tema_dark2 {
+  background-color: black;
+  color: gray;
+}
+
+.tema_dark2 a {
+  color: white;
+}
+/*# sourceMappingURL=app.css.map */
