@@ -1,0 +1,37 @@
+@import "variaveis";
+
+@mixin negrito {
+    font-weight: $fonte-negrito;
+}
+
+.destacado {
+    @include negrito;
+    color: $cor-vermelho;
+}
+
+@mixin curvas($escolha) {
+    border: $tamanho-borda solid $cor-preto;
+    @if ($escolha == sim) {
+        border-radius: 8px;
+    }
+}
+
+.caixa-normal {
+    @include curvas(nao);
+    background-color: $cor-cinza;
+}
+
+.caixa-arredondada {
+    @include curvas(sim);
+    background-color: $cor-cinza;
+}
+
+@function multiplicar($valor) {
+    @return $valor * 10px;
+}
+
+@for $var from 1 to 10+1 {
+    .texto-#{$var} {
+        font-size: multiplicar($var);
+    }
+}

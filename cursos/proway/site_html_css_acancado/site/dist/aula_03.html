@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Html e Css avançado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
+        crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Proway</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+
+        <!-- Navbar-->
+
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Inicio
+                        </a>
+
+
+                        <a class="nav-link" href="http://atena.proway.com.br/atena/diario-instrutor/login/"
+                            target="_blank">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Login do professor
+                        </a>
+
+
+
+                        <div class="sb-sidenav-menu-heading">Ambiente</div>
+
+                        <a class="nav-link" href="https://code.visualstudio.com/Download" target="_blank">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Visual Studio Code
+                        </a>
+
+
+
+
+
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Html e Css avançado</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Aula 03 - Html e Css avançado</li>
+                    </ol>
+                    <div class="row">
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Assuntos
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Assunto</th>
+                                                    <th>Descrição</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Utilizar os loop para criar a tipografia do site</td>
+                                                   <td>
+
+                                                    <a href="aula_003/exemplo_001/index.html" target="_blank">Ver exemplo em outra aba</a>
+                                                  
+                                                   </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>@mixin</td>
+                                                    <td>
+
+                                                        <ul>Permitem criar procedimentos 
+                                                            <li> 
+                                                                <pre>
+//variaveis                                                           
+$fonte-negrito: bold;
+$cor-vermelho: red;
+$cor-cinza: gray;
+$cor-preto: black;
+$tamanho-borda: 1px;
+$tamanho-curva: 8px;
+<hr>
+// sintaxe no SCSS
+@mixin negrito {
+    font-weight: $fonte-negrito;
+}
+
+
+.destacado{
+    @include negrito;
+    color: $cor-vermelho;
+}
+<hr>
+// conteudo gerado no CSS
+.destacado {
+    font-weight: bold;
+    color: red;
+    }
+    <hr>
+    //consumo no html
+    < p class="destacado"> destacado< /p>
+    //resultado
+    <p style="font-weight: bold;color: red;"> destacado</p>
+
+                                                        </pre>
+                                                               <hr>
+                                                               <hr>
+                                                               <hr>
+                                                               <hr>
+                                                               <hr>     
+                                                            </li>
+                                                            <li>
+
+                                                                <pre>
+//variaveis                                                           
+$fonte-negrito: bold;
+$cor-vermelho: red;
+$cor-cinza: gray;
+$cor-preto: black;
+$tamanho-borda: 1px;
+$tamanho-curva: 8px;
+<hr>
+// sintaxe no SCSS
+@mixin curvas ($escolha) {
+    border: $tamanho-borda solid $cor-preto;
+    @if($escolha == sim){
+        border-radius: 8px;
+
+    }
+}
+
+
+.caixa-normal{
+    @include curvas(nao);
+    background-color: $cor-cinza;
+}
+
+.caixa-arredondada{
+    @include curvas(sim);
+    background-color: $cor-cinza;
+}
+<hr>
+// conteudo gerado no CSS
+.caixa-normal {
+    border: 1px solid black;
+    background-color: gray;
+  }
+  
+  .caixa-arredondada {
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: gray;
+  }
+    <hr>
+    //consumo no html
+    < div class="caixa-normal">
+        caixa-normal
+    < /div>
+    < div class="caixa-arredondada">
+        caixa-normal
+    < /div>
+    //resultado
+    <div style="border: 1px solid black;background-color: gray;">
+        caixa-normal
+    </div>
+    <div style="border: 1px solid black;background-color: gray;border-radius: 8px;">
+        caixa-arredondada
+    </div>
+
+                                                                                                                            
+                                                                    </pre>
+                                                            </li>
+                                                           
+                                                        </ul>
+                                                       
+
+                                                      
+                                                         
+                                                    </td>
+                                                </tr>
+                                               
+
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>@function</td>
+                                                    <td>
+                                                        Permitem criar funções que retornam valores
+                                                        
+                                                        <ul>Permitem criar procedimentos 
+                                                            <li> 
+                                                                <pre>
+//variaveis                                                           
+$fonte-negrito: bold;
+$cor-vermelho: red;
+$cor-cinza: gray;
+$cor-preto: black;
+$tamanho-borda: 1px;
+$tamanho-curva: 8px;
+<hr>
+// sintaxe no SCSS
+@mixin negrito {
+    font-weight: $fonte-negrito;
+}
+
+
+.destacado{
+    @include negrito;
+    color: $cor-vermelho;
+}
+<hr>
+// conteudo gerado no CSS
+.destacado {
+    font-weight: bold;
+    color: red;
+    }
+    <hr>
+    //consumo no html
+    < p class="destacado"> destacado< /p>
+    //resultado
+    <p style="font-weight: bold;color: red;"> destacado</p>
+
+                                                        </pre>
+                                                               <hr>
+                                                               <hr>
+                                                               <hr>
+                                                               <hr>
+                                                               <hr>     
+                                                            </li>
+                                                            <li>
+
+                                                                <pre>
+//variaveis                                                           
+$fonte-negrito: bold;
+$cor-vermelho: red;
+$cor-cinza: gray;
+$cor-preto: black;
+$tamanho-borda: 1px;
+$tamanho-curva: 8px;
+<hr>
+// sintaxe no SCSS
+@function multiplicar($valor) {
+    @return $valor * 10px;
+}
+
+@for $var from 1 to 10+1 {
+    .texto-#{$var} {
+        font-size: multiplicar($var);
+    }
+}
+<hr>
+// conteudo gerado no CSS
+.texto-1 {
+    font-size: 10px;
+  }
+  
+  .texto-2 {
+    font-size: 20px;
+  }
+  
+  .texto-3 {
+    font-size: 30px;
+  }
+  
+  .texto-4 {
+    font-size: 40px;
+  }
+  
+  .texto-5 {
+    font-size: 50px;
+  }
+  
+  .texto-6 {
+    font-size: 60px;
+  }
+  
+  .texto-7 {
+    font-size: 70px;
+  }
+  
+  .texto-8 {
+    font-size: 80px;
+  }
+  
+  .texto-9 {
+    font-size: 90px;
+  }
+  
+  .texto-10 {
+    font-size: 100px;
+  }
+    <hr>
+    //consumo no html
+    <p class="texto-1"> texto 10px</p>
+    <p class="texto-2"> texto 20px</p>
+    <p class="texto-3"> texto 30px</p>
+    <p class="texto-4"> texto 40px</p>
+    <p class="texto-5"> texto 50px</p>
+    <p class="texto-6"> texto 60px</p>
+    <p class="texto-7"> texto 70px</p>
+    <p class="texto-8"> texto 80px</p>
+    <p class="texto-9"> texto 90px</p>
+    <p class="texto-10"> texto 100px</p>
+    
+    //resultado
+    <p style="font-size: 10px;"> texto 10px</p>
+    <p style="font-size: 20px;"> texto 20px</p>
+    <p style="font-size: 30px;"> texto 30px</p>
+    <p style="font-size: 40px;"> texto 40px</p>
+    <p style="font-size: 50px;"> texto 50px</p>
+    <p style="font-size: 60px;"> texto 60px</p>
+    <p style="font-size: 70px;"> texto 70px</p>
+    <p style="font-size: 80px;"> texto 80px</p>
+    <p style="font-size: 90px;"> texto 90px</p> 
+    <p style="font-size: 100px;"> texto 100px</p>
+                                                                                                                            
+                                                                    </pre>
+                                                            </li>
+                                                           
+                                                        </ul>
+                                                         
+                                                    </td>
+                                                </tr>
+                                               
+
+ 
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Proway 2021</div>
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+</body>
+
+</html>

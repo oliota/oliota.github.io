@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cor de fundo</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+
+    <h1>cor de fundo</h1>
+    <a href="../index.html">Voltar</a>
+    <hr>
+
+    <pre>
+        //variaveis de cores
+        $cor-preto: #000000;
+        $cor-branco: #ffffff;
+        $cor-roxo: #cc00cc;
+        $cor-azul: #0000ff;
+        $cor-verde: #00ff00;
+        $cor-amarelo: #ffff00;
+        $cor-laranja: #e67812;
+        $cor-marrom: #971313;
+        $cor-vermelho: #ff0000;
+        
+        $cores: (
+            preto: $cor-preto,
+            branco: $cor-branco,
+            roxo: $cor-roxo,
+            azul: $cor-azul,
+            verde: $cor-verde,
+            amarelo: $cor-amarelo,
+            laranja: $cor-laranja,
+            marrom: $cor-marrom,
+            vermelho: $cor-vermelho,
+        );
+        <hr>
+        
+        //criar cores de fundo com texto em contraste
+
+        @each $chave, $valor in $cores {
+            .contraste-#{$chave} {  
+                @if ($chave == preto 
+                or $chave == roxo 
+                or $chave == azul 
+                or $chave == marrom 
+                or $chave == laranja
+                or $chave == vermelho  
+                ){
+                    color: nth(map-values($cores), 2);
+                }@else{
+                    color: nth(map-values($cores), 1);
+                }
+                
+                background-color: $valor;
+            }
+        }
+        <hr>
+        //resultado no arquivo css 
+        .contraste-preto {
+            color: #ffffff;
+            background-color: #000000;
+          }
+          
+          .contraste-branco {
+            color: #000000;
+            background-color: #ffffff;
+          }
+          
+          .contraste-roxo {
+            color: #ffffff;
+            background-color: #cc00cc;
+          }
+          
+          .contraste-azul {
+            color: #ffffff;
+            background-color: #0000ff;
+          }
+          
+          .contraste-verde {
+            color: #000000;
+            background-color: #00ff00;
+          }
+          
+          .contraste-amarelo {
+            color: #000000;
+            background-color: #ffff00;
+          }
+          
+          .contraste-laranja {
+            color: #ffffff;
+            background-color: #e67812;
+          }
+          
+          .contraste-marrom {
+            color: #ffffff;
+            background-color: #971313;
+          }
+          
+          .contraste-vermelho {
+            color: #ffffff;
+            background-color: #ff0000;
+          }
+        
+
+        <hr>
+        //tags na pagina html
+        < p class="contraste-preto">contraste-preto< /p>
+        < p class="contraste-branco">contraste-branco< /p>
+        < p class="contraste-roxo">contraste-roxo< /p>
+        < p class="contraste-azul">contraste-azul< /p>
+        < p class="contraste-verde">contraste-verde< /p>
+        < p class="contraste-amarelo">contraste-amarelo< /p>
+        < p class="contraste-laranja">contraste-laranja< /p>
+        < p class="contraste-marrom">contraste-marrom< /p>
+        < p class="contraste-vermelho">contraste-vermelho< /p>
+        <hr>
+        //resultado
+        <p class="contraste-preto">contraste-preto</p>
+        <p class="contraste-branco">contraste-branco</p>
+        <p class="contraste-roxo">contraste-roxo</p>
+        <p class="contraste-azul">contraste-azul</p>
+        <p class="contraste-verde">contraste-verde</p>
+        <p class="contraste-amarelo">contraste-amarelo</p>
+        <p class="contraste-laranja">contraste-laranja</p>
+        <p class="contraste-marrom">contraste-marrom</p>
+        <p class="contraste-vermelho">contraste-vermelho</p>
+    </pre>
+</body>
+
+</html> 

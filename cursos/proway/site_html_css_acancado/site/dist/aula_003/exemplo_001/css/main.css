@@ -1,0 +1,189 @@
+.texto-preto {
+  color: #000000;
+}
+
+.texto-branco {
+  color: #ffffff;
+}
+
+.texto-roxo {
+  color: #cc00cc;
+}
+
+.texto-azul {
+  color: #0000ff;
+}
+
+.texto-verde {
+  color: #00ff00;
+}
+
+.texto-amarelo {
+  color: #ffff00;
+}
+
+.texto-laranja {
+  color: #e67812;
+}
+
+.texto-marrom {
+  color: #971313;
+}
+
+.texto-vermelho {
+  color: #ff0000;
+}
+
+.fundo-preto {
+  background-color: #000000;
+}
+
+.fundo-branco {
+  background-color: #ffffff;
+}
+
+.fundo-roxo {
+  background-color: #cc00cc;
+}
+
+.fundo-azul {
+  background-color: #0000ff;
+}
+
+.fundo-verde {
+  background-color: #00ff00;
+}
+
+.fundo-amarelo {
+  background-color: #ffff00;
+}
+
+.fundo-laranja {
+  background-color: #e67812;
+}
+
+.fundo-marrom {
+  background-color: #971313;
+}
+
+.fundo-vermelho {
+  background-color: #ff0000;
+}
+
+.contraste-preto {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.contraste-branco {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.contraste-roxo {
+  color: #ffffff;
+  background-color: #cc00cc;
+}
+
+.contraste-azul {
+  color: #ffffff;
+  background-color: #0000ff;
+}
+
+.contraste-verde {
+  color: #000000;
+  background-color: #00ff00;
+}
+
+.contraste-amarelo {
+  color: #000000;
+  background-color: #ffff00;
+}
+
+.contraste-laranja {
+  color: #ffffff;
+  background-color: #e67812;
+}
+
+.contraste-marrom {
+  color: #ffffff;
+  background-color: #971313;
+}
+
+.contraste-vermelho {
+  color: #ffffff;
+  background-color: #ff0000;
+}
+
+.texto-tamanho-pequeno {
+  font-size: 8px;
+}
+
+.texto-tamanho-medio {
+  font-size: 16px;
+}
+
+.texto-tamanho-grande {
+  font-size: 32px;
+}
+
+.texto-tamanho-enorme {
+  font-size: 64px;
+}
+
+.texto-tamanho-1 {
+  font-size: 10px;
+}
+
+.texto-tamanho-2 {
+  font-size: 20px;
+}
+
+.texto-tamanho-3 {
+  font-size: 30px;
+}
+
+.texto-tamanho-4 {
+  font-size: 40px;
+}
+
+.texto-tamanho-5 {
+  font-size: 50px;
+}
+
+.texto-tamanho-6 {
+  font-size: 60px;
+}
+
+.texto-tamanho-7 {
+  font-size: 70px;
+}
+
+.texto-tamanho-8 {
+  font-size: 80px;
+}
+
+.texto-tamanho-9 {
+  font-size: 90px;
+}
+
+.texto-tamanho-10 {
+  font-size: 100px;
+}
+
+.texto-tamanho-pequeno {
+  font-size: 8px;
+}
+
+.texto-tamanho-medio {
+  font-size: 16px;
+}
+
+.texto-tamanho-grande {
+  font-size: 32px;
+}
+
+.texto-tamanho-enorme {
+  font-size: 64px;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tamanho do texto</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+
+    <h1>tamanho do texto</h1>
+    <a href="../index.html">Voltar</a>
+    <hr>
+
+    <pre>
+        //variaveis de tamanhos
+        
+        $tamanho-pequeno:8px;
+        $tamanho-medio:16px;
+        $tamanho-grande:32px;
+        $tamanho-enorme:64px;
+        
+
+        $tamanhos: (
+            pequeno: $tamanho-pequeno,
+            medio: $tamanho-medio,
+            grande: $tamanho-grande,
+            enorme: $tamanho-enorme,
+        );
+        <hr>
+        
+        //criar tamanho de texto por categoria
+
+        @each $chave, $valor in $tamanhos {
+            .texto-tamanho-#{$chave} {
+                font-size: $valor;
+            }
+        }
+        <hr>
+        //resultado no arquivo css 
+        .texto-tamanho-pequeno {
+            font-size: 8px;
+          }
+          
+          .texto-tamanho-medio {
+            font-size: 16px;
+          }
+          
+          .texto-tamanho-grande {
+            font-size: 32px;
+          }
+          
+          .texto-tamanho-enorme {
+            font-size: 64px;
+          }
+        
+
+        <hr>
+        //tags na pagina html
+        < p class="texto-tamanho-pequeno">texto-tamanho-pequeno< /p>
+        < p class="texto-tamanho-medio">texto-tamanho-medio< /p>
+        < p class="texto-tamanho-grande">texto-tamanho-grande< /p>
+        < p class="texto-tamanho-enorme">texto-tamanho-enorme< /p>
+        <hr>
+        //resultado
+        <p class="texto-tamanho-pequeno">texto-tamanho-pequeno</p>
+        <p class="texto-tamanho-medio">texto-tamanho-medio</p>
+        <p class="texto-tamanho-grande">texto-tamanho-grande</p>
+        <p class="texto-tamanho-enorme">texto-tamanho-enorme</p>
+    </pre>
+</body>
+
+</html> 

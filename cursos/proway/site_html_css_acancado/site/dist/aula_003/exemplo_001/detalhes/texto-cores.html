@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cor de texto</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+
+    <h1>cor de texto</h1>
+    <a href="../index.html">Voltar</a>
+    <hr>
+
+    <pre>
+        //variaveis de cores
+        $cor-preto: #000000;
+        $cor-branco: #ffffff;
+        $cor-roxo: #cc00cc;
+        $cor-azul: #0000ff;
+        $cor-verde: #00ff00;
+        $cor-amarelo: #ffff00;
+        $cor-laranja: #e67812;
+        $cor-marrom: #971313;
+        $cor-vermelho: #ff0000;
+        
+        $cores: (
+            preto: $cor-preto,
+            branco: $cor-branco,
+            roxo: $cor-roxo,
+            azul: $cor-azul,
+            verde: $cor-verde,
+            amarelo: $cor-amarelo,
+            laranja: $cor-laranja,
+            marrom: $cor-marrom,
+            vermelho: $cor-vermelho,
+        );
+        <hr>
+        //criar cores de texto
+
+        @each $chave, $valor in $cores {
+            .texto-#{$chave} {
+                color: $valor;
+            }
+        }
+        <hr>
+        //resultado no arquivo css 
+          .texto-preto {
+            color: #000000;
+          }
+          
+          .texto-branco {
+            color: #ffffff;
+          }
+          
+          .texto-roxo {
+            color: #cc00cc;
+          }
+          
+          .texto-azul {
+            color: #0000ff;
+          }
+          
+          .texto-verde {
+            color: #00ff00;
+          }
+          
+          .texto-amarelo {
+            color: #ffff00;
+          }
+          
+          .texto-laranja {
+            color: #e67812;
+          }
+          
+          .texto-marrom {
+            color: #971313;
+          }
+          
+          .texto-vermelho {
+            color: #ff0000;
+          }
+        
+
+        <hr>
+        //tags na pagina html
+        < p class="texto-preto">texto-preto< /p>
+        < p class="texto-branco">texto-branco< /p>
+        < p class="texto-roxo">texto-roxo< /p>
+        < p class="texto-azul">texto-azul< /p>
+        < p class="texto-verde">texto-verde< /p>
+        < p class="texto-amarelo">texto-amarelo< /p>
+        < p class="texto-laranja">texto-laranja< /p>
+        < p class="texto-marrom">texto-marrom< /p>
+        < p class="texto-vermelho">texto-vermelho< /p>
+        <hr>
+        //resultado
+        <p class="texto-preto">texto-preto</p>
+        <p class="texto-branco">texto-branco</p>
+        <p class="texto-roxo">texto-roxo</p>
+        <p class="texto-azul">texto-azul</p>
+        <p class="texto-verde">texto-verde</p>
+        <p class="texto-amarelo">texto-amarelo</p>
+        <p class="texto-laranja">texto-laranja</p>
+        <p class="texto-marrom">texto-marrom</p>
+        <p class="texto-vermelho">texto-vermelho</p>
+    </pre>
+</body>
+
+</html>

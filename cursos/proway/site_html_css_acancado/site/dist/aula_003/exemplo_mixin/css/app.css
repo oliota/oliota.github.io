@@ -1,0 +1,56 @@
+.destacado {
+  font-weight: bold;
+  color: red;
+}
+
+.caixa-normal {
+  border: 1px solid black;
+  background-color: gray;
+}
+
+.caixa-arredondada {
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: gray;
+}
+
+.texto-1 {
+  font-size: 10px;
+}
+
+.texto-2 {
+  font-size: 20px;
+}
+
+.texto-3 {
+  font-size: 30px;
+}
+
+.texto-4 {
+  font-size: 40px;
+}
+
+.texto-5 {
+  font-size: 50px;
+}
+
+.texto-6 {
+  font-size: 60px;
+}
+
+.texto-7 {
+  font-size: 70px;
+}
+
+.texto-8 {
+  font-size: 80px;
+}
+
+.texto-9 {
+  font-size: 90px;
+}
+
+.texto-10 {
+  font-size: 100px;
+}
+/*# sourceMappingURL=app.css.map */

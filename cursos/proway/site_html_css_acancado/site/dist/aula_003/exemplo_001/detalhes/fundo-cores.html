@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cor de fundo</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+
+    <h1>cor de fundo</h1>
+    <a href="../index.html">Voltar</a>
+    <hr>
+
+    <pre>
+        //variaveis de cores
+        $cor-preto: #000000;
+        $cor-branco: #ffffff;
+        $cor-roxo: #cc00cc;
+        $cor-azul: #0000ff;
+        $cor-verde: #00ff00;
+        $cor-amarelo: #ffff00;
+        $cor-laranja: #e67812;
+        $cor-marrom: #971313;
+        $cor-vermelho: #ff0000;
+        
+        $cores: (
+            preto: $cor-preto,
+            branco: $cor-branco,
+            roxo: $cor-roxo,
+            azul: $cor-azul,
+            verde: $cor-verde,
+            amarelo: $cor-amarelo,
+            laranja: $cor-laranja,
+            marrom: $cor-marrom,
+            vermelho: $cor-vermelho,
+        );
+        <hr>
+        //criar cores de fundo
+
+        @each $chave, $valor in $cores {
+            .fundo-#{$chave} {
+                background-color: $valor;
+            }
+        }
+        <hr>
+        //resultado no arquivo css 
+          .fundo-preto {
+            background-color: #000000;
+          }
+          
+          .fundo-branco {
+            background-color: #ffffff;
+          }
+          
+          .fundo-roxo {
+            background-color: #cc00cc;
+          }
+          
+          .fundo-azul {
+            background-color: #0000ff;
+          }
+          
+          .fundo-verde {
+            background-color: #00ff00;
+          }
+          
+          .fundo-amarelo {
+            background-color: #ffff00;
+          }
+          
+          .fundo-laranja {
+            background-color: #e67812;
+          }
+          
+          .fundo-marrom {
+            background-color: #971313;
+          }
+          
+          .fundo-vermelho {
+            background-color: #ff0000;
+          }
+        
+
+        <hr>
+        //tags na pagina html
+        < p class="fundo-preto">fundo-preto< /p>
+        < p class="fundo-branco">fundo-branco< /p>
+        < p class="fundo-roxo">fundo-roxo< /p>
+        < p class="fundo-azul">fundo-azul< /p>
+        < p class="fundo-verde">fundo-verde< /p>
+        < p class="fundo-amarelo">fundo-amarelo< /p>
+        < p class="fundo-laranja">fundo-laranja< /p>
+        < p class="fundo-marrom">fundo-marrom< /p>
+        < p class="fundo-vermelho">fundo-vermelho< /p>
+        <hr>
+        //resultado
+        <p class="fundo-preto">fundo-preto</p>
+        <p class="fundo-branco">fundo-branco</p>
+        <p class="fundo-roxo">fundo-roxo</p>
+        <p class="fundo-azul">fundo-azul</p>
+        <p class="fundo-verde">fundo-verde</p>
+        <p class="fundo-amarelo">fundo-amarelo</p>
+        <p class="fundo-laranja">fundo-laranja</p>
+        <p class="fundo-marrom">fundo-marrom</p>
+        <p class="fundo-vermelho">fundo-vermelho</p>
+    </pre>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+@import "cores",'tamanhos';
+
+//criar cores de texto
+
+@each $chave, $valor in $cores {
+    .texto-#{$chave} {
+        color: $valor;
+    }
+}
+
+//criar cores de fundo
+
+@each $chave, $valor in $cores {
+    .fundo-#{$chave} {
+        background-color: $valor;
+    }
+}
+
+//criar cores de fundo com texto em contraste
+
+@each $chave, $valor in $cores {
+    .contraste-#{$chave} {  
+        @if ($chave == preto 
+        or $chave == roxo 
+        or $chave == azul 
+        or $chave == marrom 
+        or $chave == laranja
+        or $chave == vermelho  
+        ){
+            color: nth(map-values($cores), 2);
+        }@else{
+            color: nth(map-values($cores), 1);
+        }
+        
+        background-color: $valor;
+    }
+}
+
+//criar tamanho de texto por categoria
+
+@each $chave, $valor in $tamanhos {
+    .texto-tamanho-#{$chave} {
+        font-size: $valor;
+    }
+}
+
+
+//criar tamanho de texto por numeração
+@for $numero from 1 to 10+1 {
+    .texto-tamanho-#{$numero} {
+        font-size: $numero *10px;
+    } 
+}
+
+@each $chave, $valor in $tamanhos {
+    .texto-tamanho-#{$chave} {
+        font-size: $valor;
+    }
+}
+
