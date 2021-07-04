@@ -1,0 +1,48 @@
+.box
+{
+  margin: 10px;
+  background-color: yellow;
+  width: 120px;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border: 2px solid black; 
+}
+.box-blue
+{
+   background-color: #0000AA;
+   color: white;
+}
+.box-red
+{
+   background-color: #AA0000;
+   color: white;
+}
+
+.box-green
+{
+   background-color: green;
+   color: white;
+}
+.box-orange
+{
+   background-color: orange;
+   color: black;
+}
+.box-black
+{
+   background-color: black;
+   color: white;
+}
+
+.box-gray
+{
+   background-color: gray;
+   color: white;
+}
+
+
+ 
+body { background-color: #fafafa; font-family: 'Open Sans'; }
+.container { margin: 150px auto; }
