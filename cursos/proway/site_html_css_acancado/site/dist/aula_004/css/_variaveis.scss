@@ -1,0 +1,32 @@
+$cor-preto: black;
+$cor-branco: white;
+$cor-cinza: lightgray;
+$cor-roxo: purple;
+$cor-azul: blue;
+$cor-verde: green;
+$cor-amarelo: yellow;
+$cor-laranja: orange;
+$cor-vermelho: red;
+
+$cores: (
+    preto: $cor-preto,
+    branco: $cor-branco,
+    cinza: $cor-cinza,
+    roxo: $cor-roxo,
+    azul: $cor-azul,
+    verde: $cor-verde,
+    amarelo: $cor-amarelo,
+    laranja: $cor-laranja,
+    vermelho: $cor-vermelho,
+);
+
+$borda-fina: 1px;
+
+$curva-pequena: 8px;
+
+$input-margem-pequeno: 16px;
+$espacamento-interno-medio: 16px;
+
+$altura: 100px;
+$largura: 100px;
+$altura-minima: 500px;
