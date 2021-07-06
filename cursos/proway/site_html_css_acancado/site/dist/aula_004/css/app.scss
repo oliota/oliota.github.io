@@ -1,0 +1,11 @@
+ @import 'formulario','variaveis';
+
+html{
+    margin-left: $largura;
+    margin-right: $altura;
+}
+
+input{
+    width: 100%;
+    @extend .curvas; 
+}

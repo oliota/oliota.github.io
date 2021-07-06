@@ -1,0 +1,38 @@
+@import 'variaveis';
+
+.borda{
+    border: $borda-fina solid $cor-preto;
+}
+
+
+.curvas{
+    border-radius: $curva-pequena;
+}
+
+.margem-interna{
+    padding: $espacamento-interno-medio;
+}
+
+.container{
+    @extend .borda;
+    @extend .curvas;
+    @extend .margem-interna;
+    background-color: $cor-cinza;
+    min-height: $altura-minima;
+
+}
+
+@for $var from 1 to 10+1 {
+
+    .col-#{$var}{
+        width: $var * 10%; 
+    }
+    
+}
+
+.row{
+    width: 100px;
+    display: flex;
+}
+
+ 
