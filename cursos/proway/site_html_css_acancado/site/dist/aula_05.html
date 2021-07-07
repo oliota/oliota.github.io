@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Html e Css avançado</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
+        crossorigin="anonymous"></script>
+
+    <style>
+        /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+scss+bash */
+        /**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            color: black;
+            /*	text-shadow: 0 1px white;*/
+            font-family: 'Inconsolata', Monaco, Consolas, 'Andale Mono', monospace;
+            direction: ltr;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            line-height: 1.4;
+
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none;
+        }
+
+        pre[class*="language-"]::-moz-selection,
+        pre[class*="language-"] ::-moz-selection,
+        code[class*="language-"]::-moz-selection,
+        code[class*="language-"] ::-moz-selection {
+            text-shadow: none;
+            background: #b3d4fc;
+        }
+
+        pre[class*="language-"]::selection,
+        pre[class*="language-"] ::selection,
+        code[class*="language-"]::selection,
+        code[class*="language-"] ::selection {
+            text-shadow: none;
+            background: #b3d4fc;
+        }
+
+        @media print {
+
+            code[class*="language-"],
+            pre[class*="language-"] {
+                text-shadow: none;
+            }
+        }
+
+        /* Code blocks */
+        pre[class*="language-"] {
+            padding: 1em;
+            margin: .5em 0;
+            overflow: auto;
+        }
+
+        :not(pre)>code[class*="language-"],
+        pre[class*="language-"] {
+            background: #f5f2f0;
+        }
+
+        /* Inline code */
+        :not(pre)>code[class*="language-"] {
+            padding: .1em;
+            border-radius: .3em;
+        }
+
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+            color: slategray;
+        }
+
+        .token.punctuation {
+            color: #999;
+        }
+
+        .namespace {
+            opacity: .7;
+        }
+
+        .token.property,
+        .token.tag,
+        .token.boolean,
+        .token.number,
+        .token.constant,
+        .token.symbol,
+        .token.deleted {
+            color: #905;
+        }
+
+        .token.selector,
+        .token.attr-name,
+        .token.string,
+        .token.char,
+        .token.builtin,
+        .token.inserted {
+            color: #690;
+        }
+
+        .token.operator,
+        .token.entity,
+        .token.url,
+        .language-css .token.string,
+        .style .token.string {
+            color: #a67f59;
+            background: hsla(0, 0%, 100%, .5);
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+            color: #07a;
+        }
+
+        .token.function {
+            color: #DD4A68;
+        }
+
+        .token.regex,
+        .token.important,
+        .token.variable {
+            color: #e90;
+        }
+
+        .token.important {
+            font-weight: bold;
+        }
+
+        .token.entity {
+            cursor: help;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Proway</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
+                class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+
+        <!-- Navbar-->
+
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Menu</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Inicio
+                        </a>
+
+
+                        <a class="nav-link" href="http://atena.proway.com.br/atena/diario-instrutor/login/"
+                            target="_blank">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Login do professor
+                        </a>
+
+
+
+                        <div class="sb-sidenav-menu-heading">Ambiente</div>
+
+                        <a class="nav-link" href="https://code.visualstudio.com/Download" target="_blank">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Visual Studio Code
+                        </a>
+
+
+
+
+
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Html e Css avançado</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Aula 05 - Html e Css avançado</li>
+                    </ol>
+                    <div class="row">
+                    </div>
+
+
+
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    Assuntos
+                                </div>
+
+
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Item</th>
+                                                    <th>Assunto</th>
+                                                    <th>Descrição</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>PWA - Configuração inicial</td>
+                                                    <td>
+                                                        <ol>
+                                                            <li>Criar pasta e abrir com VS code</li>
+                                                            <li>Ativar o salvamento automatico dos arquivos do VS-Code
+                                                                no menu superior > File > AutoSave</li>
+                                                            <li>Verificar extensões básica
+                                                                <ul>
+                                                                    <li>Live server - Para subir o site no local host
+                                                                        121.0.1:5500, permitindo acessar via ip na mesma
+                                                                        rede ao verificar o ip 192.168.x.x:5500</li>
+                                                                    <li>Live sass compiler - Para compilar ou monitorar
+                                                                        as mudanças nos _.scss ou .sccs com o objetivo
+                                                                        de gerar .css que serão consumidos nos .html
+                                                                    </li>
+                                                                    <li>SCSS Formatter - Formata a sixtaxe scss</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                Criar página inicial index.html
+                                                                <ul>
+                                                                    <li>Utilizar auto complete "!" que escreve o básico
+                                                                        da formatação html</li>
+                                                                    <li>Incluir no header das páginas o css e o
+                                                                        javascript do MaterializeCss
+                                                                        <ul>
+                                                                            <li><a href="https://materializecss.com/getting-started.html"
+                                                                                    target="_blank">Ver página</a></li>
+                                                                            <li><span class="token tag"><span
+                                                                                        class="token tag"><span
+                                                                                            class="token punctuation">&lt;</span>link</span>
+                                                                                    <span
+                                                                                        class="token attr-name">rel</span><span
+                                                                                        class="token attr-value"><span
+                                                                                            class="token punctuation">=</span><span
+                                                                                            class="token punctuation">"</span>stylesheet<span
+                                                                                            class="token punctuation">"</span></span>
+                                                                                    <span
+                                                                                        class="token attr-name">href</span><span
+                                                                                        class="token attr-value"><span
+                                                                                            class="token punctuation">=</span><span
+                                                                                            class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css<span
+                                                                                            class="token punctuation">"</span></span><span
+                                                                                        class="token punctuation">&gt;</span></span>
+                                                                            </li>
+                                                                            <li><span
+                                                                                    class="token script language-javascript"><span
+                                                                                        class="token tag"><span
+                                                                                            class="token tag"><span
+                                                                                                class="token punctuation">&lt;</span>script</span>
+                                                                                        <span
+                                                                                            class="token attr-name">src</span><span
+                                                                                            class="token attr-value"><span
+                                                                                                class="token punctuation">=</span><span
+                                                                                                class="token punctuation">"</span>https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js<span
+                                                                                                class="token punctuation">"</span></span><span
+                                                                                            class="token punctuation">&gt;</span></span><span
+                                                                                        class="token tag"><span
+                                                                                            class="token tag"><span
+                                                                                                class="token punctuation">&lt;/</span>script</span><span
+                                                                                            class="token punctuation">&gt;</span></span></span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                    <li>Para utilizar os icones do material design
+                                                                        <br>
+                                                                        <span class="token tag"><span
+                                                                                class="token tag"><span
+                                                                                    class="token punctuation">&lt;</span>link</span>
+                                                                            <span
+                                                                                class="token attr-name">rel</span><span
+                                                                                class="token attr-value"><span
+                                                                                    class="token punctuation">=</span><span
+                                                                                    class="token punctuation">"</span>stylesheet<span
+                                                                                    class="token punctuation">"</span></span>
+                                                                            <span
+                                                                                class="token attr-name">href</span><span
+                                                                                class="token attr-value"><span
+                                                                                    class="token punctuation">=</span><span
+                                                                                    class="token punctuation">"</span>https://fonts.googleapis.com/icon?family=Material+Icons<span
+                                                                                    class="token punctuation">"</span></span><span
+                                                                                class="token punctuation">&gt;</span></span>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Criar estilos - SCSS </td>
+                                                    <td>
+                                                        <ol>
+                                                            <li>No index.html criar um tag link que aponte para a pasta
+                                                                css/ e o arquivo main.css</li>
+                                                            <li>No arquivo criado mudar extensão para .scss </li>
+                                                            <li>Criar variaveis
+                                                                <ul>
+                                                                    <li>tamanhos</li>
+                                                                    <li>cores</li>
+                                                                    <li>listas de tamanhos e cores com chave/valor</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>Iniciar o monitoramento do Live Sass com CTRL + SHIFT +
+                                                                P e executar o comando Live Sass Watch Sass</li>
+                                                            <li>Como resultado o arquivo main.css será criado na pasta e
+                                                                será atualizado a cada SAVE nos arquivos .scss</li>
+                                                            <li>A hierarquia de arquivos será
+                                                                <ul>
+                                                                    <li>main.css
+                                                                        <br>
+                                                                        @import 'componentes';
+                                                                        <ul>
+                                                                            <li>componentes.css <br>
+                                                                                @import 'variaveis';
+                                                                                <ul>
+                                                                                    <li>variaveis.css
+                                                                                        <br>organiza todas as variaveis
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Variaveis.scss</td>
+                                                    <td>
+                                                        <ol>
+                                                            <li>cores
+                                                                <hr>
+                                                                <pre>
+$cor-preto: black;
+$cor-cinza: gray;
+$cor-cinzinha: lightgray;
+$cor-branco: white;
+$cor-roxo: purple;
+$cor-azul: blue;
+$cor-verde: green;
+$cor-amarelo: yellow;
+$cor-laranja: orange;
+$cor-vermelho: red;
+$cor-marrom: brown;
+
+$cor-principal:$cor-azul;
+$cor-secundaria:$cor-laranja;
+$cor-titulo:$cor-branco;
+  
+$cores: (
+    preto: $cor-preto,
+    cinza: $cor-cinza,
+    cinzinha: $cor-cinzinha,
+    branco: $cor-branco,
+    roxo: $cor-roxo,
+    azul: $cor-azul,
+    verde: $cor-verde,
+    amarelo: $cor-amarelo,
+    laranja: $cor-laranja,
+    vermelho: $cor-vermelho,
+    marrom: $cor-marrom,
+);
+
+                                                                </pre>
+                                                            </li>
+                                                            <li>tamanhos
+                                                                <hr>
+                                                                <pre>
+$tamanho-zero: 0px;
+$tamanho-pp: 1px;
+$tamanho-p: 8px;
+$tamanho-m: 16px;
+$tamanho-g: 14px;
+$tamanho-gg: 32px; 
+$tamanho-eg: 64px; 
+
+//agrupar cores em uma lista
+$tamanhos: (
+    zero: $tamanho-zero,
+    pp: $tamanho-pp,
+    p: $tamanho-p,
+    m: $tamanho-m,
+    g: $tamanho-g,
+    gg: $tamanho-gg,
+    eg: $tamanho-eg,
+);
+
+$fonte-peso:bold;
+$font-maiusculo:uppercase;
+$font-minusculo:lowercase;
+                                                                </pre>
+                                                            </li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Componentes.scss</td>
+                                                    <td>
+                                                        <ol>
+                                                            <li>Sombras, cores e temas
+                                                                <hr>
+                                                                <pre>
+@function contraste($cor-background){
+
+    @if($cor-background == $cor-preto or $cor-background == $cor-roxo or $cor-background == $cor-azul or $cor-background == $cor-vermelho or $cor-background == $cor-marrom ){ 
+        @return $cor-branco;
+    }@else{
+        @return $cor-preto;
+    }
+
+}
+
+@each $chave,$valor in $cores {
+    .sombra-#{$chave}{ 
+        box-shadow: $tamanho-zero $tamanho-p $tamanho-m$valor;
+    }
+    .tema-#{$chave}{ 
+        
+        background-color: $valor;
+        color: contraste($valor);
+        
+    } 
+    .texto-#{$chave}{  
+        color: $valor; 
+        
+    } 
+}
+ 
+                                                                </pre>
+                                                            </li>
+                                                            <li>Cartões
+                                                                <hr>
+                                                                <pre>
+
+.card{
+    border-radius: $tamanho-p;
+    padding: $tamanho-m; 
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    grid-template-areas: "logo detalhe status";
+    position: relative;
+}
+
+
+.item{
+    @extend .card;
+    margin-top: $tamanho-m;
+    img {
+        grid-area: logo;
+        max-width: $tamanho-gg;
+    }   
+    .detalhe {
+        grid-area: detalhe;
+        margin-top: $tamanho-p;
+    }
+    .titulo {
+        font-weight: $fonte-peso;
+    }
+    .descricao {
+        font-size: $tamanho-m;
+    }
+  
+    .icone {
+        grid-area: status;
+        position: absolute;
+        bottom: $tamanho-zero;
+        right: $tamanho-zero;
+        i {
+            font-size: $tamanho-m;
+        }
+       
+    }
+}
+                                                                </pre>
+                                                            </li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Main.scss</td>
+                                                    <td>
+                                                        <ol>
+                                                            <li>Body e Menu
+                                                                <hr>
+                                                                <pre>
+body{
+    background-color: $cor-cinzinha;
+}
+
+nav {
+    background: $cor-principal;
+    border-bottom: $tamanho-p solid $cor-secundaria;
+    a {
+        text-transform: $font-maiusculo;
+        color: $cor-titulo;
+        span {
+            font-weight: $fonte-peso;
+        }
+    }
+    .sidenav-trigger {
+        margin: 0;
+    }
+} 
+ 
+                                                                </pre>
+                                                            </li>
+                                                            <li>Cartões
+                                                                <hr>
+                                                                <pre>
+
+.card{
+    border-radius: $tamanho-p;
+    padding: $tamanho-m; 
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    grid-template-areas: "logo detalhe status";
+    position: relative;
+}
+
+
+.item{
+    @extend .card;
+    margin-top: $tamanho-m;
+    img {
+        grid-area: logo;
+        max-width: $tamanho-gg;
+    }   
+    .detalhe {
+        grid-area: detalhe;
+        margin-top: $tamanho-p;
+    }
+    .titulo {
+        font-weight: $fonte-peso;
+    }
+    .descricao {
+        font-size: $tamanho-m;
+    }
+  
+    .icone {
+        grid-area: status;
+        position: absolute;
+        bottom: $tamanho-zero;
+        right: $tamanho-zero;
+        i {
+            font-size: $tamanho-m;
+        }
+       
+    }
+}
+                                                                </pre>
+                                                            </li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Index.hml</td>
+                                                    <td>
+                                                        <ol>
+                                                            <li>Incluir tag script com src para pasta js/ arquivo app.js
+                                                            </li>
+                                                            <li>No arquivo app.js incluir o conteudo
+                                                                <pre>
+const menus = document.getElementById('menu');
+M.Sidenav.init(menus, { edge: 'right' });
+configurarIcones();
+
+function configurarIcones() {
+    var icones = document.getElementsByTagName("i");
+    for (var i = 0; i < icones.length; i++) {
+        let classe = icones[i].getAttribute('class');
+        if (classe == null) {
+            icones[i].setAttribute('class', "material-icons ");
+        } else {
+            icones[i].setAttribute('class', classe + " material-icons");
+        }
+    }  
+} </pre>
+                                                            </li>
+                                                            <li>Body
+                                                                <ul>
+                                                                    <li>Criar elemento nav com id topo</li>
+                                                                    <li>Criar ul com id menu e classe sidenav</li>
+                                                                    <li>Criar div com class container
+                                                                        <ul>
+                                                                            <li>Para cada card criar um div com classe
+                                                                                <b>item tema-branco</b>
+                                                                                <ul>Elementos do card
+                                                                                    <li>Imagem
+                                                                                        <ul><li>src para alguma imagem do projeto</li></ul>
+                                                                                    </li>
+                                                                                    <li>Detalhe = div com class detalhe
+                                                                                        <ul> 
+                                                                                            <li>div class titulo</li>
+                                                                                            <li>div class descricao</li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                    <li>Icone
+                                                                                        <ul>
+                                                                                            <li>div class icone</li>
+                                                                                            <li>tag i com nome de um icone no material icons</li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            
+                                                        </ol>
+                                                    </td>
+                                                </tr>
+
+
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>PWA</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li><a href="aula_005/index.html" target="_blank">Ver
+                                                                    exemplo</a></li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+
+
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Proway 2021</div>
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/chart-area-demo.js"></script>
+    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    <script src="assets/demo/datatables-demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+@import "variaveis";
+ 
+
+@function contraste($cor-background){
+
+    @if($cor-background == $cor-preto or $cor-background == $cor-roxo or $cor-background == $cor-azul or $cor-background == $cor-vermelho or $cor-background == $cor-marrom ){ 
+        @return $cor-branco;
+    }@else{
+        @return $cor-preto;
+    }
+
+}
+
+@each $chave,$valor in $cores {
+    .sombra-#{$chave}{ 
+        box-shadow: $tamanho-zero $tamanho-p $tamanho-m$valor;
+    }
+    .tema-#{$chave}{ 
+        
+        background-color: $valor;
+        color: contraste($valor);
+        
+    } 
+    .texto-#{$chave}{  
+        color: $valor; 
+        
+    } 
+}
+ 
+
+.card{
+    border-radius: $tamanho-p;
+    padding: $tamanho-m; 
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    grid-template-areas: "logo detalhe status";
+    position: relative;
+}
+
+
+.item{
+    @extend .card;
+    margin-top: $tamanho-m;
+    img {
+        grid-area: logo;
+        max-width: $tamanho-gg;
+    }   
+    .detalhe {
+        grid-area: detalhe;
+        margin-top: $tamanho-p;
+    }
+    .titulo {
+        font-weight: $fonte-peso;
+    }
+    .descricao {
+        font-size: $tamanho-m;
+    }
+  
+    .icone {
+        grid-area: status;
+        position: absolute;
+        bottom: $tamanho-zero;
+        right: $tamanho-zero;
+        i {
+            font-size: $tamanho-m;
+        }
+       
+    }
+}
+ 
+ 
