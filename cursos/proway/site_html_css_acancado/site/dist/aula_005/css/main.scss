@@ -1,0 +1,20 @@
+@import 'componentes';
+
+body{
+    background-color: $cor-cinzinha;
+}
+
+nav {
+    background: $cor-principal;
+    border-bottom: $tamanho-p solid $cor-secundaria;
+    a {
+        text-transform: $font-maiusculo;
+        color: $cor-titulo;
+        span {
+            font-weight: $fonte-peso;
+        }
+    }
+    .sidenav-trigger {
+        margin: 0;
+    }
+} 

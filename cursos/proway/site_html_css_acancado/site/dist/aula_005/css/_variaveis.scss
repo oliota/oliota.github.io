@@ -1,0 +1,55 @@
+ 
+$cor-preto: black;
+$cor-cinza: gray;
+$cor-cinzinha: lightgray;
+$cor-branco: white;
+$cor-roxo: rgb(102, 11, 121);
+$cor-azul: rgb(12, 12, 136);
+$cor-verde: green;
+$cor-amarelo: yellow;
+$cor-laranja: orange;
+$cor-vermelho: red;
+$cor-marrom: brown;
+
+$cor-principal:$cor-azul;
+$cor-secundaria:$cor-roxo;
+$cor-titulo:$cor-branco;
+  
+$cores: (
+    preto: $cor-preto,
+    cinza: $cor-cinza,
+    cinzinha: $cor-cinzinha,
+    branco: $cor-branco,
+    roxo: $cor-roxo,
+    azul: $cor-azul,
+    verde: $cor-verde,
+    amarelo: $cor-amarelo,
+    laranja: $cor-laranja,
+    vermelho: $cor-vermelho,
+    marrom: $cor-marrom,
+);
+
+
+$tamanho-zero: 0px;
+$tamanho-pp: 1px;
+$tamanho-p: 8px;
+$tamanho-m: 16px;
+$tamanho-g: 14px;
+$tamanho-gg: 32px; 
+$tamanho-eg: 64px; 
+
+//agrupar cores em uma lista
+$tamanhos: (
+    zero: $tamanho-zero,
+    pp: $tamanho-pp,
+    p: $tamanho-p,
+    m: $tamanho-m,
+    g: $tamanho-g,
+    gg: $tamanho-gg,
+    eg: $tamanho-eg,
+);
+
+$fonte-peso:bold;
+$font-maiusculo:uppercase;
+$font-minusculo:lowercase;
+

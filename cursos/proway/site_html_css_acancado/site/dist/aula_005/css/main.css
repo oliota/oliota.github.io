@@ -1,0 +1,226 @@
+.sombra-preto {
+  -webkit-box-shadow: 0px 8px 16px black;
+          box-shadow: 0px 8px 16px black;
+}
+
+.tema-preto {
+  background-color: black;
+  color: white;
+}
+
+.texto-preto {
+  color: black;
+}
+
+.sombra-cinza {
+  -webkit-box-shadow: 0px 8px 16px gray;
+          box-shadow: 0px 8px 16px gray;
+}
+
+.tema-cinza {
+  background-color: gray;
+  color: black;
+}
+
+.texto-cinza {
+  color: gray;
+}
+
+.sombra-cinzinha {
+  -webkit-box-shadow: 0px 8px 16px lightgray;
+          box-shadow: 0px 8px 16px lightgray;
+}
+
+.tema-cinzinha {
+  background-color: lightgray;
+  color: black;
+}
+
+.texto-cinzinha {
+  color: lightgray;
+}
+
+.sombra-branco {
+  -webkit-box-shadow: 0px 8px 16px white;
+          box-shadow: 0px 8px 16px white;
+}
+
+.tema-branco {
+  background-color: white;
+  color: black;
+}
+
+.texto-branco {
+  color: white;
+}
+
+.sombra-roxo {
+  -webkit-box-shadow: 0px 8px 16px #660b79;
+          box-shadow: 0px 8px 16px #660b79;
+}
+
+.tema-roxo {
+  background-color: #660b79;
+  color: white;
+}
+
+.texto-roxo {
+  color: #660b79;
+}
+
+.sombra-azul {
+  -webkit-box-shadow: 0px 8px 16px #0c0c88;
+          box-shadow: 0px 8px 16px #0c0c88;
+}
+
+.tema-azul {
+  background-color: #0c0c88;
+  color: white;
+}
+
+.texto-azul {
+  color: #0c0c88;
+}
+
+.sombra-verde {
+  -webkit-box-shadow: 0px 8px 16px green;
+          box-shadow: 0px 8px 16px green;
+}
+
+.tema-verde {
+  background-color: green;
+  color: black;
+}
+
+.texto-verde {
+  color: green;
+}
+
+.sombra-amarelo {
+  -webkit-box-shadow: 0px 8px 16px yellow;
+          box-shadow: 0px 8px 16px yellow;
+}
+
+.tema-amarelo {
+  background-color: yellow;
+  color: black;
+}
+
+.texto-amarelo {
+  color: yellow;
+}
+
+.sombra-laranja {
+  -webkit-box-shadow: 0px 8px 16px orange;
+          box-shadow: 0px 8px 16px orange;
+}
+
+.tema-laranja {
+  background-color: orange;
+  color: black;
+}
+
+.texto-laranja {
+  color: orange;
+}
+
+.sombra-vermelho {
+  -webkit-box-shadow: 0px 8px 16px red;
+          box-shadow: 0px 8px 16px red;
+}
+
+.tema-vermelho {
+  background-color: red;
+  color: white;
+}
+
+.texto-vermelho {
+  color: red;
+}
+
+.sombra-marrom {
+  -webkit-box-shadow: 0px 8px 16px brown;
+          box-shadow: 0px 8px 16px brown;
+}
+
+.tema-marrom {
+  background-color: brown;
+  color: white;
+}
+
+.texto-marrom {
+  color: brown;
+}
+
+.card, .item {
+  border-radius: 8px;
+  padding: 16px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 70% 10%;
+      grid-template-columns: 20% 70% 10%;
+      grid-template-areas: "logo detalhe status";
+  position: relative;
+}
+
+.item {
+  margin-top: 16px;
+}
+
+.item img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+  max-width: 32px;
+}
+
+.item .detalhe {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: detalhe;
+  margin-top: 8px;
+}
+
+.item .titulo {
+  font-weight: bold;
+}
+
+.item .descricao {
+  font-size: 16px;
+}
+
+.item .icone {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: status;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.item .icone i {
+  font-size: 16px;
+}
+
+body {
+  background-color: lightgray;
+}
+
+nav {
+  background: #0c0c88;
+  border-bottom: 8px solid #660b79;
+}
+
+nav a {
+  text-transform: uppercase;
+  color: white;
+}
+
+nav a span {
+  font-weight: bold;
+}
+
+nav .sidenav-trigger {
+  margin: 0;
+}
+/*# sourceMappingURL=main.css.map */
