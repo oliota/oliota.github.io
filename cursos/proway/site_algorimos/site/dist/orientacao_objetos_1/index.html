@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientação a objetos</title>
+</head>
+
+<body>
+    <h1>Orientação a objetos</h1>
+    <hr>
+    <h2>
+        Verifique o console com F12
+    </h2>
+    <h3>
+        Dicas
+        <ul>
+            <li>Instalar o <a class="nav-link" href="https://code.visualstudio.com/Download" target="_blank">Visual
+                    studio code</a></li>
+            <li>Instalar a extensão Live server, para que ao salvar o codigo a pagina seja atualizada</li>
+            <li>Habilitar o autosave nmo visual studio code, para que cada mudança ja seja salva e assim complementa o
+                comportamento do live server</li>
+        </ul>
+    </h3>
+
+    <script>
+
+        let nome = "Rubem";
+        let sobrenome = "Oliota"
+        let idade = 32;
+
+        console.log("Meu nome completo é");
+        console.log(nome + " " + sobrenome);
+
+        class Aluno {
+            constructor(nome, sobrenome, idade) {
+                this.nome = nome;
+                this.sobrenome = sobrenome;
+                this.idade = idade;
+
+            }
+            ApresentacaoFormal() {
+                console.log("Oi meu nome completo é " + this.nome + " " + this.sobrenome + " e tenho " + this.idade + " anos");
+            }
+        }
+
+
+        class Carro {
+            constructor(modelo,cor,ano){
+                this.modelo=modelo;
+                this.cor=cor;
+                this.ano=ano;
+
+            }
+            CriarLinhaHtml(){
+               let parafrago= document.createElement('p');
+               parafrago.setAttribute('style','color:'+this.cor);
+               parafrago.textContent=this.modelo+" "+this.ano;
+               document.body.append(parafrago);
+            }
+
+        }
+
+
+        let aluno1 = new Aluno("Fulano", "Blumenau", 55);
+        let aluno2 = new Aluno("José", "da Silva", 30);
+        let aluno3 = new Aluno();
+        aluno3.nome="teste";
+
+        aluno1.ApresentacaoFormal();
+        aluno2.ApresentacaoFormal();
+        aluno3.ApresentacaoFormal();
+
+        let carrinho1= new Carro("Fusca",'red',1970);
+        let carrinho2= new Carro("Bmw",'blue',2021);
+        carrinho1.CriarLinhaHtml();
+        carrinho2.CriarLinhaHtml();
+
+        let carrinho3= new Carro();
+        carrinho3.modelo="Palio";
+        carrinho3.cor="gray";
+        carrinho3.ano=1999;
+
+        carrinho3.CriarLinhaHtml();
+
+    </script>
+
+</body>
+
+</html>
