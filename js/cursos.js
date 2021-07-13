@@ -1,13 +1,13 @@
 class Curso {
 
-    constructor(nome, inicio, fim, aulas, dias, horas, link) {
+    constructor(nome,link, inicio, fim, aulas, dias, horas) {
         this.nome = nome;
+        this.link = link;
         this.inicio = inicio;
         this.fim = fim;
         this.aulas = aulas;
         this.dias = dias;
         this.horas = horas;
-        this.link = link;
     }
 }
 
@@ -30,6 +30,7 @@ cursos.push(new Curso(
 
 cursos.push(new Curso(
     'C# Fundamentos',
+    '',
     '24/01/2021',
     '28/02/2021',
     '6',
@@ -39,6 +40,7 @@ cursos.push(new Curso(
 );
 cursos.push(new Curso(
     'Java Fundamentos',
+    '',
     '24/02/2021',
     '17/03/2021',
     '10',
@@ -49,6 +51,7 @@ cursos.push(new Curso(
 
 cursos.push(new Curso(
     'Linguagem de programação Java',
+    '',
     '19/03/2021',
     '26/04/2021',
     '17',
@@ -59,6 +62,7 @@ cursos.push(new Curso(
 
 cursos.push(new Curso(
     'TypeScript',
+    '',
     '17/04/2021',
     '08/05/2021',
     '4',
@@ -69,69 +73,80 @@ cursos.push(new Curso(
 
 cursos.push(new Curso(
     'Fundamentos de Html 5',
+    'cursos/proway/site_html5_css/index.html',
     '27/04/2021',
     '11/05/2021',
     '5',
     'Terça e Quinta',
-    '20',
-    'cursos/proway/site_html5_css/index.html'
+    '20'
 )
 );
 
 cursos.push(new Curso(
     'Fundamentosem Css',
+    'cursos/proway/site_html5_css/index.html',
     '13/05/2021',
     '27/05/2021',
     '5',
     'Terça e Quinta',
-    '20',
-    'cursos/proway/site_html5_css/index.html'
+    '20'
 )
 );
 
 
 cursos.push(new Curso(
     'Javascript, Jquery e Ajax',
+    'cursos/proway/site_javascript/index.html',
     '15/05/2021',
     '05/06/2021',
     '4',
     'Sábado',
-    '20',
-    'cursos/proway/site_javascript/index.html'
+    '20'
 )
 );
 
 cursos.push(new Curso(
     'Lógica de programação e algoritmos 1',
+    'cursos/proway/site_algorimos/index.html',
     '16/05/2021',
     '06/06/2021',
     '4',
     'Domingo',
-    '20',
-    'cursos/proway/site_algorimos/index.html'
+    '20'
 )
 );
 
 cursos.push(new Curso(
     'Lógica de programação e algoritmos 2',
+    'cursos/proway/site_algorimos/index.html',
     '13/06/2021',
     '18/07/2021',
     '6',
     'Domingo',
-    '28',
-    'cursos/proway/site_algorimos/index.html'
+    '28'
 )
 );
 
 
 cursos.push(new Curso(
     'HTML/CSS Avançado',
+    'cursos/proway/site_html_css_acancado/index.html',
     '24/06/2021',
     '08/07/2021',
     '5',
     'Terça e Quinta',
-    '20',
-    'cursos/proway/site_html_css_acancado/index.html'
+    '20'
+)
+);
+
+cursos.push(new Curso(
+    'Javascript, Jquery e Ajax (SUPER DEV)',
+    'cursos/proway/site_javascript_SUPERDEV/index.html',
+    '13/07/2021',
+    '27/07/2021',
+    '5',
+    'Terça e Quinta',
+    '20'
 )
 );
 
@@ -150,12 +165,14 @@ cursos.forEach(element => {
             coluna.textContent = element[campo];
 
         } else {
-            if (element[campo] != undefined) {
+            if (element[campo] != undefined && element[campo]!='') {
                 let link = document.createElement('a');
                 link.setAttribute('href', element[campo]);
                 link.setAttribute('target', '_blank');
                 link.textContent = 'Visitar página do curso';
                 coluna.append(link);
+            }else{
+                item.append(coluna); 
             }
         }
         item.append(coluna);
@@ -168,6 +185,8 @@ cursos.forEach(element => {
  
 
 $('table').DataTable({
+    "order": [[ 0, "desc" ]],
+    "pageLength": 25,
     language: {
         "sEmptyTable": "Nenhum registro encontrado",
         "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
