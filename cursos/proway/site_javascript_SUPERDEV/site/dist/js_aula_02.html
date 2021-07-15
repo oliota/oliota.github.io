@@ -92,31 +92,89 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                               
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Prompt</td>
-                                                    <td>Capturando informações do usuario</td> 
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
                                                     <td>Funções</td>
                                                     <td>Modularização, parametros e retornos</td> 
                                                 </tr>
                                                 
                                                 
                                                 <tr>
-                                                    <td>3</td>
+                                                    <td>2</td>
                                                     <td>Switch</td>
-                                                    <td>Estrutura de controle - Escolha</td>
+                                                    <td>Estrutura de controle - Escolha
+                                                        <pre>
+                                                            
+                                                        </pre>
+                                                    </td>
                                                 </tr> 
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Escrever em tela</td>
+                                                    <td>Acessar o html com js
+                                                        <ul>
+                                                            <li>document.write('texto de exemplo');</li>
+                                                            <li>
+                                                                <pre>
+let variavel= documento.creatElement('nome de uma tag pode ser a tag p');
+variavel.textContent="texto que ficará no exemplo < p > texto < /p>" 
+document.body.append(variavel);
+                                                                </pre>
+                                                            </li>
+                                                    
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+
                                                 <tr>
                                                     <td>4</td>
                                                     <td>Formulários</td>
-                                                    <td>Capturar varias informações ao mesmo tempo</td>
+                                                    <td>Capturar varias informações ao mesmo tempo
+                                                        <ul>
+                                                            <li>Criar inputs com ids</li>
+                                                            <li>Usar document.getElementById().value para acessar o atributo value do elemento no html</li>
+                                                            <li>O valor obtido pode ser armazenado em uma variavel</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Calculadora</td>
+                                                    <td>Usar função eval
+                                                        <pre>
+let calculo = eval('1+1');
+console.log('resultado = '+calculo);
+                                                        </pre>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Tratamento de erros</td>
+                                                    <td>Usar try catch
+                                                        <pre>
+let valido = true;
+try {
+    eval(calculo);
+} catch (e) {
+    if (e instanceof SyntaxError) {
+        valido = false;
+        console.warn(e.message);
+        alert("Expressão inválida, verifique no console a mensagem completa")
+    }
+} finally {
+    if (valido) {
+        adicionarHistorico(new String(calculo), eval(calculo))
+        calculo = eval(calculo)
+    }
+}
+                                                        </pre>
+                                                    </td>
                                                 </tr>
                                                   
                                                 <tr>
-                                                    <td>5</td>
+                                                    <td>7</td>
                                                     <td>Exemplo feito em sala</td>
                                                     <td>
                                                         <ul>

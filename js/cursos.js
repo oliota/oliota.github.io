@@ -130,7 +130,7 @@ cursos.push(new Curso(
 
 cursos.push(new Curso(
     'HTML/CSS Avançado',
-    'cursos/proway/site_html_css_acancado/index.html',
+    'cursos/proway/site_html_css_avancado/index.html',
     '24/06/2021',
     '08/07/2021',
     '5',
