@@ -95,8 +95,42 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                              
                                                 <tr>
                                                     <td>1</td>
+                                                    <td>Calculadora</td>
+                                                    <td>Usar função eval
+                                                        <pre>
+let calculo = eval('1+1');
+console.log('resultado = '+calculo);
+                                                        </pre>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Tratamento de erros</td>
+                                                    <td>Usar try catch
+                                                        <pre>
+let valido = true;
+try {
+    eval(calculo);
+} catch (e) {
+    if (e instanceof SyntaxError) {
+        valido = false;
+        console.warn(e.message);
+        alert("Expressão inválida, verifique no console a mensagem completa")
+    }
+} finally {
+    if (valido) {
+        adicionarHistorico(new String(calculo), eval(calculo))
+        calculo = eval(calculo)
+    }
+}
+                                                        </pre>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
                                                     <td>Classes</td>
                                                     <td>
                                                         <ul>
@@ -107,59 +141,8 @@
                                                         </ul>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Jquery</td>
-                                                    <td>
-                                                        <ul>
-                                                            <li>O que é?
-                                                                <ul>
-                                                                    <li>É uma biblioteca feita em javascript</li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>Para que serve?
-                                                                <ul>
-                                                                    <li>Fazer mais com menos</li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>Como se pronuncia?
-                                                                <ul>
-                                                                    <li>Jei - quiu - ri</li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>
-                                                                Como utilizar?
-                                                                <ul>
-                                                                    <li>Primeiro ler a documentação <a href="https://jquery.com/download/" target="_blank"> Aqui </a></li>
-                                                                    <li>Incluir no head das páginas
-                                                                        <ul>
-                                                                            <li>
-                                                                                <pre
-                                                                                    class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</span> <span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
-                
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                     
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
 
-
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Forms</td>
-                                                    <td>Comparativo de codigo sem jquery e com jquery
-                                                        <ul>
-                                                            <ul>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_003/index.html" target="_blank">Ver</a> exemplo</li>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_003.zip" target="_blank">Baixar</a> exemplo</li>
-                                                            </ul>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
+                                                
 
                                                 <tr>
                                                     <td>4</td>
@@ -251,6 +234,63 @@
                                                         </ul>
                                                     </td>
                                                 </tr> 
+
+
+
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Jquery</td>
+                                                    <td>
+                                                        <ul>
+                                                            <li>O que é?
+                                                                <ul>
+                                                                    <li>É uma biblioteca feita em javascript</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>Para que serve?
+                                                                <ul>
+                                                                    <li>Fazer mais com menos</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>Como se pronuncia?
+                                                                <ul>
+                                                                    <li>Jei - quiu - ri</li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                Como utilizar?
+                                                                <ul>
+                                                                    <li>Primeiro ler a documentação <a href="https://jquery.com/download/" target="_blank"> Aqui </a></li>
+                                                                    <li>Incluir no head das páginas
+                                                                        <ul>
+                                                                            <li>
+                                                                                <pre
+                                                                                    class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</span> <span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
+                
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                     
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+
+                                                
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Forms</td>
+                                                    <td>Comparativo de codigo sem jquery e com jquery
+                                                        <ul>
+                                                            <ul>
+                                                                <li><a href="material/exemplo_em_aula_javascript_aula_003/index.html" target="_blank">Ver</a> exemplo</li>
+                                                                <li><a href="material/exemplo_em_aula_javascript_aula_003.zip" target="_blank">Baixar</a> exemplo</li>
+                                                            </ul>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+
                                             </tbody>
                                         </table>
                                     </div>
