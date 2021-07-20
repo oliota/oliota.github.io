@@ -139,39 +139,7 @@ document.body.append(variavel);
                                                     </td>
                                                 </tr>
 
-                                                <tr>
-                                                    <td>5</td>
-                                                    <td>Calculadora</td>
-                                                    <td>Usar função eval
-                                                        <pre>
-let calculo = eval('1+1');
-console.log('resultado = '+calculo);
-                                                        </pre>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>6</td>
-                                                    <td>Tratamento de erros</td>
-                                                    <td>Usar try catch
-                                                        <pre>
-let valido = true;
-try {
-    eval(calculo);
-} catch (e) {
-    if (e instanceof SyntaxError) {
-        valido = false;
-        console.warn(e.message);
-        alert("Expressão inválida, verifique no console a mensagem completa")
-    }
-} finally {
-    if (valido) {
-        adicionarHistorico(new String(calculo), eval(calculo))
-        calculo = eval(calculo)
-    }
-}
-                                                        </pre>
-                                                    </td>
-                                                </tr>
+                                              
                                                   
                                                 <tr>
                                                     <td>7</td>
