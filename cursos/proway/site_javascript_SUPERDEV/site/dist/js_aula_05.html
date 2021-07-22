@@ -96,33 +96,40 @@
                                             </thead>
                                             <tbody>
 
-
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Jquery</td>
+                                                    <td>Ajax</td>
                                                     <td>
                                                         <ul>
                                                             <li>O que é?
                                                                 <ul>
-                                                                    <li>É uma biblioteca feita em javascript</li>
+                                                                    <li>AJAX é o acrônimo de Asynchronous Javascript and
+                                                                        XML,
+                                                                        <br> que em português significa “Javascript e
+                                                                        XML assíncronos”
+                                                                    </li>
                                                                 </ul>
                                                             </li>
                                                             <li>Para que serve?
                                                                 <ul>
-                                                                    <li>Fazer mais com menos</li>
+                                                                    <li>Realizar chamada de um recurso no servidor a
+                                                                        partir de um código Javascript no navegador web,
+                                                                        <br>
+                                                                        de forma que o resultado atualize apenas uma
+                                                                        parte da página sem precisar fazer uma
+                                                                        atualização dela inteira
+                                                                    </li>
                                                                 </ul>
                                                             </li>
                                                             <li>Como se pronuncia?
                                                                 <ul>
-                                                                    <li>Jei - quiu - ri</li>
+                                                                    <li>Ei - jacs </li>
                                                                 </ul>
                                                             </li>
                                                             <li>
                                                                 Como utilizar?
                                                                 <ul>
-                                                                    <li>Primeiro ler a documentação <a
-                                                                            href="https://jquery.com/download/"
-                                                                            target="_blank"> Aqui </a></li>
+                                                                    <li>Com jquery fica mais facil</li>
                                                                     <li>Incluir no head das páginas
                                                                         <ul>
                                                                             <li>
@@ -139,129 +146,123 @@
                                                     </td>
                                                 </tr>
 
+
                                                 <tr>
                                                     <td>2</td>
-                                                    <td>Como acessar elementos</td>
-                                                    <td>
-                                                        Nesse caso estamos acessando a propriedade textContent dos
-                                                        elementos
+                                                    <td>Requisições</td>
+                                                    <td>Página de exemplo
                                                         <ul>
-                                                            <li>Acessando por tag
-                                                                <pre>
-$("nome_da_tag").text();// todas as tag com esse nome serão acessadas
-$("nome_da_tag").text('novo valor');// todas as tag com esse nome terão o atributo textContent atualizados
-                                                                </pre>
-                                                            </li>
-                                                            <li>Acessando por id
-                                                                <pre>
-$("#nome_do_id).text();// a tag com esse id será acessada
-$("#nome_do_id).text('novo valor');// a tag com esse id terá o atributo textContent atualizado
-                                                                </pre>
-                                                            </li>
-                                                            <li>Acessando por class
-                                                                <pre>
-$(".nome_da_classe").text();// todas as tag com esse classe serão acessadas
-$(".nome_da_classe").text('novo valor');// todas as tag com esse classe terão o atributo textContent atualizados
-                                                                </pre>
-                                                            </li>
+                                                            <ul>
+                                                                <li><a href="material/exemplo_em_aula_javascript_aula_004/index.html"
+                                                                        target="_blank">Ver</a> exemplo</li>
+                                                                <li><a href="material/exemplo_em_aula_javascript_aula_004.zip"
+                                                                        target="_blank">Baixar</a> exemplo</li>
+                                                            </ul>
                                                         </ul>
                                                     </td>
                                                 </tr>
-
                                                 <tr>
                                                     <td>3</td>
-                                                    <td>Eventos</td>
-                                                    <td>
-                                                        Para determinar o que deve acontecer quando um evento for
-                                                        executado podemos definir quem o executará com 'tag','#id' ou
-                                                        '.class'
-                                                        Exemplos:
+                                                    <td>Get</td>
+                                                    <td>Sintaxe
+                                                        <br>
+                                                        <pre>
+$.ajax({
+    <font color=blue>url: 'endereco_aqui',</font>
+    <font color=orange>type: 'get',</font>
+    <font color=green>success: function (dados) {
+        console.log(dados)
+    },</font>
+    <font color=red>error: function (erro) {
+        console.error(erro)
+    } </font>
+})
+                                                        </pre>
+                                                        <hr>
+                                                        Exemplo de url :
+                                                        <br>
                                                         <ul>
-                                                            <li>Quando o botão com id enviar for clicado
-                                                                <pre>
-$('#enviar').click(
-
-    function (){
-        //vai acontecer oq eu programar
-    }
-
-);
-                                                                </pre>
+                                                            <li>
+                                                                <a class="get"
+                                                                    name=" https://pw-mobile.firebaseio.com/item.json">
+                                                                    Testar : Firebase </a>
                                                             </li>
-                                                            <li>Quando o mouse passar por cima de qualquer H1
-                                                                <pre>
-$('h1').mouseover(
+                                                            <li>
+                                                                <a class="get" name="https://httpbin.org/ip">
+                                                                    Testar : Meu ip </a>
 
-    function () {
-        //vai acontecer oq eu programar
-        console.log("Não passe por cima de mim");
-    }
-
-);
-                                                                </pre>
-                                                            </li>
-                                                            <li>Quando digitar ENTER em campos de texto com a classe
-                                                                'permite-enter'
-                                                                <pre>
-$('.permite-enter').keyup(
-
-    function (e) {
-        //vai acontecer oq eu programar
-        var code = e.key;
-        if (code === "Enter") {
-            console.log("digitou enter e o valor atual é " + this.value)
-        }
-
-    }
-
-);
-                                                                </pre>
                                                             </li>
 
-                                                            <li>Quando a pagina carregar gostaria de executar algo
-                                                                <pre>
-$('document').ready(
+                                                            <li>
+                                                                <a class="get"
+                                                                    name="https://httpbin.org/get?nome=rubem&aula=javascript%20com%20ajax">
+                                                                    Testar : Eco de parametros </a>
 
-    function () {
-        //vai acontecer oq eu programar
-        console.log("pagina carregou?");
-    }
-
-);
-                                                                </pre>
                                                             </li>
+                                                            <li>
+                                                                <a class="get" name="https://httpbin.org/delay/10">
+                                                                    Testar : Demora 10s para responder </a>
 
-                                                            <li>Quando o usuario tira o mouse da tela, gostaria de fazer
-                                                                algo
-                                                                <pre>
-$('body').mouseleave(
-
-    function () {
-        //vai acontecer oq eu programar
-        console.log("já vai?");
-    }
-
-);
-                                                                </pre>
                                                             </li>
                                                         </ul>
+
+
+
 
                                                     </td>
                                                 </tr>
 
                                                 <tr>
                                                     <td>4</td>
-                                                    <td>Forms</td>
-                                                    <td>Comparativo de codigo sem jquery e com jquery
+                                                    <td>Post</td>
+                                                    <td>
+                                                        Sintaxe
+                                                        <br>
+                                                        <pre>
+<b> 
+// objeto a ser enviado no body
+var objeto = {
+    nome: "Rubem", 
+    email: "email@email.com" 
+};
+</b>
+
+$.ajax({
+    <font color=blue>url: 'endereco_aqui',</font>
+    <font color=orange>type: 'post',</font>
+    <b>headers: {
+        'Accept': "application/json",
+        'Content-type': 'application/json',
+    },
+    data: JSON.stringify(objeto),//converte objeto em string</b>
+    <font color=green>success: function (dados) {
+        console.log(dados)
+    },</font>
+    <font color=red>error: function (erro) {
+        console.error(erro)
+    } </font>
+})
+                                                        </pre>
+                                                        <hr>
+                                                        Exemplo de url : 
+
                                                         <ul>
-                                                            <ul>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_003/index.html"
-                                                                        target="_blank">Ver</a> exemplo</li>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_003.zip"
-                                                                        target="_blank">Baixar</a> exemplo</li>
-                                                            </ul>
+                                                            <li>
+                                                                <a class="post"
+                                                                    name="https://httpbin.org/post">
+                                                                    Testar : Eco do body </a>
+                                                            </li>
+                                                           
                                                         </ul>
+
+
                                                     </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
                                                 </tr>
 
                                             </tbody>
@@ -292,8 +293,6 @@ $('body').mouseleave(
                     </div>
                 </div>
             </footer>
-            <input type="text" class="permite-enter">
-
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -305,6 +304,7 @@ $('body').mouseleave(
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/datatables-demo.js"></script>
+
 
     <script>
 
@@ -359,51 +359,6 @@ $('body').mouseleave(
             }
         )
 
-
-    </script>
-
-
-    <script>
-
-        $('h1').mouseover(
-
-            function () {
-                //vai acontecer oq eu programar
-                console.log("Não passe por cima de mim");
-            }
-
-        );
-        $('.permite-enter').keyup(
-
-            function (e) {
-                //vai acontecer oq eu programar
-                var code = e.key;
-                if (code === "Enter") {
-                    console.log("digitou enter e o valor atual é " + this.value)
-                }
-
-            }
-
-        );
-
-
-        $('document').ready(
-
-            function () {
-                //vai acontecer oq eu programar
-                console.log("pagina carregou?");
-            }
-
-        );
-
-        $('body').mouseleave(
-
-            function () {
-                //vai acontecer oq eu programar
-                console.log("já vai?");
-            }
-
-        );
 
     </script>
 </body>
