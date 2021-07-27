@@ -67,7 +67,7 @@
                 <div class="container-fluid">
                     <h1 class="mt-4">Javascript, Jquery e Ajax</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Aula 04 - javascript</li>
+                        <li class="breadcrumb-item active">Aula 05 - javascript</li>
                     </ol>
                     <div class="row">
 
@@ -147,22 +147,9 @@
                                                 </tr>
 
 
+
                                                 <tr>
                                                     <td>2</td>
-                                                    <td>Requisições</td>
-                                                    <td>Página de exemplo
-                                                        <ul>
-                                                            <ul>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_004/index.html"
-                                                                        target="_blank">Ver</a> exemplo</li>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_004.zip"
-                                                                        target="_blank">Baixar</a> exemplo</li>
-                                                            </ul>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
                                                     <td>Get</td>
                                                     <td>Sintaxe
                                                         <br>
@@ -182,6 +169,9 @@ $.ajax({
                                                         Exemplo de url :
                                                         <br>
                                                         <ul>
+                                                            <a href="https://console.firebase.google.com/project/pw-mobile/database/pw-mobile/data?hl=pt-BR"
+                                                                target="_blank" style="color: white;">acessar
+                                                                firebase</a>
                                                             <li>
                                                                 <a class="get"
                                                                     name=" https://pw-mobile.firebaseio.com/item.json">
@@ -189,19 +179,21 @@ $.ajax({
                                                             </li>
                                                             <li>
                                                                 <a class="get" name="https://httpbin.org/ip">
-                                                                    Testar : Meu ip </a>
+                                                                    Testar : Meu ip = https://httpbin.org/ip </a>
 
                                                             </li>
 
                                                             <li>
                                                                 <a class="get"
                                                                     name="https://httpbin.org/get?nome=rubem&aula=javascript%20com%20ajax">
-                                                                    Testar : Eco de parametros </a>
+                                                                    Testar : Eco de parametros =
+                                                                    https://httpbin.org/get?nome=rubem&aula=javascript%20com%20ajax
+                                                                </a>
 
                                                             </li>
                                                             <li>
                                                                 <a class="get" name="https://httpbin.org/delay/10">
-                                                                    Testar : Demora 10s para responder </a>
+                                                                    Testar : Demora 10s para responder = https://httpbin.org/delay/10 </a>
 
                                                             </li>
                                                         </ul>
@@ -213,7 +205,7 @@ $.ajax({
                                                 </tr>
 
                                                 <tr>
-                                                    <td>4</td>
+                                                    <td>3</td>
                                                     <td>Post</td>
                                                     <td>
                                                         Sintaxe
@@ -244,15 +236,14 @@ $.ajax({
 })
                                                         </pre>
                                                         <hr>
-                                                        Exemplo de url : 
+                                                        Exemplo de url :
 
                                                         <ul>
                                                             <li>
-                                                                <a class="post"
-                                                                    name="https://httpbin.org/post">
+                                                                <a class="post" name="https://httpbin.org/post">
                                                                     Testar : Eco do body </a>
                                                             </li>
-                                                           
+
                                                         </ul>
 
 
@@ -260,9 +251,84 @@ $.ajax({
                                                 </tr>
 
                                                 <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>4</td>
+                                                    <td>Requisições</td>
+                                                    <td>Página de exemplo
+                                                        <ul>
+                                                            <ul>
+                                                                <li>Layout
+                                                                    <img src="material/exemplo_em_aula_javascript_aula_004/template.png"
+                                                                        width="100%">
+                                                                </li>
+                                                                <li>
+                                                                    Scripts para adicionar
+                                                                    <ul>
+                                                                        <li>
+                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> 
+<span class="na">src</span><span class="o">=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</span> <span class="p">&gt;
+&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
+
+                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> 
+<span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"</span> <span class="p"> 
+<span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"</span> <span class="p"> 
+<span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">&gt;
+&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
+
+                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> 
+<span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"</span> <span class="p">  
+<span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">&gt;
+&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
+
+                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> 
+<span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"</span> <span class="p">  
+<span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">&gt;
+&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
+
+
+                                                                        </li>
+
+                                                                    </ul>
+                                                                    Css para adicionar
+                                                                    <ul>
+                                                                        <li>
+
+                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> 
+<span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"</span> <span class="p"> 
+<span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"</span> <span class="p">  
+<span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">  
+<span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> 
+<span class="p">&gt;</span></code></pre>
+
+                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> 
+<span class="na">href</span><span class="o">=</span><span class="s">"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"</span> <span class="p">  
+<span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="p">  
+<span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> 
+<span class="p">&gt;</span></code></pre>
+
+
+
+
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </li>
+                                                                <br>
+                                                                <li>Variaveis globais
+                                                                    <pre>
+var gorest = 'https://gorest.co.in/public-api'
+var token = 'a6f906ca1462ee35051d80e4f987172770c914e1dc10d9e32cd16e73dcb325ce'
+var usuarios = new Array
+var adicionando = true
+                                                                    </pre>
+                                                                </li>
+
+                                                                <li><a href="material/exemplo_em_aula_javascript_aula_004/index.html"
+                                                                        target="_blank">Ver</a> exemplo</li>
+                                                                <li><a href="material/exemplo_em_aula_javascript_aula_004.zip"
+                                                                        target="_blank">Baixar</a> exemplo</li>
+                                                            </ul>
+                                                        </ul>
+                                                    </td>
                                                 </tr>
 
                                             </tbody>
