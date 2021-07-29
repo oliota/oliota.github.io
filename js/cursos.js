@@ -150,6 +150,17 @@ cursos.push(new Curso(
 )
 );
 
+cursos.push(new Curso(
+    'Javascript AVANÇADO (SUPER DEV)',
+    'cursos/proway/site_javascript_AVANCADO_SUPERDEV/index.html',
+    '29/07/2021',
+    '12/08/2021',
+    '5',
+    'Terça e Quinta',
+    '20'
+)
+);
+
 
 
 let contador = 1;

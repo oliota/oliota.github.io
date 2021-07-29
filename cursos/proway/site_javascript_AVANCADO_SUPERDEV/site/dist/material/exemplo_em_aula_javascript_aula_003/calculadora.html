@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Calculadora</title>
+
+
+
+</head>
+
+<body>
+
+    <h1>Calculadora - eval</h1>
+    <h3><a href="index.html">Voltar</a></h3>
+
+    <form action="">
+
+
+        <center>
+            <input type="reset" value="limpar">
+            <input type="button" value="←" onclick="escrever(this)">
+            <br>
+            <input id="calculo" type="text" placeholder="use os botões" disabled width="400px" size="100px">
+            <br>
+            <input type="button" value="1" onclick="escrever(this)">
+            <input type="button" value="2" onclick="escrever(this)">
+            <input type="button" value="3" onclick="escrever(this)">
+            <input type="button" value="+" onclick="escrever(this)">
+
+            <br>
+            <input type="button" value="4" onclick="escrever(this)">
+            <input type="button" value="5" onclick="escrever(this)">
+            <input type="button" value="6" onclick="escrever(this)">
+            <input type="button" value="-" onclick="escrever(this)">
+            <br>
+            <input type="button" value="7" onclick="escrever(this)">
+            <input type="button" value="8" onclick="escrever(this)">
+            <input type="button" value="9" onclick="escrever(this)">
+            <input type="button" value="/" onclick="escrever(this)">
+            <br>
+            <input type="button" value="( " onclick="escrever(this)">
+            <input type="button" value="0" onclick="escrever(this)">
+            <input type="button" value=" )" onclick="escrever(this)">
+            <input type="button" value="*" onclick="escrever(this)">
+            <br>
+            <input type="button" value="=" onclick="escrever(this)">
+            <table border>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Operação</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody id="historico">
+
+                </tbody>
+
+            </table>
+        </center>
+
+
+
+
+
+    </form>
+    <script>
+
+        var contador = 1
+        function escrever(botao) {
+            let calculo = document.getElementById("calculo").value
+            let valor = botao.value
+
+            switch (valor) {
+
+                case "=":
+
+                    let valido = true;
+                    try {
+                        eval(calculo);
+                    } catch (e) {
+                        if (e instanceof SyntaxError) {
+                            valido = false;
+                            console.warn(e.message);
+                            alert("Expressão inválida, verifique no console a mensagem completa")
+                        }
+                    } finally {
+                        if (valido) {
+                            adicionarHistorico(new String(calculo), eval(calculo))
+                            calculo = eval(calculo)
+                        }
+                    }
+
+                    break
+                case "←":
+                    calculo = calculo.slice(0, -1)
+                    break
+                default:
+                    calculo = calculo + valor
+                    break
+
+            }
+            document.getElementById("calculo").value = calculo
+        }
+
+        function adicionarHistorico(expressao,resultado) {
+
+            var tabela=document.getElementById("historico")
+            var linha = document.createElement("tr")
+
+           
+            
+            
+            let item= document.createElement("td")
+            item.textContent=contador++
+            let formula=document.createElement("td")
+            formula.textContent=expressao
+
+            let valor= document.createElement("td")
+            valor.textContent=resultado
+
+            linha.append(item)
+            linha.append(formula)
+            linha.append(valor)
+            tabela.append(linha)
+
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
