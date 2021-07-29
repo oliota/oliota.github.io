@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Formularios</title>
+</head>
+
+<body>
+
+    <h1>Formularios</h1>
+    <h3><a href="index.html">Voltar</a></h3>
+
+    <form action="">
+
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome">
+
+        <br>
+
+
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" id="idade">
+
+        <br>
+        <input type="button" value="Enviar" onclick="enviar()">
+
+
+
+    </form>
+    <script>
+
+        function enviar() {
+
+            let nome = document.getElementById("nome").value
+            let idade = document.getElementById("idade").value
+
+            console.log("Seu nome é " + nome + " e vc tem " + idade + " anos")
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

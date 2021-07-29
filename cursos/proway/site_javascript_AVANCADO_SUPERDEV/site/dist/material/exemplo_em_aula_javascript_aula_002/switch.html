@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Escolha</title>
+</head>
+
+<body>
+
+    <h1>Escolha</h1>
+    <h3><a href="index.html">Voltar</a></h3>
+
+
+    <script>
+
+
+
+        document.write("Sintaxe para numeros:")
+        document.write("<br>")
+        document.write("switch(variavel_numerica_aqui){")
+        document.write("<br>")
+        document.write(tab() + "case 1:")
+        document.write("<br>")
+        document.write(tab(2) + "//o que vai ser executado")
+        document.write("<br>")
+        document.write(tab() + "break")
+        document.write("<br>")
+        document.write(tab() + "case 2:")
+        document.write("<br>")
+        document.write(tab(2) + "//o que vai ser executado")
+        document.write("<br>")
+        document.write(tab() + "break")
+        document.write("<br>")
+        document.write(tab() + "default: // é opcional")
+        document.write("<br>")
+        document.write(tab(2) + "//o que vai ser executado das outras condições não forem atendidas")
+        document.write("<br>")
+        document.write(tab() + "break")
+        document.write("<br>")
+        document.write("}")
+        document.write("<br>")
+        document.write("<hr>")
+
+
+
+        document.write("Sintaxe para strings:")
+        document.write("<br>")
+        document.write("switch(variavel_string_aqui){")
+        document.write("<br>")
+        document.write(tab() + "case \"1\":")
+        document.write("<br>")
+        document.write(tab(2) + "//o que vai ser executado")
+        document.write("<br>")
+        document.write(tab() + "break")
+        document.write("<br>")
+        document.write(tab() + "case \"2\":")
+        document.write("<br>")
+        document.write(tab(2) + "//o que vai ser executado")
+        document.write("<br>")
+        document.write(tab() + "break")
+        document.write("<br>")
+        document.write(tab() + "default: // é opcional")
+        document.write("<br>")
+        document.write(tab(2) + "//o que vai ser executado das outras condições não forem atendidas")
+        document.write("<br>")
+        document.write(tab() + "break")
+        document.write("<br>")
+        document.write("}")
+        document.write("<br>")
+
+
+        document.write("Verifique o console...")
+
+
+        let numero_da_sorte = Number(prompt("Informe um numero da sorte"))
+
+        switch (numero_da_sorte) {
+            case -1:
+                console.log("Acertou, lá vai a mensagem")
+                console.log("Nossa que negativo vc...")
+                break
+
+                case 5:
+                console.log("Acertou, lá vai a mensagem")
+                console.log("Vc ja gastou toda sua sorte do ano acertando esse numero")
+                break
+ 
+                case 8:
+                console.log("Acertou, lá vai a mensagem")
+                console.log("8 é o meu numero da sorte, pq sim...")
+                break
+
+                default:
+                    console.log("Que pena seu numero não é sortudo, quer tentar dnv?")
+                    console.log("Ai vai uma dica")
+
+                    if(numero_da_sorte>8){
+                        console.log("Tente um numero abaixo de 10")
+                    }else if(numero_da_sorte>5){
+                        console.log("Tente um numero acima de 4 ou menor que 10")
+                    }else if(numero_da_sorte>-1){
+                        console.log("Tente um numero negativo ou menor que 10")
+                    }else if(numero_da_sorte<-1){
+                        console.log("Tente um numero negativo mas não tão negativo assim, que tal um mais proximo do zero...")
+                    }
+                    console.log("Atualize a página para tentar dnv")
+                break
+
+        }
+
+
+
+
+
+        function tab(num) {
+            if (num == undefined)
+                num = 1
+            var texto = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            for (i = 1; i <= num; i++) {
+                texto += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            }
+            return texto
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

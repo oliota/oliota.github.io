@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Forms e classes</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Forms e classes</h1>
+        <h3><a href="index.html">Voltar</a></h3>
+
+        Verifique o console...
+        <hr>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-primary" type="button" onclick="salvar_aluno()">Salvar aluno</button>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="row">
+                            <div class="col-9">
+                                <label for="nome">Aluno</label>
+                                <input class="form-control" type="text" name="" id="nome">
+                                <label for="Matricula">Matricula</label>
+                                <input class="form-control" type="text" name="" id="matricula">
+                            </div>
+    
+                            <div class="col-3 ">
+    
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="nome">Nota</label>
+                                        <input class="form-control" type="number" name="" id="nota">
+                                        <br>
+    
+                                        <table class="table table-striped table-bordered">
+                                            <thead>
+                                                <th>Notas</th>
+                                            </thead>
+                                            <tbody id="notas">
+    
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-8">
+                                        <br>
+                                        <button class="btn btn-success" onclick="incluir_nota()">Incluir nota</button>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+
+
+
+                    </div>
+
+
+
+
+
+                </div> 
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+
+                <div class="card-body">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <th>Aluno</th>
+                            <th>Matricula</th>
+                            <th>Média</th>
+                            <th>Situação</th>
+                        </thead>
+                        <tbody id="alunos">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+
+    <script src="js/bootstrap_jquery.js"></script>
+    <script src="js/Aluno.js"></script>
+
+
+
+    <script>
+        var notas = new Array
+        var alunos = new Array
+        function incluir_nota() {
+            let nota=document.getElementById("nota").value
+            if (nota == "")
+                return
+ 
+            notas.push(Number(nota))
+
+            let linha = document.createElement("tr")
+            let coluna=document.createElement("td")
+            coluna.textContent=nota 
+
+            linha.append(coluna)
+ 
+            let tabela_notas=document.getElementById("notas")
+            tabela_notas.append(linha)
+
+            document.getElementById("nota").value=""
+
+
+        }
+
+        function salvar_aluno() {
+            if (notas.length == 0) {
+                alert("Infome no minimo uma nota")
+                return
+            }
+
+            let aluno = new Aluno(
+                document.getElementById("nome").value,
+                document.getElementById("matricula").value,
+                notas
+            )
+
+            let linha = document.createElement("tr")
+
+            
+            let coluna_nome=document.createElement("td")
+            coluna_nome.textContent=aluno.nome 
+            
+            let coluna_matricula=document.createElement("td")
+            coluna_matricula.textContent=aluno.matricula 
+
+            let coluna_media=document.createElement("td")
+            coluna_media.textContent=aluno.calcularMedia().toString()
+            console.log(coluna_media)
+            
+            let coluna_situacao=document.createElement("td")
+            coluna_situacao.textContent=aluno.verSituacao()
+
+            let tabela_alunos=document.getElementById("alunos")
+            linha.append(coluna_nome)
+            linha.append(coluna_matricula)
+            linha.append(coluna_media)
+            linha.append(coluna_situacao)
+            tabela_alunos.append(linha)
+
+
+            document.getElementById("nome").value=""
+            document.getElementById("matricula").value="" 
+            alunos.push(aluno)
+            console.clear()
+            console.log(alunos)
+
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

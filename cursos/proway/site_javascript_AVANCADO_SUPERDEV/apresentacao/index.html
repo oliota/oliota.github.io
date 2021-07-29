@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Apresentação inicial - Javascript avançado</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+ 
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="form-collection">
+
+
+
+    <div class="card elevation-2 limit-width sign-up-card above">
+      <div class="card-header">
+        Bem vindos ao curso de Javascript avançado
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col">
+            <h5>Sobre o curso</h3>
+              <hr>
+              <!-- <div class="form-group ">
+                <label for="professor_nome">Professor</label><br>
+                <input type="text" id="professor_nome" class="form-control" value="Rubem Oliota" readonly />
+              </div>
+              <div class="form-group ">
+                <label for="professor_idade">Aulas</label><br>
+                <input type="number" id="professor_idade" class="form-control" title="Sempre aos sábados" value="5"
+                  readonly />
+              </div> -->
+              <div class="form-group ">
+                <label for="professor_naturalidade">Assuntos</label><br>
+                <ul>
+                  <li>Programação Assíncrona</li>
+                  <li>Consumo de APIs</li>
+                  <li>REST / GraphQL</li>
+                  <li>Programação funcional</li>
+                  <li>JavaScript Modular</li>
+                  <li>Node.js</li>
+                  <li>TDD</li>
+                  <li>Prototype</li>
+                  <li>Flow</li>
+                  <li>Renderização do lado do servidor</li> 
+                </ul>
+              </div>
+          </div>
+          <div class="col">
+
+            <h5>Pré-requisitos</h3>
+              <hr>
+              Lógica de Programação
+              <hr>
+              HTML
+              <hr>
+              CSS
+              <hr>
+              Javascript
+
+          </div>
+          
+
+        </div>
+
+        <br>
+
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn-success">Javascript</button>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="card elevation-3 limit-width log-in-card below turned">
+      <div class="card-header">
+        <div class="row">
+
+          <div class="col-md-10">
+            Aprendizado
+          </div>
+          <div class="col-md-2">
+            <a href="../site/index.html">
+              <button type="button" class="btn btn-success">Continuação</button>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-body">
+
+        <div class="row">
+
+          <div class="col">
+            <h5>Programação Assíncrona</h3>
+              <hr>
+              <ul>
+                <li>Consumo de APIs</li>
+                <li>REST</li>
+                <li>GraphQL</li>
+                <li>Renderização do lado do servidor</li>
+              </ul>
+          </div>
+          <div class="col">
+
+            <h5>Node.js</h3>
+              <hr>
+              <ul>
+                <li>Gerenciadores de pacotes</li>
+                <li>npm</li>
+                <li>yarn</li>
+              </ul>
+
+          </div>
+          <div class="col">
+            <h5>TDD</h3>
+              <hr>
+              <ul>
+                <li>Jest</li>
+                <li>mocha</li>
+                <li>chai</li>
+                <li>jasmine</li>
+              </ul>
+          </div> 
+           
+          <div class="col">
+            <h5>JavaScript Modular</h3>
+              <hr>
+              <ul>
+                <li>Programação funcional</li>
+                <li>Prototype</li> 
+              </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn-success">Apresentação</button>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+  <script src="./script.js"></script>
+
+  <script>
+
+    $("#proximo").on(
+      "click", function () {
+        alert("Obrigado agora é a vez de outra pessoa se apresentar.")
+      }
+
+    )
+  </script>
+
+</body>
+
+</html>
