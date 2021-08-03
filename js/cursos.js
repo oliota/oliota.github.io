@@ -83,7 +83,7 @@ cursos.push(new Curso(
 );
 
 cursos.push(new Curso(
-    'Fundamentosem Css',
+    'Fundamentos em Css',
     'cursos/proway/site_html5_css/index.html',
     '13/05/2021',
     '27/05/2021',
