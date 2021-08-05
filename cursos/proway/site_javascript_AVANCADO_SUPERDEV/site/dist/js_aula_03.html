@@ -13,7 +13,7 @@
         crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"
         crossorigin="anonymous"></script>
-        
+
     <link rel="stylesheet" href="https://getbootstrap.com/docs/5.0/assets/css/docs.css">
 </head>
 
@@ -45,11 +45,11 @@
                             Login do professor
                         </a>
 
- 
+
 
                         <div class="sb-sidenav-menu-heading">Ambiente</div>
 
-                           <a class="nav-link" href="https://code.visualstudio.com/Download" target="_blank">
+                        <a class="nav-link" href="https://code.visualstudio.com/Download" target="_blank">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Visual Studio Code
                         </a>
@@ -104,145 +104,242 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                              
+
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Calculadora</td>
-                                                    <td>Usar função eval
-                                                        <pre>
-let calculo = eval('1+1');
-console.log('resultado = '+calculo);
-                                                        </pre>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Tratamento de erros</td>
-                                                    <td>Usar try catch
-                                                        <pre>
-let valido = true;
-try {
-    eval(calculo);
-} catch (e) {
-    if (e instanceof SyntaxError) {
-        valido = false;
-        console.warn(e.message);
-        alert("Expressão inválida, verifique no console a mensagem completa")
-    }
-} finally {
-    if (valido) {
-        adicionarHistorico(new String(calculo), eval(calculo))
-        calculo = eval(calculo)
-    }
-}
-                                                        </pre>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Classes</td>
+                                                    <td>Antes de implementar um CRUD</td>
                                                     <td>
+                                                        Configurar o projeto
                                                         <ul>
-                                                            <li>Construtor</li>
-                                                            <li>Atributos</li>
-                                                            <li>Métodos</li>
-                                                            <li>Instanciar</li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-
-                                                
-
-                                                <tr>
-                                                    <td>4</td>
-                                                    <td>Json</td>
-                                                    <td>
-                                                        <ul>
-                                                            <li>O que é?
+                                                            <li>No menu superior > Terminal > New terminal ou
+                                                                <code>CTRL + SHIFT + '</code>
+                                                            </li>
+                                                            <li>
+                                                                Abrir um terminal do tipo Command prompt (CMD)
+                                                            </li>
+                                                            <li>Adicionar o CORS no projeto com npm
                                                                 <ul>
-                                                                    <li>É uma notação de objetos em javascript que pode ser usado em tudo, não é limitado ao javascript</li>
+                                                                    <li><code>npm install cors  </code></li>
                                                                 </ul>
                                                             </li>
-                                                            <li>Para que serve?
+
+                                                            <li>
+                                                                criar um arquivo json de configuração do yarn
                                                                 <ul>
-                                                                    <li>Troca de informações/dados entre sistemas</li>
+                                                                    <li><code>yarn init -y</code></li>
                                                                 </ul>
                                                             </li>
-                                                            <li>Como se pronuncia?
+                                                            <li>Fazer o yarn entender o express
                                                                 <ul>
-                                                                    <li>Jei - son</li>
+
+                                                                    <li><code>yarn add express</code></li>
                                                                 </ul>
                                                             </li>
                                                             <li>
-                                                                Sintaxe
+                                                                nosso servidor publicado fica aqui
                                                                 <ul>
-                                                                    <li>{ } = objetos</li>
-                                                                    <li>"chave": "valor literal"   = atributos literais </li>
-                                                                    <li>"chave": valor_numerico    = atributos numericos </li>
-                                                                    <li>"chave": valor_logico    = atributos lógicos </li>
-                                                                    <li>[ ] =  lista de itens</li>
-                                                                    <li>Exemplo de um objeto com atributos
-                                                                        <ul>
-                                                                            <li>
-                                                                                <pre>
-{
-    "nome":"Rubem Oliota",
-    "idade":32,
-    "curso":"Javascript"
-}
-                                                                                </pre>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-
-                                                                    <li>Exemplo de uma lista de objeto com atributos
-                                                                        <ul>
-                                                                            <li>
-                                                                                <pre>
-[
-    {
-        "nome":"Rubem Oliota",
-        "idade":32,
-        "curso":"Javascript"
-    },
-    {
-        "nome":"Aluno 1",
-        "idade":18,
-        "curso":"Javascript"
-    }
-]
-                                                                                </pre>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    <li>Exemplo de uma lista simples de dados
-                                                                        <ul>
-                                                                            <li>
-                                                                                <pre>
-[
-    "Rubem",
-    1.79,
-    "Teste",
-    "Aluno",
-    32
-]
-                                                                                </pre>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    
+                                                                    <li><code>node index.js</code></li>
                                                                 </ul>
                                                             </li>
-                                                            <li>O site <a href="http://jsonviewer.stack.hu/" target="_blank">http://jsonviewer.stack.hu/</a> serve para ler esse dados em um formato amigavel
-                                                            <ol>
-                                                                <li>Cole o seu json na aba "TEXT"</li>
-                                                                <li>Selecione o comando "Format"</li>
-                                                                <li>Acessa a aba Viewer, para visualizar os dados</li>
-                                                            </ol>
+                                                            <li>
+                                                                Para desligar o serviço
+                                                                <ul>
+                                                                    Digite <code>CTRL + C</code> no terminal
+                                                                </ul>
                                                             </li>
                                                         </ul>
                                                     </td>
-                                                </tr> 
+                                                </tr>
+
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Criar CRUD na API</td>
+                                                    <td>
+                                                        <ol>
+                                                            <li>Escrever codigo inicial
+                                                                <ul>
+                                                                    <li>
+
+                                                                        <pre>
+const express = require('express');
+const cors = require('cors');
+
+const server = express();
+
+server.use(cors());
+server.use(express.json()); // faz com que o express entenda JSON
+
+// Route params = /animais/1
+// Request body = { "tipo": "Gato", "nome": "bixano"}
+
+// CRUD - Create, Read, Update, Delete
+
+const animais = [
+    { tipo: 'gato', nome: "Vézû" },
+    { tipo: 'cachorro', nome: "Tótó" },
+    { tipo: 'coelho', nome: 'Perna longa' },
+    { tipo: 'passarinho', nome: "pica-pau" }
+];
+                                                                        </pre>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                Criar funções utilitarias que serão usadas no CRUD
+                                                                <ul>
+                                                                    <li>
+                                                                        <pre>
+server.use((req, res, next) => { // server.use cria o middleware global
+    console.time('Request'); // marca o início da requisição
+    console.log(`Método: ${req.method}; URL: ${req.url}; `); // retorna qual o método e url foi chamada
+
+    next(); // função que chama as próximas ações 
+
+    console.log('Finalizou'); // será chamado após a requisição ser concluída
+
+    console.timeEnd('Request'); // marca o fim da requisição
+});
+
+function validar(req, res, next) {
+    if (!req.body.tipo) {
+        return res.status(400).json({ error: 'o tipo do animal não foi informado' });
+        // middleware local que irá checar se a propriedade tipo foi infomada, 
+        // caso negativo, irá retornar um erro 400 - BAD REQUEST 
+    }
+    if (!req.body.nome) {
+        return res.status(400).json({ error: 'o nome do animal não foi informado' });
+        // middleware local que irá checar se a propriedade nome foi infomada, 
+        // caso negativo, irá retornar um erro 400 - BAD REQUEST 
+    }
+    return next(); // se o nome for informado corretamente, a função next() chama as próximas ações
+}
+
+function naoExiste(req, res, next) {
+    const animal = animais[req.params.index];
+    if (!animal) {
+        return res.status(404).json({ error: 'animal não encontrado' });
+    } // checa se o animal existe no array, caso negativo informa que o index não existe no array
+
+    req.animal = animal;
+
+    return next();
+}
+                                                                        </pre>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                <code>C</code>RUD = Create
+                                                                <ul>
+                                                                    <li>
+                                                                        <pre>
+//================ CRUD
+
+//-----------------CREATE
+server.post('/animais', validar, (req, res) => {
+    // const {  } = req.body; // assim esperamos buscar o name informado dentro do body da requisição  
+    animais.push(req.body);
+    return res.status(201).json({
+        "mensagem": "Item inserido com sucesso" ,
+        "objeto":req.body
+    }); // retorna a informação da variavel animais
+})
+                </pre>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                C<code>R</code>UD = Read
+                                                                <ul>
+                                                                    <li>
+                                                                        Listar todos
+                                                                        <pre>
+//-----------------READ
+
+//Listar todos
+server.get('/animais', (req, res) => {
+    return res.status(200).json(animais);
+}) // rota para listar todos os animais
+</pre>
+                                                                        <hr>
+                                                                        Get item
+                                                                        <pre>
+//Get item
+server.get('/animais/:index', naoExiste, (req, res) => {
+    return res.status(200).json(req.animal);
+})
+</pre>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                CR<code>U</code>D = Update
+                                                                <ul>
+                                                                    <li>
+                                                                        <pre>
+//-----------------UPDATE
+
+server.put('/animais/:index', naoExiste, validar, (req, res) => {
+    const { index } = req.params; // recupera o index com os dados
+    // const { name } = req.body;
+    let antes = animais[index];
+    animais[index] = req.body; // sobrepõe/edita o index obtido na rota de acordo com o novo valor
+    return res.status(200).json({
+        "mensagem": "Item atualizado com sucesso",
+        "antes": antes,
+        "depois": animais[index]
+    });
+}); // retorna novamente os animais atualizados após o update
+</pre>
+
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>
+                                                                CRU<code>D</code> = Delete
+                                                                <ul>
+                                                                    <li>
+                                                                        <pre>
+//-----------------DELETE
+
+server.delete('/animais/:index', naoExiste, (req, res) => {
+    const { index } = req.params; // recupera o index com os dados
+
+    animais.splice(index, 1); // percorre o vetor até o index selecionado e deleta uma posição no array
+
+    return res.status(200).json({
+        "mensagem": "Item deletado com sucesso"
+    });
+}); // retorna os dados após exclusão
+</pre>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>Ultima linha é sobre qual porta o servidor será
+                                                                executado
+                                                                <ul>
+                                                                    <li>
+                                                                        server.listen(4000);
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                            <li>Testar CRUD no POSTMAN
+                                                                <ol>
+                                                                    <li>
+
+                                                                        <a href="material/CRUD_NODE/API - ANIMAIS.postman_collection.json"
+                                                                            target="_blank">Baixar</a> e adicionar a
+                                                                        collection
+                                                                    </li>
+                                                                    <li>No menu superior > IMPORT > Paste raw text</li>
+                                                                    <li>Colar conteudo do json > Selecionar comando IMPORT</li>
+                                                                    <li>A collection será criada no menu lateral com 5 requisições</li>
+                                                                </ol>
+                                                            </li>
+                                                            <li>Fazer uma página web para consumir a API</li>
+                                                        </ol>
+                                                    </td>
+                                                </tr>
 
 
 
