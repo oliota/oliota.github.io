@@ -40,6 +40,7 @@
     },
     "dependencies": {
         "bootstrap": "4.5.3",
+        "cors": "^2.8.5",
         "jquery": "^3.6.0",
         "jsdom": "^16.6.0"
     },
