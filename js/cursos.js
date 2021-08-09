@@ -161,6 +161,17 @@ cursos.push(new Curso(
 )
 );
 
+cursos.push(new Curso(
+    'Javascript, Jquery e Ajax',
+    'cursos/proway/site_javascript_seg_quar_sex/index.html',
+    '09/08/2021',
+    '18/08/2021',
+    '5',
+    'Segunda, Quarta e Sexta',
+    '20'
+)
+);
+
 
 
 let contador = 1;
