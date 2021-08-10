@@ -1,3 +1,58 @@
+const express = require('express');
+const cors = require('cors');
+
+const server = express();
+
+server.use(cors());
+server.use(express.json()); // faz com que o express entenda JSON
+
+
+const pessoas = [
+    { tipo: 'gato', nome: "Vézû" },
+    { tipo: 'cachorro', nome: "Tótó" },
+    { tipo: 'coelho', nome: 'Perna longa' },
+    { tipo: 'passarinho', nome: "pica-pau" }
+];
+
+
+server.use((req, res, next) => { // server.use cria o middleware global
+    console.time('Request'); // marca o início da requisição
+    console.log(`Método: ${req.method}; URL: ${req.url}; `); // retorna qual o método e url foi chamada
+
+    next(); // função que chama as próximas ações 
+
+    console.log('Finalizou'); // será chamado após a requisição ser concluída
+
+    console.timeEnd('Request'); // marca o fim da requisição
+});
+    
+ 
+
+function validar(req, res, next) {
+    if (!req.body.tipo) {
+        return res.status(400).json({ error: 'o tipo do pessoa não foi informado' });
+        // middleware local que irá checar se a propriedade tipo foi infomada, 
+        // caso negativo, irá retornar um erro 400 - BAD REQUEST 
+    }
+    if (!req.body.nome) {
+        return res.status(400).json({ error: 'o nome do pessoa não foi informado' });
+        // middleware local que irá checar se a propriedade nome foi infomada, 
+        // caso negativo, irá retornar um erro 400 - BAD REQUEST 
+    }
+    return next(); // se o nome for informado corretamente, a função next() chama as próximas ações
+}
+
+function naoExiste(req, res, next) {
+    const pessoa = pessoas[req.params.index];
+    if (!pessoa) {
+        return res.status(404).json({ error: 'pessoa não encontrado' });
+    } // checa se o pessoa existe no array, caso negativo informa que o index não existe no array
+
+    req.pessoa = pessoa;
+
+    return next();
+}
+
 
 
 //================ CRUD
@@ -50,3 +105,4 @@ server.delete('/pessoas/:index', naoExiste, (req, res) => {
         "mensagem": "Item deletado com sucesso"
     });
 }); // retorna os dados após exclusão
+ 

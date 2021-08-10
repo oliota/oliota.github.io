@@ -49,7 +49,7 @@
 
                         <div class="sb-sidenav-menu-heading">Ambiente</div>
 
-                           <a class="nav-link" href="https://code.visualstudio.com/Download" target="_blank">
+                        <a class="nav-link" href="https://code.visualstudio.com/Download" target="_blank">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Visual Studio Code
                         </a>
@@ -62,6 +62,20 @@
                         <a class="nav-link" href="https://www.postman.com/downloads/" target="_blank">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             POSTMAN
+                        </a>
+
+
+                        <a class="nav-link" href="https://sqlitestudio.pl/" target="_blank">
+                            <div class="sb-nav-link-icon"><svg class="svg-inline--fa fa-chart-area fa-w-16"
+                                    aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chart-area"
+                                    role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                    data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                        d="M500 384c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v308h436zM372.7 159.5L288 216l-85.3-113.7c-5.1-6.8-15.5-6.3-19.9 1L96 248v104h384l-89.9-187.8c-3.2-6.5-11.4-8.7-17.4-4.7z">
+                                    </path>
+                                </svg><!-- <i class="fas fa-chart-area"></i> Font Awesome fontawesome.com -->
+                            </div>
+                            Sqlite Studio
                         </a>
 
 
@@ -104,173 +118,246 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-
-
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Jquery</td>
-                                                    <td>
-                                                        <ul>
-                                                            <li>O que é?
+                                                    <td>Criar back com persistencia</td>
+                                                    <td>Os dados serão salvos no sqlitestudio
+                                                        <ol>
+                                                            <li>Baixar e instalar o sqlitestudio</li>
+                                                            <li>Criar database localizado dentro do projeto
                                                                 <ul>
-                                                                    <li>É uma biblioteca feita em javascript</li>
+                                                                    <li>Exemplo : banco/cadastros.db</li>
                                                                 </ul>
                                                             </li>
-                                                            <li>Para que serve?
-                                                                <ul>
-                                                                    <li>Fazer mais com menos</li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>Como se pronuncia?
-                                                                <ul>
-                                                                    <li>Jei - quiu - ri</li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>
-                                                                Como utilizar?
-                                                                <ul>
-                                                                    <li>Primeiro ler a documentação <a
-                                                                            href="https://jquery.com/download/"
-                                                                            target="_blank"> Aqui </a></li>
-                                                                    <li>Incluir no head das páginas
-                                                                        <ul>
-                                                                            <li>
-                                                                                <pre
-                                                                                    class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</span> <span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
-
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
+                                                            <li>Criar tabelas</li>
+                                                        </ol>
                                                     </td>
                                                 </tr>
+
 
                                                 <tr>
                                                     <td>2</td>
-                                                    <td>Como acessar elementos</td>
+                                                    <td>Configurar o projeto</td>
                                                     <td>
-                                                        Nesse caso estamos acessando a propriedade textContent dos
-                                                        elementos
-                                                        <ul>
-                                                            <li>Acessando por tag
-                                                                <pre>
-$("nome_da_tag").text();// todas as tag com esse nome serão acessadas
-$("nome_da_tag").text('novo valor');// todas as tag com esse nome terão o atributo textContent atualizados
-                                                                </pre>
+                                                        <ol>
+                                                            <li>Executar os comandos:
+                                                                <ul>
+                                                                    <li>npm init -y</li>
+                                                                    <li>npm i express</li>
+                                                                    <li>npm i body-parser</li>
+                                                                    <li>npm i sequelize sqlite3</li> 
+                                                                </ul>
                                                             </li>
-                                                            <li>Acessando por id
-                                                                <pre>
-$("#nome_do_id).text();// a tag com esse id será acessada
-$("#nome_do_id).text('novo valor');// a tag com esse id terá o atributo textContent atualizado
-                                                                </pre>
-                                                            </li>
-                                                            <li>Acessando por class
-                                                                <pre>
-$(".nome_da_classe").text();// todas as tag com esse classe serão acessadas
-$(".nome_da_classe").text('novo valor');// todas as tag com esse classe terão o atributo textContent atualizados
-                                                                </pre>
-                                                            </li>
-                                                        </ul>
+                                                           
+                                                        </ol>
                                                     </td>
                                                 </tr>
+
 
                                                 <tr>
                                                     <td>3</td>
-                                                    <td>Eventos</td>
+                                                    <td>Criar arquivo index.js</td>
                                                     <td>
-                                                        Para determinar o que deve acontecer quando um evento for
-                                                        executado podemos definir quem o executará com 'tag','#id' ou
-                                                        '.class'
-                                                        Exemplos:
                                                         <ul>
-                                                            <li>Quando o botão com id enviar for clicado
+                                                           
+                                                            <li>
+                                                                Inicializar constantes
                                                                 <pre>
-$('#enviar').click(
-
-    function (){
-        //vai acontecer oq eu programar
-    }
-
-);
-                                                                </pre>
-                                                            </li>
-                                                            <li>Quando o mouse passar por cima de qualquer H1
-                                                                <pre>
-$('h1').mouseover(
-
-    function () {
-        //vai acontecer oq eu programar
-        console.log("Não passe por cima de mim");
-    }
-
-);
-                                                                </pre>
-                                                            </li>
-                                                            <li>Quando digitar ENTER em campos de texto com a classe
-                                                                'permite-enter'
-                                                                <pre>
-$('.permite-enter').keyup(
-
-    function (e) {
-        //vai acontecer oq eu programar
-        var code = e.key;
-        if (code === "Enter") {
-            console.log("digitou enter e o valor atual é " + this.value)
-        }
-
-    }
-
-);
+const express = require('express')
+const app = express()
+const sqlite3 = require('sqlite3').verbose();
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
                                                                 </pre>
                                                             </li>
 
-                                                            <li>Quando a pagina carregar gostaria de executar algo
+                                                            <li>
+                                                                Configurar rotas modulares
                                                                 <pre>
-$('document').ready(
+ 
 
-    function () {
-        //vai acontecer oq eu programar
-        console.log("pagina carregou?");
-    }
+ 
 
-);
+app.use(
+    require('./rotas/animais.js') 
+)
+
+//rotas globais
+
+app.get("/", (req, res) => {
+    console.log("Rota raiz")
+    res.send("Esta tudo ok")
+})
+
+// configurar a porta
+app.listen(4000, () => {
+    console.log("o Servidor está esperando requisições na porta 4000...")
+})
                                                                 </pre>
                                                             </li>
 
-                                                            <li>Quando o usuario tira o mouse da tela, gostaria de fazer
-                                                                algo
-                                                                <pre>
-$('body').mouseleave(
-
-    function () {
-        //vai acontecer oq eu programar
-        console.log("já vai?");
-    }
-
-);
-                                                                </pre>
+                                                            <li>
+                                                                Criar arquivos js das rotas modulares em /rotas
+                                                                <ul>
+                                                                    <li>animais.js</li>
+                                                                </ul>
                                                             </li>
+
+                                                            
                                                         </ul>
+                                                    </td>
+                                                </tr>
 
+
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>/rotas/animais.js</td>
+                                                    <td>
+                                                        Configuração inicial
+                                                        <pre>
+const express = require('express')
+const router = express.Router()
+router.use(express.json());
+
+
+const sqlite3 = require('sqlite3').verbose();
+let db = new sqlite3.Database('./banco/cadastros.db');
+                                                        </pre>
+                                                        CRUD
+                                                        <ul>
+                                                            <li>
+                                                                <pre>
+//================ CRUD
+
+//-----------------CREATE
+router.post('/animais',
+    (req, res) => {
+
+        let sql = `INSERT INTO Animais(tipo,nome) VALUES(?,?)`;
+        let values = [
+            req.body.tipo,
+            req.body.nome
+        ]
+        db.run(sql, values, function (err) {
+            if (err) {
+                return console.log(err.message);
+            }
+
+            return res.status(201).json({
+                "mensagem": "Item inserido com sucesso",
+                "id": this.lastID
+            });
+        });
+
+
+    })
+                                                                </pre>
+                                                            </li>
+                                                            <li>
+                                                                <pre>
+ //-----------------READ
+
+//Listar todos
+router.get('/animais', (req, res) => {
+
+    let sql = `SELECT * FROM Animais `;
+    db.all(sql, [], (err, rows) => {
+        console.log(rows)
+        return res.status(200).json(rows);
+    });
+
+
+}) // rota para listar todos os animais
+
+//Get item
+router.get('/animais/:index',
+    (req, res) => {
+
+        let sql = `SELECT * FROM Animais where id=${req.params.index}`;
+        db.get(sql, [], (err, row) => {
+            console.log(row)
+            return res.status(200).json(row);
+        });
+
+    })
+                                                                </pre>
+                                                            </li> <li>
+                                                                <pre>
+ //-----------------UPDATE
+
+router.put('/animais/:index',
+    (req, res) => {
+
+
+        let sql = `SELECT * FROM Animais where id=${req.params.index}`;
+        db.get(sql, [], (err, row) => {
+             
+           if(!row){
+            return res.status(404).json({
+                "mensagem": "Item não localizado com esse id",
+                "id": req.params.index 
+            });
+           }
+
+
+            let sql = `UPDATE Animais SET
+            tipo=?,
+            nome=?
+            where id=${req.params.index}`;
+            let values = [
+                req.body.tipo,
+                req.body.nome
+            ]
+
+            db.run(sql, values, function (err) {
+                if (err) {
+                    return console.log(err.message);
+                }
+
+                return res.status(200).json({
+                    "mensagem": "Item atualizado com sucesso", 
+                    "linhas atualizadas": this.changes
+                });
+            }); 
+ 
+        }); 
+    });  
+                                                                </pre>
+                                                            </li> <li>
+                                                                <pre>
+ //-----------------DELETE
+
+router.delete('/animais/:index',
+    (req, res) => {
+
+        db.run(`DELETE FROM Animais WHERE id=?`, req.params.index, function(err) {
+            return res.status(200).json({
+                "Itens deletados": this.changes
+            }); 
+          });
+ 
+        
+    }); // retorna os dados após exclusão
+                                                                </pre>
+                                                            </li>
+                                                            Configuração final
+                                                            <br>
+                                                            module.exports = router
+                                                        </ul>
                                                     </td>
                                                 </tr>
 
                                                 <tr>
-                                                    <td>4</td>
-                                                    <td>Forms</td>
-                                                    <td>Comparativo de codigo sem jquery e com jquery
-                                                        <ul>
-                                                            <ul>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_003/index.html"
-                                                                        target="_blank">Ver</a> exemplo</li>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_003.zip"
-                                                                        target="_blank">Baixar</a> exemplo</li>
-                                                            </ul>
-                                                        </ul>
-                                                    </td>
+                                                    <td>5</td>
+                                                    <td>Testar API</td>
+                                                    <td><a href="material/CRUD_MODULAR/API - ANIMAIS.postman_collection.json">Collection</a></td>
+                                                </tr>
+
+                                                
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Baixar Back</td>
+                                                    <td><a href="material/CRUD_MODULAR.zip">Download</a></td>
                                                 </tr>
 
                                             </tbody>
