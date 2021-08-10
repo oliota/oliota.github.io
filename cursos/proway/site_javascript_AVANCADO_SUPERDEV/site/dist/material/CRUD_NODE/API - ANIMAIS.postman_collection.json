@@ -1,158 +1,97 @@
 {
-	"id": "8829717f-6a25-d0df-efd1-e4f21204b479",
-	"name": "API - ANIMAIS",
-	"description": "Testar o CRUD de animais",
-	"order": [
-		"cbf10342-0ad8-fd4b-819b-e66432b1db1c",
-		"6907fab5-b049-0ee9-6035-6e272188f2c7",
-		"cf2a8413-6da2-d120-2b85-19a67b33f953",
-		"7ddd38da-4b7a-7887-df46-72a2decff6d2",
-		"ea952d2a-55c8-554c-ed01-364b362ddc8e"
-	],
-	"folders": [],
-	"folders_order": [],
-	"timestamp": 1628190401348,
-	"owner": 0,
-	"public": false,
-	"requests": [
+	"variables": [],
+	"info": {
+		"name": "API - ANIMAIS",
+		"_postman_id": "8829717f-6a25-d0df-efd1-e4f21204b479",
+		"description": "Testar o CRUD de animais",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "6907fab5-b049-0ee9-6035-6e272188f2c7",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:4000/animais/1",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1628191623328,
-			"name": "READ-ONE",
-			"description": "Get a animal by index",
-			"collectionId": "8829717f-6a25-d0df-efd1-e4f21204b479",
-			"responses": []
-		},
-		{
-			"id": "7ddd38da-4b7a-7887-df46-72a2decff6d2",
-			"headers": "Content-Type: application/json\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:4000/animais/0",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "PUT",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1628190812690,
-			"name": "UPDATE",
-			"description": "Update a animal by index",
-			"collectionId": "8829717f-6a25-d0df-efd1-e4f21204b479",
-			"responses": [],
-			"rawModeData": "{\n\t\"tipo\":\"xx\",\n\t\"nome\":\"123\"\n}"
-		},
-		{
-			"id": "cbf10342-0ad8-fd4b-819b-e66432b1db1c",
-			"headers": "Content-Type: application/json\nAccept: application/json\n",
-			"headerData": [
-				{
-					"key": "Content-Type",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				},
-				{
-					"key": "Accept",
-					"value": "application/json",
-					"description": "",
-					"enabled": true
-				}
-			],
-			"url": "http://localhost:4000/animais",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "POST",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1628190728951,
 			"name": "CREATE",
-			"description": "Create a animal",
-			"collectionId": "8829717f-6a25-d0df-efd1-e4f21204b479",
-			"responses": [],
-			"rawModeData": "{\n\t\"tipo\":\"cavalo\",\n\t\"nome\":\"pocotó\"\n}"
+			"request": {
+				"url": "http://localhost:4000/animais",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tipo\":\"cavalo\",\n\t\"nome\":\"pocotó\"\n}"
+				},
+				"description": "Create a animal"
+			},
+			"response": []
 		},
 		{
-			"id": "cf2a8413-6da2-d120-2b85-19a67b33f953",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:4000/animais",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "GET",
-			"data": null,
-			"dataMode": "params",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1628190612548,
+			"name": "READ-ONE",
+			"request": {
+				"url": "http://localhost:4000/animais/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get a animal by index"
+			},
+			"response": []
+		},
+		{
 			"name": "READ-ALL",
-			"description": "Get all animals",
-			"collectionId": "8829717f-6a25-d0df-efd1-e4f21204b479",
-			"responses": []
+			"request": {
+				"url": "http://localhost:4000/animais",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get all animals"
+			},
+			"response": []
 		},
 		{
-			"id": "ea952d2a-55c8-554c-ed01-364b362ddc8e",
-			"headers": "",
-			"headerData": [],
-			"url": "http://localhost:4000/animais/0",
-			"queryParams": [],
-			"preRequestScript": null,
-			"pathVariables": {},
-			"pathVariableData": [],
-			"method": "DELETE",
-			"data": [],
-			"dataMode": "raw",
-			"version": 2,
-			"tests": null,
-			"currentHelper": "normal",
-			"helperAttributes": {},
-			"time": 1628190930804,
+			"name": "UPDATE",
+			"request": {
+				"url": "http://localhost:4000/animais/0",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tipo\":\"xx\",\n\t\"nome\":\"123\"\n}"
+				},
+				"description": "Update a animal by index"
+			},
+			"response": []
+		},
+		{
 			"name": "DELETE",
-			"description": "Delete a animal by index",
-			"collectionId": "8829717f-6a25-d0df-efd1-e4f21204b479",
-			"responses": [],
-			"rawModeData": ""
+			"request": {
+				"url": "http://localhost:4000/animais/0",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Delete a animal by index"
+			},
+			"response": []
 		}
 	]
 }

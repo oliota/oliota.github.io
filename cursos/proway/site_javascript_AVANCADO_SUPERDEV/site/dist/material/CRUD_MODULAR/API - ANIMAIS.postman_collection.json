@@ -1,0 +1,97 @@
+{
+	"variables": [],
+	"info": {
+		"name": "API - ANIMAIS",
+		"_postman_id": "8829717f-6a25-d0df-efd1-e4f21204b479",
+		"description": "Testar o CRUD de animais",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE",
+			"request": {
+				"url": "http://localhost:4000/animais",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tipo\":\"cavalo\",\n\t\"nome\":\"pocotó\"\n}"
+				},
+				"description": "Create a animal"
+			},
+			"response": []
+		},
+		{
+			"name": "READ-ONE",
+			"request": {
+				"url": "http://localhost:4000/animais/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get a animal by index"
+			},
+			"response": []
+		},
+		{
+			"name": "READ-ALL",
+			"request": {
+				"url": "http://localhost:4000/animais",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Get all animals"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE",
+			"request": {
+				"url": "http://localhost:4000/animais/0",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tipo\":\"xx\",\n\t\"nome\":\"123\"\n}"
+				},
+				"description": "Update a animal by index"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE",
+			"request": {
+				"url": "http://localhost:4000/animais/0",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": "Delete a animal by index"
+			},
+			"response": []
+		}
+	]
+}

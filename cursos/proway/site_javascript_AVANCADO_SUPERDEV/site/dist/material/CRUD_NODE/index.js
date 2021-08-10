@@ -1,113 +1,27 @@
-const express = require('express');
-const cors = require('cors');
+// load our app server using express somehow....
+const express = require('express')
+const app = express()
+const morgan = require('morgan')
+const mysql = require('mysql')
 
-const server = express();
+const bodyParser = require('body-parser')
 
-server.use(cors());
-server.use(express.json()); // faz com que o express entenda JSON
+app.use(bodyParser.urlencoded({extended: false}))
 
-// Route params = /animais/1
-// Request body = { "tipo": "Gato", "nome": "bixano"}
+app.use(express.static('./public'))
 
-// CRUD - Create, Read, Update, Delete
+app.use(morgan('short'))
 
-const animais = [
-    { tipo: 'gato', nome: "Vézû" },
-    { tipo: 'cachorro', nome: "Tótó" },
-    { tipo: 'coelho', nome: 'Perna longa' },
-    { tipo: 'passarinho', nome: "pica-pau" }
-];
+const router = require('./rotas/animais.js')
 
+app.use(router)
 
-server.use((req, res, next) => { // server.use cria o middleware global
-    console.time('Request'); // marca o início da requisição
-    console.log(`Método: ${req.method}; URL: ${req.url}; `); // retorna qual o método e url foi chamada
-
-    next(); // função que chama as próximas ações 
-
-    console.log('Finalizou'); // será chamado após a requisição ser concluída
-
-    console.timeEnd('Request'); // marca o fim da requisição
-});
-    
- 
-
-function validar(req, res, next) {
-    if (!req.body.tipo) {
-        return res.status(400).json({ error: 'o tipo do animal não foi informado' });
-        // middleware local que irá checar se a propriedade tipo foi infomada, 
-        // caso negativo, irá retornar um erro 400 - BAD REQUEST 
-    }
-    if (!req.body.nome) {
-        return res.status(400).json({ error: 'o nome do animal não foi informado' });
-        // middleware local que irá checar se a propriedade nome foi infomada, 
-        // caso negativo, irá retornar um erro 400 - BAD REQUEST 
-    }
-    return next(); // se o nome for informado corretamente, a função next() chama as próximas ações
-}
-
-function naoExiste(req, res, next) {
-    const animal = animais[req.params.index];
-    if (!animal) {
-        return res.status(404).json({ error: 'animal não encontrado' });
-    } // checa se o animal existe no array, caso negativo informa que o index não existe no array
-
-    req.animal = animal;
-
-    return next();
-}
-
-
-
-//================ CRUD
-
-//-----------------CREATE
-server.post('/animais', validar, (req, res) => {
-    // const {  } = req.body; // assim esperamos buscar o name informado dentro do body da requisição  
-    animais.push(req.body);
-    return res.status(201).json({
-        "mensagem": "Item inserido com sucesso" ,
-        "objeto":req.body
-    }); // retorna a informação da variavel animais
+app.get("/", (req, res) => {
+  console.log("Responding to root route")
+  res.send("Hello from ROOOOOT")
 })
 
-//-----------------READ
-
-//Listar todos
-server.get('/animais', (req, res) => {
-    return res.status(200).json(animais);
-}) // rota para listar todos os animais
-
-//Get item
-server.get('/animais/:index', naoExiste, (req, res) => {
-    return res.status(200).json(req.animal);
+// localhost:3003
+app.listen(3003, () => {
+  console.log("Server is up and listening on 3003...")
 })
-
-//-----------------UPDATE
-
-server.put('/animais/:index', naoExiste, validar, (req, res) => {
-    const { index } = req.params; // recupera o index com os dados
-    // const { name } = req.body;
-    let antes = animais[index];
-    animais[index] = req.body; // sobrepõe/edita o index obtido na rota de acordo com o novo valor
-    return res.status(200).json({
-        "mensagem": "Item atualizado com sucesso",
-        "antes": antes,
-        "depois": animais[index]
-    });
-}); // retorna novamente os animais atualizados após o update
-
-
-//-----------------DELETE
-
-server.delete('/animais/:index', naoExiste, (req, res) => {
-    const { index } = req.params; // recupera o index com os dados
-
-    animais.splice(index, 1); // percorre o vetor até o index selecionado e deleta uma posição no array
-
-    return res.status(200).json({
-        "mensagem": "Item deletado com sucesso"
-    });
-}); // retorna os dados após exclusão
-
-server.listen(4000);
