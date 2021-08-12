@@ -1,11 +1,11 @@
 const express = require('express')
+const cors = require('express')
 const app = express()
 const sqlite3 = require('sqlite3').verbose();
-const bodyParser = require('body-parser')
-
- 
-
-app.use(bodyParser.urlencoded({ extended: false }))
+const bodyParser = require('body-parser') 
+app.use(bodyParser.urlencoded({ extended: false })) 
+app.use(express.json())
+app.use(cors())
  
 
 app.use(

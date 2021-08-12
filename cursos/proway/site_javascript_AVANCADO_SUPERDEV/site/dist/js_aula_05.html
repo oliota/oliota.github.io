@@ -113,239 +113,94 @@
 
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>Ajax</td>
-                                                    <td>
-                                                        <ul>
-                                                            <li>O que é?
-                                                                <ul>
-                                                                    <li>AJAX é o acrônimo de Asynchronous Javascript and
-                                                                        XML,
-                                                                        <br> que em português significa “Javascript e
-                                                                        XML assíncronos”
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>Para que serve?
-                                                                <ul>
-                                                                    <li>Realizar chamada de um recurso no servidor a
-                                                                        partir de um código Javascript no navegador web,
-                                                                        <br>
-                                                                        de forma que o resultado atualize apenas uma
-                                                                        parte da página sem precisar fazer uma
-                                                                        atualização dela inteira
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>Como se pronuncia?
-                                                                <ul>
-                                                                    <li>Ei - jacs </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li>
-                                                                Como utilizar?
-                                                                <ul>
-                                                                    <li>Com jquery fica mais facil</li>
-                                                                    <li>Incluir no head das páginas
-                                                                        <ul>
-                                                                            <li>
-                                                                                <pre
-                                                                                    class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</span> <span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
-
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </td>
+                                                    <td>Concluir projeto anterior</td>
+                                                    <td>Finalizar operações CRUD em animais</td>
                                                 </tr>
-
-
 
                                                 <tr>
                                                     <td>2</td>
-                                                    <td>Get</td>
-                                                    <td>Sintaxe
-                                                        <br>
-                                                        <pre>
-$.ajax({
-    <font color=blue>url: 'endereco_aqui',</font>
-    <font color=orange>type: 'get',</font>
-    <font color=green>success: function (dados) {
-        console.log(dados)
-    },</font>
-    <font color=red>error: function (erro) {
-        console.error(erro)
-    } </font>
-})
-                                                        </pre>
-                                                        <hr>
-                                                        Exemplo de url :
-                                                        <br>
+                                                    <td>Incluir testes</td>
+                                                    <td>
+                                                        Instalar modulos
                                                         <ul>
-                                                            <a href="https://console.firebase.google.com/project/pw-mobile/database/pw-mobile/data?hl=pt-BR"
-                                                                target="_blank" style="color: white;">acessar
-                                                                firebase</a>
-                                                            <li>
-                                                                <a class="get"
-                                                                    name=" https://pw-mobile.firebaseio.com/item.json">
-                                                                    Testar : Firebase </a>
-                                                            </li>
-                                                            <li>
-                                                                <a class="get" name="https://httpbin.org/ip">
-                                                                    Testar : Meu ip = https://httpbin.org/ip </a>
-
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="get"
-                                                                    name="https://httpbin.org/get?nome=rubem&aula=javascript%20com%20ajax">
-                                                                    Testar : Eco de parametros =
-                                                                    https://httpbin.org/get?nome=rubem&aula=javascript%20com%20ajax
-                                                                </a>
-
-                                                            </li>
-                                                            <li>
-                                                                <a class="get" name="https://httpbin.org/delay/10">
-                                                                    Testar : Demora 10s para responder = https://httpbin.org/delay/10 </a>
-
-                                                            </li>
+                                                            <li>npm i tape</li>
+                                                            <li>npm i tap-spec</li>
+                                                            <li>npm i supertest express body-parser</li>
                                                         </ul>
-
-
-
-
                                                     </td>
                                                 </tr>
 
                                                 <tr>
                                                     <td>3</td>
-                                                    <td>Post</td>
-                                                    <td>
-                                                        Sintaxe
-                                                        <br>
-                                                        <pre>
-<b> 
-// objeto a ser enviado no body
-var objeto = {
-    nome: "Rubem", 
-    email: "email@email.com" 
-};
-</b>
-
-$.ajax({
-    <font color=blue>url: 'endereco_aqui',</font>
-    <font color=orange>type: 'post',</font>
-    <b>headers: {
-        'Accept': "application/json",
-        'Content-type': 'application/json',
-    },
-    data: JSON.stringify(objeto),//converte objeto em string</b>
-    <font color=green>success: function (dados) {
-        console.log(dados)
-    },</font>
-    <font color=red>error: function (erro) {
-        console.error(erro)
-    } </font>
-})
-                                                        </pre>
-                                                        <hr>
-                                                        Exemplo de url :
-
+                                                    <td>Criar pasta de testes</td>
+                                                    <td>Configurar package.json
                                                         <ul>
-                                                            <li>
-                                                                <a class="post" name="https://httpbin.org/post">
-                                                                    Testar : Eco do body </a>
-                                                            </li>
-
+                                                            <li>Atualizar scripts</li>
+                                                            <li>"test": "tape ./testes/* | tap-spec"</li>
                                                         </ul>
-
-
                                                     </td>
                                                 </tr>
 
                                                 <tr>
                                                     <td>4</td>
-                                                    <td>Requisições</td>
-                                                    <td>Página de exemplo
-                                                        <ul>
-                                                            <ul>
-                                                                <li>Layout
-                                                                    <img src="material/exemplo_em_aula_javascript_aula_004/template.png"
-                                                                        width="100%">
-                                                                </li>
-                                                                <li>
-                                                                    Scripts para adicionar
-                                                                    <ul>
-                                                                        <li>
-                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> 
-<span class="na">src</span><span class="o">=</span><span class="s">"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"</span> <span class="p">&gt;
-&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
-
-                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> 
-<span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"</span> <span class="p"> 
-<span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"</span> <span class="p"> 
-<span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">&gt;
-&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
-
-                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> 
-<span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"</span> <span class="p">  
-<span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">&gt;
-&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
-
-                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> 
-<span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"</span> <span class="p">  
-<span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">&gt;
-&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
-
-
-                                                                        </li>
-
-                                                                    </ul>
-                                                                    Css para adicionar
-                                                                    <ul>
-                                                                        <li>
-
-                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> 
-<span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"</span> <span class="p"> 
-<span class="na">integrity</span><span class="o">=</span><span class="s">"sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"</span> <span class="p">  
-<span class="na">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span> <span class="p">  
-<span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> 
-<span class="p">&gt;</span></code></pre>
-
-                                                                            <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">link</span> 
-<span class="na">href</span><span class="o">=</span><span class="s">"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"</span> <span class="p">  
-<span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="p">  
-<span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> 
-<span class="p">&gt;</span></code></pre>
-
-
-
-
-                                                                        </li>
-
-                                                                    </ul>
-                                                                </li>
-                                                                <br>
-                                                                <li>Variaveis globais
-                                                                    <pre>
-var gorest = 'https://gorest.co.in/public-api'
-var token = 'a6f906ca1462ee35051d80e4f987172770c914e1dc10d9e32cd16e73dcb325ce'
-var usuarios = new Array
-var adicionando = true
-                                                                    </pre>
-                                                                </li>
-
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_004/index.html"
-                                                                        target="_blank">Ver</a> exemplo</li>
-                                                                <li><a href="material/exemplo_em_aula_javascript_aula_004.zip"
-                                                                        target="_blank">Baixar</a> exemplo</li>
-                                                            </ul>
-                                                        </ul>
-                                                    </td>
+                                                    <td>Exportar js principal apos o listen</td>
+                                                    <td>
+                                                        module.exports = app;</td>
                                                 </tr>
 
+
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Criar js de teste</td>
+                                                    <td>animaisTeste.js
+                                                        <pre>
+const test = require('tape');
+const supertest = require('supertest');
+
+const app = require('../index');
+                                                        </pre>
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>6</td>
+                                                    <td>Criar primeiro teste</td>
+                                                    <td>
+                                                        <pre>
+test('GET /animais', (t) => {
+    supertest(app)
+        .get('/animais')
+        .expect('Content-Type', /json/)
+        .expect(200)
+        .end((err, res) => {
+            t.error(err, 'Sem erros');
+            t.assert(res.body.length > 0, `Lista com ${res.body.length} itens`);
+            t.end();
+        })
+})
+                                                        </pre>
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>7</td>
+                                                    <td>Executar teste</td>
+                                                    <td>no terminal
+                                                        <ul>
+                                                            <li>npm test</li>
+                                                        </ul>
+                                                        O resultado será emitido no terminal
+                                                    </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td>8</td>
+                                                    <td>Baixar projeto completo</td>
+                                                    <td><a href="https://drive.google.com/file/d/1hPOnvvW5bDAQoiVm3SNmJXt4Dsstjwu3/view?usp=sharing" target="_blank">Download</a></td>
+                                                </tr>
+                                                
+                                               
+ 
                                             </tbody>
                                         </table>
                                     </div>

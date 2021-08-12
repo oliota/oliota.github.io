@@ -145,6 +145,7 @@
                                                                     <li>npm init -y</li>
                                                                     <li>npm i express</li>
                                                                     <li>npm i body-parser</li>
+                                                                    <li>npm i cors</li>
                                                                     <li>npm i sequelize sqlite3</li> 
                                                                 </ul>
                                                             </li>
@@ -164,10 +165,13 @@
                                                                 Inicializar constantes
                                                                 <pre>
 const express = require('express')
+const cors = require('express')
 const app = express()
 const sqlite3 = require('sqlite3').verbose();
-const bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({ extended: false }))
+const bodyParser = require('body-parser') 
+app.use(bodyParser.urlencoded({ extended: false })) 
+app.use(express.json())
+app.use(cors())
                                                                 </pre>
                                                             </li>
 
@@ -357,7 +361,7 @@ router.delete('/animais/:index',
                                                 <tr>
                                                     <td>6</td>
                                                     <td>Baixar Back</td>
-                                                    <td><a href="material/CRUD_MODULAR.zip">Download</a></td>
+                                                    <td><a href="https://drive.google.com/file/d/1yuP3zVQWl3Rcqck-It8mn-RXMBlKAG6n/view?usp=sharing">Download</a></td>
                                                 </tr>
 
                                             </tbody>
