@@ -131,7 +131,7 @@
                               <p class="card-description">
                                 Bem vindo a minha página,
                               </p>
-                              <a href="#" class="btn btn-warning btn-round">Sempre em construção...</a>
+                              <a href="#" id="teste" class="btn btn-warning btn-round">Sempre em construção...</a>
                             </div>
                           </div>
                         </div>
@@ -714,6 +714,19 @@
     //     url: 'http://cdn.datatables.net/plug-ins/1.10.15/i18n/Portuguese-Brasil.json'
     //   }
     // });
+
+    $("#teste").on("click", () => {
+        $.ajax({
+            url: "https://oliota.herokuapp.com/pessoas",
+            type: "get",
+            success: (pessoas) => {
+                console.log(pessoas);
+            },
+            error: (erro) => {
+                console.warn(erro);
+            }
+        });
+    });
   </script>
 
   <script src="js/cursos.js"></script>
