@@ -1,0 +1,115 @@
+<html onmousedown="Random();">
+
+<head>
+
+    <style>
+        .button {
+  transition: left 0.2s ease 0s, top 0.2s ease 0s, background 0.2s ease 0s,
+    color 0.2s ease 0s, box-shadow 0.2s ease 0s;
+  box-shadow: 5px 5px 6px 1px #444444;
+  height: 70px;
+  background: white; 
+  border: 1px solid black;
+  color: black;
+  border-radius: 00px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Franchise";
+  font-size: 20px;
+  width: 200px;
+  position: absolute;
+  left: 40%;
+  top: 45%;
+}
+
+#button:active {
+  box-shadow: 0px 0px 0px 0px transparent;
+  background: black;
+  color: white;
+}
+
+.button::after {
+  box-shadow: inset rgb(68 68 68) 7px 9px 10px 1px;
+  opacity: 0;
+  transition: 0.2s ease 0s;
+  width: 100%;
+  height: 100%;
+}
+
+.button:hover::after {
+  box-shadow: inset rgb(68 68 68) 7px 9px 10px 1px;
+  opacity: 1;
+}
+
+#funds {
+  background: #00b289;
+  color: white;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  border: 0px solid black;
+  font-family: "Franchise";
+}
+
+#total {
+  color: #00b289;
+  position: absolute;
+  border: 1px solid #00b289;
+  font-size: 20px;
+  font-style: bold;
+  width: 60px;
+  height: 40px;
+  background: white;
+  margin-left: -0.2%;
+}
+
+#div {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+
+    </style>
+</head>
+
+<body oncontextmenu="return false;" onmousedown="Random();" >
+
+  <center id="startbutton" style="
+    margin-left: -10%;
+    margin-top: 20%;  
+"><input type="button" onmouseover="play();" value="Go on, click me bitch" id="start" class="button" ></center>
+  <div id="div" onmousedown="Random();">
+
+    <input value="Go on, click me bitch" class="button" id="button" onclick="Alert();" onmouseover="Random();" onmousemove="" onfocus="Random();" onmouseup="Random();" type="button" style="left: 82.7833%; top: 35.8732%;">
+
+  </div>
+
+  <script>
+      function play() {
+  var div = document.getElementById("div");
+  var start = document.getElementById("startbutton");
+  div.style.display = "block";
+  start.style.display = "none";
+}
+
+function Alert() {
+  var total = document.getElementById("total");
+  var start = document.getElementById("startbutton");
+  alert("that was fucking lit wtf, how tf you hit that shit fr");
+  total.value = total.value * 1 + 1;
+  start.style.display = "block";
+  div.style.display = "none";
+}
+
+function Random() {
+  var button = document.getElementById("button");
+  var RandomX = Math.random() * 90 + "%";
+  var RandomY = Math.random() * 92 + "%";
+  button.style.left = RandomX;
+  button.style.top = RandomY;
+}
+
+  </script>
+</body>
+
+</html>
