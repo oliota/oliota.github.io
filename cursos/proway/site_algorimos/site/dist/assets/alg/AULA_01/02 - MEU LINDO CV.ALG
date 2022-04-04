@@ -1,11 +1,11 @@
 Algoritmo "meu lindo cv"
-// Disciplina   : [Linguagem e Lógica de Programação]
+// Disciplina   : [Linguagem e Lï¿½gica de Programaï¿½ï¿½o]
 // Professor   : Rubem Oliota 
-// Descrição   : Aqui você descreve o que o programa faz! (função)
+// Descriï¿½ï¿½o   : Aqui vocï¿½ descreve o que o programa faz! (funï¿½ï¿½o)
 // Autor(a)    : Nome do(a) aluno(a)
 // Data atual  : 18/05/2021
 Var
-// Seção de Declarações das variáveis 
+// Seï¿½ï¿½o de Declaraï¿½ï¿½es das variï¿½veis 
 
 nome_completo : caractere
 idade : inteiro
@@ -32,7 +32,7 @@ tempo_experiencia_tres : inteiro
 
 
 Inicio
-// Seção de Comandos, procedimento, funções, operadores, etc... 
+// Seï¿½ï¿½o de Comandos, procedimento, funï¿½ï¿½es, operadores, etc... 
 
 nome_completo <- "Rubem Oliota"
 idade <- 32
@@ -54,7 +54,7 @@ tempo_experiencia_um <- 2
 experiencia_dois <- "Accenture - analista junior"
 tempo_experiencia_dois <- 3
 
-experiencia_tres <- "Benner - analista sênior"
+experiencia_tres <- "&#66;&#69;&#78;&#78;&#69;&#82; - analista sï¿½nior"
 tempo_experiencia_tres <- 3
 
 
@@ -66,19 +66,19 @@ escreval("Nome: ",nome_completo)
 escreval("Idade: ",idade)
 escreval("Telefone: ",telefone)
 escreval("E-mail: ",email)
-escreval("Endereço:",rua," Nº",numero," - ",bairro," - ",uf," - ",cep)
+escreval("Endereï¿½o:",rua," Nï¿½",numero," - ",bairro," - ",uf," - ",cep)
 escreval("")
 escreval("---------------------------------------------------------")
-escreval("Formação acadêmica")
+escreval("Formaï¿½ï¿½o acadï¿½mica")
 escreval("")
 escreval(escolaridade)
 escreval("")
 escreval("---------------------------------------------------------")
-escreval("Experiência profissional")
+escreval("Experiï¿½ncia profissional")
 escreval("")
-escreval("1º - ",experiencia_um," - ",tempo_experiencia_um," anos")
-escreval("2º - ",experiencia_dois," - ",tempo_experiencia_dois," anos")
-escreval("3º - ",experiencia_tres," - ",tempo_experiencia_tres," anos")
+escreval("1ï¿½ - ",experiencia_um," - ",tempo_experiencia_um," anos")
+escreval("2ï¿½ - ",experiencia_dois," - ",tempo_experiencia_dois," anos")
+escreval("3ï¿½ - ",experiencia_tres," - ",tempo_experiencia_tres," anos")
 escreval("")
 escreval("---------------------------------------------------------")
 
