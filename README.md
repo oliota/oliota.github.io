@@ -1,49 +1,56 @@
 # Projeto Modelo Entra21 - 2022
 
- Para criar um projeto angular na raiz de um repositorio
+Repositório com modelo de projeto funcional para o frontend Angular 
 
- ng new nomeProjeto --directory ./
+<a href='#'><img align='center' src='./giphy.gif' width='400 ' height='300' /></a>
 
- routes y
- styles css
-
- importar template AdminLte3
- npm install admin-lte@^3.0 --save
-
- configurar angular.json
  
- Incluir com css e js global
-Trocar conteudo do outputPath por docs , pois será necessário configurar o github.io posteriormente
+  1. Para criar um projeto angular na raiz de um repositorio
 
- Aumentar capacidade no objeto budgets para 10mb onde inicialmente é em kb
+      - <b>ng new nomeProjeto --directory ./</b>
+      - routes y
+      - styles css
 
- criar componentes iniciais de login, header,menu e home
- rotas iniciais
- "" = LoginComponent
- "home" = HomeComponent
+  1. importar template AdminLte3
+      - <b>npm install admin-lte@^3.0 --save</b>
+  
+  1. configurar angular.json
+      - Incluir com css e js global
+      - Trocar conteudo do "<b>outputPath</b>" por docs , pois será necessário configurar o github.io posteriormente
+      - Aumentar capacidade no objeto "<b>budgets</b>" para 10mb onde inicialmente é em kb
 
- Para que os services realizem conexões é necessario incluir na lista de imports do app.module
- FormsModule
-Caso não gere o importe automaticamente utilize o exemplo de import
-import { FormsModule } from '@angular/forms';
+  1. criar componentes iniciais de login, header,menu e home
+  1. rotas iniciais
+      - "" = LoginComponent
+      - "home" = HomeComponent
 
- Configurar layout principal no app.component.html 
- Sugestao
+  1. Para que os components realizem twoWay databinding é necessario incluir na lista de imports do app.module
+      - <b>FormsModule</b>
+      - <b>ReactiveFormsModule</b>
+      - Caso não gere o importe automaticamente utilize o exemplo de import
+      - <b>import { FormsModule, ReactiveFormsModule } from '@angular/forms';</b>
 
- app-header (contendo parte do layout da parte superior)
- app-menu (contendo parte do layout lateral)
- router-outlet (local onde os componentes são subistituidos ao navegar por rotas)
+  1. Configurar layout principal no <b>app.component.html</b> 
+      - Sugestao:
+        - app-header (contendo parte do layout da parte superior)
+        - app-menu (contendo parte do layout lateral)
+        - router-outlet (local onde os componentes são subistituidos ao navegar por rotas)
 
 
- criar services iniciais em um diretorio separado
- ng g s /services/seguranca (responsavel por bloquear rotas)  é necessário colocar na lista de providers do app.module e incluir no contrutor dos componentes que o utilizam declaradamente
- ng g s /services/usuario (responsavel por conectar ao backend e apenas isso) incluir no contrutor dos componentes que o utilizam declaradamente
+  1. criar services iniciais em um diretorio separado
+      - <b>ng g s /services/seguranca</b> (responsavel por bloquear rotas)  é necessário colocar na lista de providers do app.module e incluir no contrutor dos componentes que o utilizam declaradamente
+      - <b>ng g s /services/usuario</b> (responsavel por conectar ao backend e apenas isso) incluir no contrutor dos componentes que o utilizam declaradamente
 
-Para que os services realizem conexões é necessario incluir na lista de imports do app.module
-HttpClientModule
-Caso não gere o importe automaticamente utilize o exemplo de import
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+  1. Para que os services realizem conexões é necessario incluir na lista de imports do app.module
+      - <b>HttpClientModule</b>
+      - Caso não gere o importe automaticamente utilize o exemplo de import
+      - <b>import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';</b>
 
-Em cada service que realize connexões
-incluir em seu construtor
-private http: HttpClient
+ 1. Em cada service que realize conexões
+      - incluir em seu construtor
+        - <b>private http: HttpClient</b>
+ 1. realizar o build do projeto
+      - ng build
+      - após a conclusão realizar commt e push
+ 1. no github > respositorio > settings > pages > branch
+      - selecione a opção /docs e salve 
