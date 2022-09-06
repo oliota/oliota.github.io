@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'modelo_entra21_2022'`, () => {
+  it(`should have as title 'projeto_modelo_entra21_2022'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('modelo_entra21_2022');
+    expect(app.title).toEqual('projeto_modelo_entra21_2022');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('modelo_entra21_2022 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('projeto_modelo_entra21_2022 app is running!');
   });
 });

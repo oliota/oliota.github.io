@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "modelo_entra21_2022": {
+    "projeto_modelo_entra21_2022": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/modelo_entra21_2022",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "modelo_entra21_2022:build:production"
+              "browserTarget": "projeto_modelo_entra21_2022:build:production"
             },
             "development": {
-              "browserTarget": "modelo_entra21_2022:build:development"
+              "browserTarget": "projeto_modelo_entra21_2022:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "modelo_entra21_2022:build"
+            "browserTarget": "projeto_modelo_entra21_2022:build"
           }
         },
         "test": {
