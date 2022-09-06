@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- saved from url=(0167)https://audio10.audima.co/iframe-later-thin-magazine-audima.html?skin=thin-magazine&statistic=true&clientAlias=pegn&background=undefined&color=undefined&type=undefined -->
+<html lang="pt"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" href="./iframe-later-thin-magazine-audima_files/iframe-thin-magazine.css" type="text/css">
+<link rel="stylesheet" href="./iframe-later-thin-magazine-audima_files/all.css" type="text/css">
+</head>
+<body>
+<audima-div class="audima-wrap">
+<audima-div class="audima-player">
+<div class="text-listen">
+Ouça
+</div>
+<audima-div class="play-pause-btn" tabindex="0">
+<button id="playPause" data-method="play" aria-label="Ouvir este conteúdo">
+<i class="fa fa-play ppi"></i>
+</button>
+</audima-div>
+<audima-div class="aud-content">
+
+<audima-div class="timeline_wrap">
+
+
+<audima-div class="timeline progress-bar-wrapper">
+<audima-div class="full_line"></audima-div>
+<audima-div class="line_preload"></audima-div>
+<audima-div class="line_played">
+<span class="progress-bar-pointer"></span>
+</audima-div>
+</audima-div>
+
+</audima-div>
+
+
+<audima-div class="menu-controls" id="controls" style="">
+<button class="aud-btn-control speed_down_btn" data-method="speed_down" aria-label="Reduzir velocidade da voz">
+<i class="fa fa-backward"></i>
+</button>
+<button class="aud-btn-control speed_up_btn" data-method="speed_up" aria-label="Aumentar velocidade da voz">
+<i class="fa fa-forward"></i>
+</button>
+<button class="aud-btn-control bwd_btn" data-method="backward" aria-label="Voltar 5 segundos">
+<i class="fa fa-undo"></i>
+</button>
+<button class="aud-btn-control fwd_btn" data-method="forward" aria-label="Avançar 5 segundos">
+<i class="fa fa-redo"></i>
+</button>
+</audima-div>
+
+</audima-div>
+
+<audima-div class="sb-content" tabindex="1">
+<a href="http://audima.co/" target="_blank" role="button">
+<div class="aud-link-area">
+<div class="logo-audima" data-method="logo_local" onmouseover="changeColor(true)" onmouseout="changeColor(false)" aria-label="Abrir o site da Audima em uma nova página"></div>
+</div>
+</a>
+</audima-div>
+
+</audima-div>
+
+</audima-div>
+<script>
+    const urlString = window.location.href
+    const url = new URL(urlString)
+    const skin = url.searchParams.get('skin')
+    const statistic = url.searchParams.get('statistic')
+    const clientAlias = url.searchParams.get('clientAlias')
+    const type = url.searchParams.get('type')
+
+</script>
+<script src="./iframe-later-thin-magazine-audima_files/audio-tts-player.js.download"></script>
+<script>AP.init({ skin, statistic, type })</script>
+<script>
+    let logoAudima = document.querySelector('.logo-audima');
+
+    function changeColor(flag) {
+        if(flag) {
+            logoAudima.classList.add(`logo-audima-${clientAlias}`);
+        } else {
+            logoAudima.classList.remove(`logo-audima-${clientAlias}`);
+        }
+    }
+</script>
+
+
+</body></html>
