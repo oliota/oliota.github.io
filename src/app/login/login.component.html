@@ -1,1 +1,56 @@
-<p>login works!</p>
+<div class="row mt-5">
+  <div class="col"></div>
+  <div class="col-2 mt-5">
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Login to start your session</p>
+ 
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="username"
+              placeholder="Username"
+            />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input
+              type="password"
+              [(ngModel)]="password"
+              class="form-control"
+              placeholder="Password"
+            />
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div> 
+
+        <div class="social-auth-links text-center mb-3">
+          <button (click)="login()" class="btn btn-primary"> Login </button>
+        </div>
+        <!-- /.social-auth-links -->
+
+        <div class="text-center">
+
+          <p class="mb-1">
+            <a href="#" (click)="forgotPassword()">I forgot my password</a>
+          </p>
+          <p class="mb-0">
+            <a href="#" (click)="register()" class="text-center"
+            >Register a new membership</a
+            >
+          </p>
+        </div>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <div class="col"></div>
+</div>

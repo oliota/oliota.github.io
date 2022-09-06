@@ -1,1 +1,54 @@
-<p>menu works!</p>
+<aside class="main-sidebar sidebar-light-primary elevation-4"> 
+    <a routerLink="home" class="brand-link">
+      <img src="https://avatars.githubusercontent.com/u/6345052?v=4" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Projeto Entra21</span>
+    </a>
+ 
+    <div class="sidebar"> 
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    
+         
+          <li  *ngFor="let menu of menus"  class="nav-item has-treeview">
+            <a href="#" class="nav-link {{menu.color}}">
+              <i class="nav-icon {{menu.icon}}"></i>
+              <p>
+                {{menu.title}}
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview {{menu.color}}"> 
+              <li *ngFor="let nivel2 of menu.sub" class="nav-item {{menu.sub?'has-treeview':''}} ">
+                <a href="#" [routerLink]="nivel2.route" class="nav-link {{menu.color}}">
+                  <i class="nav-icon {{nivel2.icon}}"></i>
+                  <p>
+                    {{nivel2.title}}
+                    <i *ngIf="nivel2.sub" class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul *ngIf="nivel2.sub" class="nav nav-treeview">
+                  <li *ngFor="let nivel3 of nivel2.sub" class="nav-item">
+                    <a href="#" [routerLink]="nivel3.route" class="nav-link {{menu.color}}">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>{{nivel3.title}}</p>
+                    </a>
+                  </li> 
+                </ul>
+              </li> 
+            </ul>
+          </li> 
+
+          
+         
+          <li class="nav-header">Bem vindo : {{seguranca.username}}</li>
+          <li class="nav-item">
+            <a href="#" (click)="sair()" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Sair</p>
+            </a>
+          </li>
+        </ul>
+      </nav> 
+    </div> 
+  </aside>

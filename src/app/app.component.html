@@ -1,6 +1,29 @@
+<body class="hold-transition sidebar-mini layout-fixed" >
+  <div class="wrapper">
+    <app-header [hidden]="!seguranca.logged"></app-header>
 
-<button class="btn btn-outline-primary" routerLink="">Ir componente login</button>
-<button class="btn btn-outline-primary" routerLink="home">Ir componente home</button>
+    <app-menu [hidden]="!seguranca.logged"></app-menu>
 
-<hr>
-<router-outlet></router-outlet>
+    <div [ngClass]="{'content-wrapper':seguranca.logged}"  >
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col pt-5">
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer *ngIf="seguranca.logged" class="main-footer">
+      <strong
+        >Copyright &copy; 2022
+        <a href="http://oliota.com">Oliota.com</a>.</strong
+      >
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 1.0.0
+      </div>
+    </footer>
+  </div>
+</body>

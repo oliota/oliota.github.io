@@ -1,1 +1,184 @@
-<p>home works!</p>
+<div class="row">
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box">
+      <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Projeto de exemplo</span>
+        <span class="info-box-number">
+          100% 
+        </span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box mb-3">
+      <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Qualidade das avaliações</span>
+        <span class="info-box-number">95%</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+
+  <!-- fix for small devices only -->
+  <div class="clearfix hidden-md-up"></div>
+
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box mb-3">
+      <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Aquisição de conhecimento</span>
+        <span class="info-box-number">10/11</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+  <div class="col-12 col-sm-6 col-md-3">
+    <div class="info-box mb-3">
+      <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">Alunos desistentes</span>
+        <span class="info-box-number">5</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
+</div>
+
+<div class="row">
+    <div class="col-lg-4 col-6">
+      <!-- small box -->
+      <div class="small-box bg-info">
+        <div class="inner">
+          <h3>19</h3>
+
+          <p>Alunos</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-bag"></i>
+        </div>
+        <span href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></span>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-4 col-6">
+      <!-- small box -->
+      <div class="small-box bg-success">
+        <div class="inner">
+          <h3>6<sup style="font-size: 20px"></sup></h3>
+
+          <p>Times</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-stats-bars"></i>
+        </div>
+        <span href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></span>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-lg-4 col-6">
+      <!-- small box -->
+      <div class="small-box bg-warning">
+        <div class="inner">
+          <h3>5%</h3>
+
+          <p>Avaliações em branco</p>
+        </div>
+        <div class="icon">
+          <i class="ion ion-person-add"></i>
+        </div>
+        <span href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></span>
+      </div>
+    </div>  
+  </div>
+
+  <div class="row">
+
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <i class="ion ion-clipboard mr-1"></i>
+                Controle da aula
+              </h3>
+
+               
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <ul class="todo-list" data-widget="todo-list">
+                
+                <li *ngFor="let taks of tasks"> 
+                  <div  class="icheck-primary d-inline ml-2">
+                    <input type="checkbox" value="" name="todo6" id="todoCheck6">
+                    <label for="todoCheck6"></label>
+                  </div>
+                  <span class="text">{{taks.name}}</span>
+                  <small class="badge {{taks.color}}" ><i class="far fa-clock"></i> {{taks.desc}}</small>
+                  <div class="tools">
+                    <i class="fas fa-edit"></i>
+                    <i class="fas fa-trash-o"></i>
+                  </div>
+                </li>
+              </ul>
+            </div> 
+          
+          </div>
+    </div>
+    <div class="col">
+
+      <div class="card">
+        <div class="card-header border-transparent">
+          <h3 class="card-title">Cursos</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table m-0">
+              <thead>
+              <tr> 
+                <th>Name</th>
+                <th>Quantidade</th>
+                <th>Duração</th>
+              </tr>
+              </thead>
+              <tbody *ngIf="cursos">
+              <tr *ngFor="let curso of cursos.slice().reverse(); let i = index;">
+              
+                <td><a href="https://oliota.com/curso_detalhe/{{curso.link}}/{{curso.id}}" target="_blank"  >{{cursos.length-i}} - {{curso.nome}}</a></td>
+                <td> {{curso.datas.length}} </td>
+                <td>
+                  {{curso.datas[0].data| date: 'dd/MM/yyyy'}} até {{curso.datas[curso.datas.length-1].data| date: 'dd/MM/yyyy'}}
+                </td>
+              </tr> 
+              </tbody>
+            </table>
+          </div> 
+        </div> 
+      </div>
+    </div>
+  </div>
+
