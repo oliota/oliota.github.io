@@ -10,7 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
 import { SegurancaService } from './services/seguranca.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AlunoModule } from './aluno/aluno.module';
+import { AlunoModule } from './aluno/aluno.module'; 
 
 @NgModule({
   declarations: [
@@ -23,10 +23,11 @@ import { AlunoModule } from './aluno/aluno.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, 
     ReactiveFormsModule,
     HttpClientModule,
-    AlunoModule
+    AlunoModule,
+    
   ],
   providers: [SegurancaService],
   bootstrap: [AppComponent]
